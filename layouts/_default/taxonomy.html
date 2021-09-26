@@ -1,0 +1,22 @@
+{{ define "main" }}
+  {{ partial "section-header.html" . }}
+  <section class="flex flex-wrap -mx-2 overflow-hidden">
+    {{ range .Data.Terms }}
+      <article class="w-full px-2 my-3 overflow-hidden sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+        <h2>
+          <a
+            class="text-xl font-medium hover:underline hover:underline-primary-500 hover:underline-offset-small"
+            href="{{ .Page.RelPermalink }}"
+            >{{ .Page.Title }}</a
+          >
+          {{ if $.Site.Params.taxonomy.showTermCount | default true }}
+            <span class="text-base text-neutral-400">
+              <span class="px-1 text-primary-500">&middot;</span>
+              {{ .Count }}
+            </span>
+          {{ end }}
+        </h2>
+      </article>
+    {{ end }}
+  </section>
+{{ end }}

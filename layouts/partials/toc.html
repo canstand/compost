@@ -1,0 +1,26 @@
+{{ if and (gt .WordCount 400 ) (ne .Params.showTOC false) }}
+  <aside class="sticky self-start hidden h-2 pl-8 xl:pl-12 top-20 lg:block lg:w-64 xl:w-96">
+    <div class="min-h-screen overflow-y-auto text-sm xl:text-base">
+      <label class="font-bold">{{ i18n "article.table_of_contents" }}</label>
+      {{ .TableOfContents }}
+    </div>
+  </aside>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("id")
+          if (entry.intersectionRatio > 0) {
+            document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add("active")
+          } else {
+            document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove("active")
+          }
+        })
+      })
+      // Track all headers that have an `id` applied
+      document.querySelectorAll("article h1[id], article h2[id], article h3[id]").forEach((h) => {
+        observer.observe(h)
+      })
+    })
+  </script>
+{{ end }}

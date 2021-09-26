@@ -1,0 +1,36 @@
+<article>
+  <h3 class="flex items-center mt-6 text-xl font-semibold">
+    {{ with .Params.externalUrl }}
+      <a
+        class="hover:underline hover:underline-primary-500 hover:underline-offset-small text-neutral-800 dark:text-neutral-200"
+        href="{{ . }}"
+        target="_blank"
+        rel="external"
+        >{{ $.Title }}</a
+      >
+      <span
+        class="-mt-2 text-xs cursor-default text-neutral-400 dark:text-neutral-500"
+        title="{{ i18n "list.externalurl_title" }}"
+      >
+        &#8599;
+      </span>
+    {{ else }}
+      <a
+        class="hover:underline hover:underline-primary-500 hover:underline-offset-small text-neutral-800 dark:text-neutral-200"
+        href="{{ .RelPermalink }}"
+        >{{ .Title }}</a
+      >
+    {{ end }}
+    {{ if and .Draft .Site.Params.article.showDraftLabel }}
+      <div class="ml-2">
+        {{ partial "badge.html" (i18n "article.draft" | emojify) }}
+      </div>
+    {{ end }}
+    {{ if templates.Exists "partials/extend-article-link.html" }}
+      {{ partial "extend-article-link.html" . }}
+    {{ end }}
+  </h3>
+  <div class="text-sm text-neutral-400 dark:text-neutral-500">
+    {{ partial "article-meta.html" . }}
+  </div>
+</article>

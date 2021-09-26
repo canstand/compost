@@ -1,0 +1,122 @@
+<div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky inset-x-0 top-0 z-10 ">
+  <div class="fixed z-10 flex w-48 h-screen lg:hidden" :class="open ? '' : 'hidden'" x-ref="dialog" aria-modal="true">
+    <div
+      class="fixed inset-0 bg-black bg-opacity-25"
+      :class="open ? '' : 'hidden'"
+      x-transition:enter="transition-opacity ease-linear duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition-opacity ease-linear duration-300"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state."
+      @click="open = false"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="fixed inset-0 flex flex-col w-full h-full pb-12 overflow-y-auto shadow-xl bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 max-w-xxs"
+      :class="open ? '' : 'hidden'"
+      x-transition:enter="transition ease-in-out duration-300 transform"
+      x-transition:enter-start="-translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition ease-in-out duration-300 transform"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="-translate-x-full"
+      x-description="Off-canvas menu, show/hide based on off-canvas menu state."
+    >
+      <div class="flex px-4 pt-5 pb-2">
+        <button
+          type="button"
+          title="Close menu"
+          class="inline-flex items-center justify-center p-2 -m-2 rounded-md text-neutral-400"
+          @click="open = false"
+        >
+          <span class="sr-only">Close menu</span>
+          <svg
+            class="w-6 h-6"
+            x-description="Heroicon name: outline/x"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <ul class="py-4 divide-y divide-neutral-200">
+        {{ range .Site.Menus.main }}
+          {{- $url := .URL | relLangURL -}}
+          {{- with .Page -}}
+            {{- $url = .RelPermalink -}}
+          {{- end -}}
+          <li
+            class="flow-root px-4 py-2 {{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }}
+              bg-primary-100 dark:bg-primary-900
+            {{ end }}"
+          >
+            <a href="{{ .URL }}" title="{{ .Title }}" class="block p-2 -m-2 font-medium">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+  <header class="shadow-sm bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 ">
+    <nav
+      class="container flex  leading-12 items-center px-6 mx-auto max-w-7xl lg:px-8 xl:px-12 bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200"
+      aria-label="Top"
+    >
+      {{ if .Site.Params.Logo }}
+        <a
+          class="relative hidden p-2 align-middle lg:block"
+          rel="me"
+          href="{{ `/` | relURL }}"
+          title="{{ .Site.Title }}"
+        >
+          <img src="{{ .Site.Params.Logo | relURL }}" class="h-8 w-auto" alt="{{ .Site.Title }}" />
+        </a>
+      {{ end }}
+
+
+      <button class="lg:hidden" type="button" @click="open = true">
+        <svg
+          class="block w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <div class="flex-grow h-12 ml-5 mr-2">
+        <div class="relative w-full h-full">
+          <div class="absolute max-w-full" :class="up ? 'hidden' : ''" x-transition.duration.500ms>
+            <span class="overflow-hidden overflow-ellipsis whitespace-nowrap">{{ .Site.Title }}</span>
+          </div>
+          <div class="absolute top-0 left-0 right-0 max-w-full" :class="up ? '' : 'hidden'" x-transition.duration.500ms>
+            <span class="overflow-hidden overflow-ellipsis whitespace-nowrap">{{ .Title | emojify }}</span>
+          </div>
+        </div>
+      </div>
+      <ul class="flex-shrink hidden ml-7 lg:flex flex-row justify-end list-none">
+        {{ range .Site.Menus.main }}
+          {{- $url := .URL | relLangURL -}}
+          {{- with .Page -}}
+            {{- $url = .RelPermalink -}}
+          {{- end -}}
+          <li
+            class="border-b-2 border-transparent text-right mr-7 last:mr-0 hover:border-primary-500 {{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }}
+              border-primary-500
+            {{ end }}"
+          >
+            <a class="" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </header>
+</div>

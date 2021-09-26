@@ -1,0 +1,39 @@
+<footer class="bg-black">
+    <div class="container flex flex-row px-6 lg:px-8 xl:px-12 py-4 mx-auto text-sm max-w-7xl">
+      <div class="flex-1">
+        <p class="text-neutral-500 dark:text-neutral-500">
+        {{/* Copyright */}}
+        {{- with .Site.Copyright -}}
+          {{ . | emojify | markdownify }}
+        {{- else -}}
+          &copy;
+          {{ now.Format "2006" }}
+          {{ .Site.Author.name }}
+        {{- end -}}
+        </p>
+        {{/* Theme attribution */}}
+        {{ if .Site.Params.attribution | default true }}
+          <p class="text-xs text-neutral-600 dark:text-neutral-600">
+            {{ $hugo := `<a class="hover:underline hover:underline-primary-300 hover:text-primary-400" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>` }}
+            {{ i18n "footer.powered_by" (dict "Hugo" $hugo) | safeHTML }}
+          </p>
+        {{ end }}
+      </div>
+      <div class="flex-1">
+        {{/* Extend footer - eg. for extra scripts, etc. */}}
+        {{ if templates.Exists "partials/extend-footer.html" }}
+          {{ partialCached "extend-footer.html" . }}
+        {{ end }}
+      </div>
+    </div>
+</footer>
+
+<script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js" crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" crossorigin="anonymous"></script>
+{{/* Include mermaid.js only on pages that use the shortcode */}}
+{{ if .Page.HasShortcode "mermaid" }}
+  <script src="https://unpkg.com/mermaid@8.x.x/dist/mermaid.min.js" crossorigin="anonymous"></script>
+  <script>
+    mermaid.initialize({ theme: "default" });
+  </script>
+{{ end }}

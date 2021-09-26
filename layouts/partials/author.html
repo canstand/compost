@@ -1,0 +1,18 @@
+{{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
+  <div class="flex items-center">
+    {{ with .Site.Author.image }}
+      <img class="w-24 h-24 !mt-0 !mb-0 mr-4 rounded-full" src="{{ . | relURL }}" />
+    {{ end }}
+    <div>
+      {{ with .Site.Author.name }}
+        <div class="text-[0.6rem] leading-3 text-neutral-400 dark:text-neutral-500 uppercase">
+          {{ i18n "author.byline_title" | emojify }}
+        </div>
+        <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+          {{ . }}
+        </div>
+      {{ end }}
+      {{ partialCached "author-links.html" . }}
+    </div>
+  </div>
+{{ end }}
