@@ -1,21 +1,35 @@
 {
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/canstand/compost.git"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"@tailwindcss/typography": "^0.4.1",
-		"autoprefixer": "^10.3.1",
-		"postcss": "^8.3.7",
-		"postcss-cli": "^8.3.1",
-		"postcss-purgecss": "^2.0.3",
-		"prettier": "^2.4.1",
-		"prettier-plugin-go-template": "0.0.11",
-		"tailwind-underline-utils": "^1.1.3",
-		"tailwindcss": "^2.2.15"
-	},
-	"name": "hugo-compost",
-	"version": "0.1.0"
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "@tailwindcss/typography": "project",
+      "autoprefixer": "project",
+      "postcss": "project",
+      "postcss-cli": "project",
+      "postcss-purgecss": "project",
+      "prettier": "project",
+      "prettier-plugin-go-template": "project",
+      "tailwind-underline-utils": "project",
+      "tailwindcss": "project"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.7",
+    "postcss-cli": "^8.3.1",
+    "postcss-purgecss": "^2.0.3",
+    "prettier": "^2.4.1",
+    "prettier-plugin-go-template": "0.0.11",
+    "tailwind-underline-utils": "^1.1.3",
+    "tailwindcss": "^2.2.15"
+  },
+  "license": "MIT",
+  "name": "hugo-compost",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/canstand/compost.git"
+  },
+  "version": "0.1.0"
 }
