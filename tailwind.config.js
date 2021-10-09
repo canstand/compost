@@ -37,7 +37,7 @@ module.exports = {
     ],
     mode: "all",
   },
-  darkMode: "media",
+  darkMode: "class",
   theme: {
     colors: {
         transparent: 'transparent',

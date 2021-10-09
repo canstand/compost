@@ -35,7 +35,7 @@
   {{ $options := dict "inlineImports" true }}
   {{ $mainCSS := resources.Get "css/styles.css" }}
   {{ $mainCSS = $mainCSS | resources.PostCSS $options }}
-  {{ if  hugo.IsProduction  }}
+  {{ if  hugo.IsProduction }}
     {{ $mainCSS = $mainCSS | minify | fingerprint | resources.PostProcess }}
   {{ end }}
   {{ $mainStyles := $mainCSS | resources.Fingerprint "sha512" }}
@@ -61,7 +61,7 @@
   {{ else }}
     <link rel="icon" sizes="192x192" href="{{ "logo-192.png" | relURL }}" />
     <link rel="apple-touch-icon" href="{{ "logo-192.png" | relURL }}" />
-    <link rel="mask-icon" href="{{ "logo.svg" | relURL }}" color="blue">
+    <link rel="mask-icon" href="{{ "logo.svg" | relURL }}" color="blue" />
     <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
   {{ end }}
   {{/* Site Verification */}}
@@ -93,6 +93,11 @@
       {{ range $name, $url := $links }}<link href="{{ $url }}" rel="me" />{{ end }}
     {{ end }}
   {{ end }}
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    }
+  </script>
   {{/* Analytics */}}
   {{ partialCached "analytics.html" .Site }}
   {{/* Extend head - eg. for custom analytics scripts, etc. */}}
