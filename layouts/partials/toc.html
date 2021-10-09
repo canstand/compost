@@ -10,15 +10,22 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           const id = entry.target.getAttribute("id")
-          if (entry.intersectionRatio > 0) {
-            document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add("active")
-          } else {
-            document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove("active")
+          const elem = document.querySelector(`nav li a[href="#${id}"]`)
+          if (elem !== null) {
+            if (entry.intersectionRatio > 0) {
+              elem.parentElement.classList.add("active")
+            } else {
+              elem.parentElement.classList.remove("active")
+            }
           }
         })
       })
+      const selectors = []
+      for (let i = 1; i <= 6; i++) {
+        selectors.push(`article h${i}[id]`)
+      }
       // Track all headers that have an `id` applied
-      document.querySelectorAll("article h1[id], article h2[id], article h3[id]").forEach((h) => {
+      document.querySelectorAll(selectors.join()).forEach((h) => {
         observer.observe(h)
       })
     })
