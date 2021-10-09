@@ -17,7 +17,7 @@ const px = (px) => `${px}px`
 
 module.exports = {
   // mode: "jit",
-  // important: true, // See https://tailwindcss.com/docs/configuration#important
+  important: true, // See https://tailwindcss.com/docs/configuration#important
   purge: {
     enabled: process.env.HUGO_ENVIRONMENT === "production",
     content: [
@@ -43,7 +43,7 @@ module.exports = {
         transparent: 'transparent',
         current: 'currentColor',
       black: colors.black,
-      neutral: colors.coolGray,
+      neutral: colors.gray,
       primary: colors.blue,
       secondary: colors.cyan,
     },
@@ -73,15 +73,14 @@ module.exports = {
             {
               color: theme("colors.neutral.700"),
               a: {
-                color: theme("colors.primary.700"),
-                textDecoration: "underline",
-                textDecorationColor: theme("colors.primary.300"),
+                color: theme("colors.primary.500"),
+                textDecoration: "none",
                 fontWeight: "500",
                 "&:hover": {
-                  backgroundColor: theme("colors.primary.600"),
                   borderRadius: "0.09rem",
-                  color: theme("colors.neutral.100"),
-                  textDecoration: "none",
+                  color: theme("colors.primary.600"),
+                  textDecoration: "underline",
+                  textDecorationColor: theme("colors.primary.600"),
                 },
               },
               strong: {
@@ -158,6 +157,10 @@ module.exports = {
               a: {
                 color: theme("colors.primary.400"),
                 textDecorationColor: theme("colors.neutral.500"),
+                "&:hover": {
+                  color: theme("colors.primary.500"),
+                  textDecorationColor: theme("colors.primary.500"),
+                }
               },
               strong: {
                 color: theme("colors.neutral.200"),

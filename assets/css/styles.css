@@ -38,11 +38,11 @@ body button {
 
 /* Article pagination */
 .article-pagination a:hover .article-pagination-title {
-  @apply underline underline-primary-500;
+  @apply underline underline-primary-500 text-primary-500;
 }
 
 .article-pagination a:hover .article-pagination-direction {
-  @apply text-primary-700 dark:text-primary-400;
+  @apply text-primary-500;
 }
 
 /* -- Chroma Highlight -- */
@@ -399,15 +399,19 @@ body button {
 }
 
 .tab-label {
-  @apply inline-block px-2 py-1 border-b-2 border-transparent cursor-pointer shadow rounded-tl-md bg-neutral-50 dark:bg-neutral-800;
+  @apply inline-block px-4 py-1 border-b-2 border-transparent cursor-pointer hover:text-primary-500;
+}
+
+.tab-content {
+  @apply w-full p-4 order-last bg-neutral-100 dark:bg-neutral-900;
 }
 
 .tab-control:checked+.tab-label {
-  @apply border-primary-500 bg-primary-50 dark:bg-neutral-700;
+  @apply border-primary-500 text-primary-500;
 }
 
 .tab-control:checked+.tab-label+.tab-content {
-  @apply block;
+  @apply block !important;
 }
 
 @tailwind utilities;
