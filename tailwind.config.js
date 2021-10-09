@@ -54,6 +54,9 @@ module.exports = {
       bold: "2px",
     },
     extend: {
+      boxShadow: {
+        dark: '0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 255, 255, 0.06)',
+      },
       lineHeight: {
         11: "2.75rem",
         12: "3rem",
@@ -222,6 +225,7 @@ module.exports = {
   },
   variants: {
     extend: {
+      boxShadow: ['dark'],
       typography: ["responsive", "dark"],
       margin: ["last"],
       borderColor: ["active", "checked"]
