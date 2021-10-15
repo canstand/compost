@@ -38,12 +38,11 @@
   {{ if  hugo.IsProduction }}
     {{ $mainCSS = $mainCSS | minify | fingerprint | resources.PostProcess }}
   {{ end }}
-  {{ $mainStyles := $mainCSS | resources.Fingerprint "sha512" }}
   <link
     type="text/css"
     rel="stylesheet"
-    href="{{ $mainStyles.RelPermalink }}"
-    integrity="{{ $mainStyles.Data.Integrity }}"
+    href="{{ $mainCSS.RelPermalink }}"
+    integrity="{{ $mainCSS.Data.Integrity }}"
   />
   {{ $customCSS := resources.Get "css/custom.css" }}
   {{ if $customCSS }}
