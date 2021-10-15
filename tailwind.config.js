@@ -40,8 +40,8 @@ module.exports = {
   darkMode: "class",
   theme: {
     colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
+      transparent: "transparent",
+      current: "currentColor",
       black: colors.black,
       neutral: colors.gray,
       primary: colors.blue,
@@ -55,7 +55,7 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        dark: '0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 255, 255, 0.06)',
+        dark: "0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 255, 255, 0.06)",
       },
       lineHeight: {
         11: "2.75rem",
@@ -150,7 +150,7 @@ module.exports = {
             },
           ],
         },
-        light: {
+        night: {
           css: [
             {
               color: theme("colors.neutral.400"),
@@ -160,7 +160,7 @@ module.exports = {
                 "&:hover": {
                   color: theme("colors.primary.500"),
                   textDecorationColor: theme("colors.primary.500"),
-                }
+                },
               },
               strong: {
                 color: theme("colors.neutral.200"),
@@ -228,10 +228,10 @@ module.exports = {
   },
   variants: {
     extend: {
-      boxShadow: ['dark'],
+      boxShadow: ["dark"],
       typography: ["responsive", "dark"],
       margin: ["last"],
-      borderColor: ["active", "checked"]
+      borderColor: ["active", "checked"],
     },
   },
   plugins: [typography, underlineUtils],

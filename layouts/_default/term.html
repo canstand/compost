@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ partial "section-header.html" . }}
-  <section>
+  <section class="w-full">
     {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
       <h2 class="mt-12 text-2xl font-bold first:mt-8">{{ .Key }}</h2>
       <hr class="border-dotted border-neutral-400 w-36" />

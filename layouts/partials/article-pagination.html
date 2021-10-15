@@ -23,7 +23,7 @@
             <a class="flex text-right" href="{{ .PrevInSection.RelPermalink }}">
               <span class="flex flex-col">
                 <span class="article-pagination-title">{{ .PrevInSection.Title }}</span>
-                <span class="-mt-1 text-xs text-neutral-400 dark:text-neutral-500">
+                <span class="-mt-0 text-xs text-neutral-400 dark:text-neutral-500">
                   {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
                     {{ partial "meta/date.html" . }}
                   {{ end }}

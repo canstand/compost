@@ -10,6 +10,8 @@
 # mainSections = ["section1", "section2"]
 # robots = ""
 
+logo = "logo-192.png"
+
 [homepage]
   layout = "page" # valid options: page, profile, custom
   showRecent = false

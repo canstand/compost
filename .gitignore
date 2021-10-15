@@ -140,4 +140,5 @@ hugo.linux
 
 hugo_stats.json
 exampleSite/public/
+exampleSite/resources/_gen/
 TODO
