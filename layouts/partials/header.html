@@ -79,6 +79,7 @@
         </a>
       {{ end }}
 
+
       <button class="lg:hidden" type="button" @click="open = true">
         <svg
           class="block w-6 h-6"
@@ -131,15 +132,23 @@
             clip-rule="evenodd"
           ></path>
         </svg>
+        <!-- ensure hugo captures these classes in hugo_stats.json when we run purgecss -->
+        <span class="light"></span><span class="dark"></span>
       </button>
       <script>
         document.getElementById("switchTheme").addEventListener("click", function () {
-          if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          if (
+            localStorage.theme === "dark" ||
+            (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
             document.documentElement.classList.remove("dark")
-            localStorage.theme = 'light'
-          } else if (localStorage.theme === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-            document.documentElement.classList.add('dark')
-            localStorage.theme = 'dark'
+            localStorage.theme = "light"
+          } else if (
+            localStorage.theme === "light" ||
+            (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)
+          ) {
+            document.documentElement.classList.add("dark")
+            localStorage.theme = "dark"
           }
         })
       </script>
