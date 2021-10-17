@@ -1,6 +1,3 @@
 [hugoVersion]
   extended = false
   min = "0.88.1"
-
-[[imports]]
-path = "github.com/gohugoio/hugo-mod-jslibs-dist/alpinejs/v3"

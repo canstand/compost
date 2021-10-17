@@ -1,6 +1,9 @@
 {
   "comments": {
-    "dependencies": {},
+    "dependencies": {
+      "@alpinejs/intersect": "project",
+      "alpinejs": "project"
+    },
     "devDependencies": {
       "@tailwindcss/typography": "project",
       "autoprefixer": "project",
@@ -12,7 +15,10 @@
       "tailwindcss": "project"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "@alpinejs/intersect": "^3.4.2",
+    "alpinejs": "^3.4.2"
+  },
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.7",
@@ -29,5 +35,5 @@
     "type": "git",
     "url": "https://github.com/canstand/compost.git"
   },
-  "version": "0.1.0"
+  "version": "0.1.3"
 }

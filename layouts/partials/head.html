@@ -91,6 +91,13 @@
       {{ range $name, $url := $links }}<link href="{{ $url }}" rel="me" />{{ end }}
     {{ end }}
   {{ end }}
+  {{ $mainJS := resources.Get "js/main.js" }}
+  {{ if  hugo.IsProduction }}
+    {{ $mainJS = $mainJS | js.Build | minify | fingerprint }}
+  {{ else }}
+    {{ $mainJS = $mainJS | js.Build (dict "sourceMap" "inline") }}
+  {{ end }}
+  <script defer src="{{ $mainJS.RelPermalink }}" {{ if hugo.IsProduction }} integrity="{{ $mainJS.Data.Integrity }}"{{ end }}></script>
   <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark')
