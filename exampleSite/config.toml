@@ -5,14 +5,19 @@
 # --------------------------------------------------------------------------
 
 theme = "compost"
-themesDir = "../../"
+themesDir = "../.."
 defaultContentLanguage = "en"
 title = "Compost"
 enableEmoji = true
 
-[build]
-# Used by PurgeCSS
-writeStats = true
+# [build]
+# # Used by PurgeCSS
+# writeStats = true
+
+[module]
+[[module.imports]]
+# We include the theme by "../.." above, but we need one module import for Hugo to detect us as a Hugo Module.
+path="github.com/bep/empty-hugo-module"
 
 [author]
   name = "Compost"

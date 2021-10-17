@@ -1,0 +1,4 @@
+body a,
+body button {
+  @apply transition;
+}

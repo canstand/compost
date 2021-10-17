@@ -16,13 +16,13 @@ const em = (px, base) => `${round(px / base)}em`
 const px = (px) => `${px}px`
 
 module.exports = {
-  // mode: "jit",
+  // mode: "production" !== process.env.HUGO_ENVIRONMENT ? "jit" : null,
   important: true, // See https://tailwindcss.com/docs/configuration#important
   purge: {
     enabled: process.env.HUGO_ENVIRONMENT === "production",
     content: [
-      "./hugo_stats.json",
       "./layouts/**/*.html",
+      "./content/**/*.html",
       "./exampleSite/layouts/**/*.html",
       "./exampleSite/content/**/*.html",
     ],
@@ -153,9 +153,9 @@ module.exports = {
         night: {
           css: [
             {
-              color: theme("colors.neutral.400"),
+              color: theme("colors.neutral.300"),
               a: {
-                color: theme("colors.primary.400"),
+                color: theme("colors.primary.300"),
                 textDecorationColor: theme("colors.neutral.500"),
                 "&:hover": {
                   color: theme("colors.primary.500"),
@@ -166,7 +166,7 @@ module.exports = {
                 color: theme("colors.neutral.200"),
               },
               "ol > li::before": {
-                color: theme("colors.neutral.400"),
+                color: theme("colors.neutral.300"),
               },
               "ul > li::before": {
                 backgroundColor: theme("colors.neutral.600"),

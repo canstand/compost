@@ -1,13 +1,3 @@
-@tailwind base;
-@tailwind components;
-
-@import "components/all.css";
-
-body a,
-body button {
-  @apply transition;
-}
-
 /* Scale SVG icons to text size */
 .icon svg {
   height: 1em;
@@ -413,5 +403,3 @@ body button {
 .tab-control:checked+.tab-label+.tab-content {
   @apply block !important;
 }
-
-@tailwind utilities;

@@ -32,9 +32,8 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
   {{ end -}}
   {{/* Styles */}}
-  {{ $options := dict "inlineImports" true }}
-  {{ $mainCSS := resources.Get "css/styles.css" }}
-  {{ $mainCSS = $mainCSS | resources.PostCSS $options }}
+  {{ $mainCSS := resources.Get "css/main.css" }}
+  {{ $mainCSS = $mainCSS | resources.PostCSS }}
   {{ if  hugo.IsProduction }}
     {{ $mainCSS = $mainCSS | minify | fingerprint | resources.PostProcess }}
   {{ end }}
