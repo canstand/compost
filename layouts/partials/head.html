@@ -33,7 +33,7 @@
   {{ end -}}
   {{/* Styles */}}
   {{ $mainCSS := resources.Get "css/main.css" }}
-  {{ $mainCSS = $mainCSS | resources.PostCSS }}
+  {{ $mainCSS = $mainCSS | resources.PostCSS (dict "inlineImports" true) }}
   {{ if  hugo.IsProduction }}
     {{ $mainCSS = $mainCSS | minify | fingerprint | resources.PostProcess }}
   {{ end }}
@@ -45,7 +45,7 @@
   />
   {{ $customCSS := resources.Get "css/custom.css" }}
   {{ if $customCSS }}
-    {{ $customStyles := $customCSS | resources.Minify | resources.Fingerprint "sha512" }}
+    {{ $customStyles := $customCSS | minify | fingerprint }}
     <link
       type="text/css"
       rel="stylesheet"
