@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article class="text-lg xl:text-xl max-w-prose">
+  <article class="text-lg xl:text-xl min-w-0 max-w-prose">
     <header>
       {{ if .Site.Params.article.showBreadcrumbs | default false }}
         {{ partial "breadcrumbs.html" . }}
