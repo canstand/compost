@@ -385,7 +385,7 @@
 
 /* Tabs shortcode (todo: use peer-checked if hugo support jit-mode directly ) */
 .tabs {
-  @apply my-4 overflow-hidden flex flex-wrap rounded-md;
+  @apply my-4 overflow-hidden flex flex-wrap rounded-md border border-neutral-500;
 }
 
 .tab-label {
@@ -393,7 +393,7 @@
 }
 
 .tab-content {
-  @apply w-full p-4 order-last bg-neutral-100 dark:bg-neutral-900;
+  @apply w-full p-4 order-last border-t border-neutral-500;
 }
 
 .tab-control:checked+.tab-label {

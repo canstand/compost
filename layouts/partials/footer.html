@@ -32,6 +32,10 @@
 {{ if .Page.HasShortcode "mermaid" }}
   <script src="https://unpkg.com/mermaid@8.x.x/dist/mermaid.min.js" crossorigin="anonymous"></script>
   <script>
-    mermaid.initialize({ theme: "default" });
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      mermaid.initialize({ theme: "dark" });
+    } else {
+      mermaid.initialize({ theme: "neutral" });
+    }
   </script>
 {{ end }}
