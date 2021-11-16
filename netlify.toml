@@ -1,15 +1,11 @@
 [build]
 publish = "exampleSite/public"
-command = "hugo --gc -s exampleSite --minify --baseURL $URL"
+command = "hugo --gc -s ./exampleSite --minify --baseURL $URL"
 
 [build.environment]
 HUGO_VERSION = "0.89.3"
-
-[context.deploy-preview]
-command = "hugo -s exampleSite -D -F -b $DEPLOY_PRIME_URL"
-
-[context.deploy-preview.environment]
-HUGO_VERSION = "0.89.3"
+HUGO_THEMESDIR = "../.."
+HUGO_THEME = "repo"
 
 [[headers]]
 for = "/*.jpg"
