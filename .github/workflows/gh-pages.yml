@@ -45,6 +45,8 @@ jobs:
             ${{ runner.os }}-hugomod-
 
       - name: Build
+        env:
+          HUGO_GOOGLEANALYTICS: ${{ secrets.GOOGLEANALYTICS }}
         run: hugo --gc -s ./exampleSite --minify --baseURL https://canstand.github.io/compost/
 
       - name: Deploy
