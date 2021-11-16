@@ -28,11 +28,12 @@ logo = "logo-192.png"
   showHeadingAnchors = true
   showPagination = true
   showReadingTime = true
-  # sharingLinks = ["facebook", "twitter", "reddit", "linkedin", "email"]
+  # sharingLinks = ["facebook", "twitter", "pinterest", "reddit", "linkedin", "email"]
   showTOC = true
 
 [list]
   showBreadcrumbs = false
+  showSummary = true
   groupByYear = true
 
 [taxonomy]

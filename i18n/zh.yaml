@@ -3,7 +3,7 @@ article:
   draft: "草稿"
   edit_title: "编辑内容"
   reading_time:
-    other: "{{ .Count }} 分钟"
+    other: "{{ .Count }} 分钟阅读时长"
   reading_time_title: "预计阅读"
   table_of_contents: "目录"
 

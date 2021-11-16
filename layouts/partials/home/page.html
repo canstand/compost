@@ -1,11 +1,13 @@
-<article class="prose max-w-none dark:prose-night">
-  {{ with .Title }}
-    <header>
-      <h1>{{ . | emojify }}</h1>
-    </header>
-  {{ end }}
-  <section>{{ .Content | emojify }}</section>
-</article>
-<section>
-  {{ partial "recent-articles.html" . }}
-</section>
+<div class="min-w-0 max-w-2xl lg:max-w-3xl w-full">
+  <article class="prose max-w-none dark:prose-night">
+    {{ with .Title }}
+      <header>
+        <h1>{{ . | emojify }}</h1>
+      </header>
+    {{ end }}
+    <section>{{ .Content | emojify }}</section>
+  </article>
+  <section class="w-full">
+    {{ partial "recent-articles.html" . }}
+  </section>
+</div>

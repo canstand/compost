@@ -1,22 +1,24 @@
 {{ define "main" }}
   {{ if gt .Pages 0 }}
-    <section class="w-full">
+    <section class="min-w-0 max-w-2xl lg:max-w-3xl w-full">
       {{ partial "section-header.html" . }}
       {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-        {{ if $.Site.Params.list.groupByYear }}
+        {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
           <h2 class="mt-12 text-2xl font-bold first:mt-8 text-neutral-700 dark:text-neutral-300">
             {{ .Key }}
           </h2>
-          <hr class="border-dotted border-neutral-400 w-36" />
+          <hr class="border-double border-neutral-400 max-w-none" />
         {{ end }}
-        {{ range .Pages }}
-          {{ partial "article-link.html" . }}
-        {{ end }}
+        <div class="overflow-hidden divide-y divide-neutral-300 dark:divide-neutral-600">
+          {{ range .Pages }}
+            {{ partial "article-link.html" . }}
+          {{ end }}
+        </div>
       {{ end }}
     </section>
     {{ partial "pagination.html" . }}
   {{ else }}
-    <section class="w-full">
+    <section class="min-w-0 max-w-2xl lg:max-w-3xl w-full">
       {{ partial "section-header.html" . }}
       <section class="mt-10 prose max-w-none dark:prose-night">
         <p class="py-8 border-t">

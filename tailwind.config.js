@@ -118,8 +118,8 @@ module.exports = {
               code: {
                 color: theme("colors.secondary.700"),
               },
-              "pre code": {
-                color: theme("colors.neutral.700"),
+              "a code": {
+                color: theme("colors.secondary.700"),
               },
               pre: {
                 color: theme("colors.neutral.700"),
@@ -197,7 +197,7 @@ module.exports = {
                 color: theme("colors.secondary.400"),
               },
               "a code": {
-                color: theme("colors.neutral.200"),
+                color: theme("colors.secondary.400"),
               },
               pre: {
                 color: theme("colors.neutral.200"),

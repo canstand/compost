@@ -10,10 +10,6 @@ defaultContentLanguage = "en"
 title = "Compost"
 enableEmoji = true
 
-# [build]
-# # Used by PurgeCSS
-# writeStats = true
-
 [module]
 [[module.imports]]
 # We include the theme by "../.." above, but we need one module import for Hugo to detect us as a Hugo Module.
@@ -39,10 +35,10 @@ path="github.com/bep/empty-hugo-module"
 
 [params.homepage]
   layout = "page"
-  showRecent = false
+  showRecent = true
 
 [params.list]
-  groupByYear = false
+  groupByYear = true
   showBreadcrumbs = true
 
 [params.article]
