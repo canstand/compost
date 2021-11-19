@@ -1,4 +1,4 @@
-// const theme = require("tailwindcss/defaultTheme");
+const defaultTheme = require("tailwindcss/defaultTheme");
 const typography = require("@tailwindcss/typography")
 const underlineUtils = require("tailwind-underline-utils")
 const colors = require("tailwindcss/colors")
@@ -42,10 +42,9 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      black: colors.black,
-      neutral: colors.gray,
       primary: colors.blue,
       secondary: colors.cyan,
+      neutral: colors.gray,
     },
     underlineOffset: {
       small: "2px",
@@ -71,79 +70,80 @@ module.exports = {
         DEFAULT: {
           css: [
             {
-              color: theme("colors.neutral.700"),
+              color: theme('colors.neutral.700', defaultTheme.colors.gray[700]),
+              '[class~="lead"]': {
+                color: theme('colors.neutral.600', defaultTheme.colors.gray[600]),
+              },
               a: {
-                color: theme("colors.primary.500"),
+                color: theme("colors.primary.600", defaultTheme.colors.gray[900]),
                 textDecoration: "none",
-                fontWeight: "500",
                 "&:hover": {
-                  borderRadius: "0.09rem",
-                  color: theme("colors.primary.600"),
+                  color: theme("colors.primary.700"),
                   textDecoration: "underline",
-                  textDecorationColor: theme("colors.primary.600"),
+                  textDecorationColor: theme("colors.primary.700"),
                 },
               },
               strong: {
-                color: theme("colors.neutral.900"),
+                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
               },
               "ol > li::before": {
-                color: theme("colors.neutral.800"),
+                color: theme('colors.neutral.500', defaultTheme.colors.gray[500]),
               },
               "ul > li::before": {
-                backgroundColor: theme("colors.neutral.500"),
+                backgroundColor: theme('colors.neutral.300', defaultTheme.colors.gray[300]),
               },
               hr: {
-                borderColor: theme("colors.neutral.200"),
+                borderColor: theme('colors.neutral.200', defaultTheme.colors.gray[200]),
               },
               blockquote: {
-                color: theme("colors.neutral.800"),
-                borderLeftColor: theme("colors.primary.200"),
+                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
+                borderLeftColor: theme('colors.neutral.200', defaultTheme.colors.gray[200]),
               },
               h1: {
-                color: theme("colors.neutral.800"),
+                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
                 position: "relative",
               },
               h2: {
-                color: theme("colors.neutral.800"),
+                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
                 position: "relative",
               },
               h3: {
-                color: theme("colors.neutral.800"),
+                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
                 position: "relative",
               },
               h4: {
-                color: theme("colors.neutral.800"),
+                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
                 position: "relative",
               },
+              'figure figcaption': {
+                color: theme('colors.neutral.500', defaultTheme.colors.gray[500]),
+              },
               code: {
-                color: theme("colors.secondary.700"),
+                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
               },
               "a code": {
-                color: theme("colors.secondary.700"),
+                color: theme('colors.primary.600', defaultTheme.colors.gray[900]),
               },
               pre: {
-                color: theme("colors.neutral.700"),
-                backgroundColor: theme("colors.neutral.50"),
-              },
-              "pre code": {
-                color: theme("colors.neutral.700"),
+                color: theme('colors.neutral.200', defaultTheme.colors.gray[200]),
+                backgroundColor: theme('colors.neutral.800', defaultTheme.colors.gray[800]),
               },
               thead: {
-                color: theme("colors.neutral.800"),
-                borderBottomColor: theme("colors.neutral.500"),
+                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
+                borderBottomColor: theme('colors.neutral.300', defaultTheme.colors.gray[300]),
               },
               "tbody tr": {
-                borderBottomColor: theme("colors.neutral.300"),
+                borderBottomColor: theme('colors.neutral.200', defaultTheme.colors.gray[200]),
               },
               kbd: {
-                backgroundColor: theme("colors.neutral.200"),
+                backgroundColor: theme("colors.neutral.200", defaultTheme.colors.gray[200]),
                 padding: "0.1rem 0.4rem",
                 borderRadius: "0.25rem",
                 fontSize: "0.9rem",
                 fontWeight: "600",
               },
               mark: {
-                backgroundColor: theme("colors.secondary.200"),
+                backgroundColor: theme("colors.secondary.200", defaultTheme.colors.yellow[200]),
                 padding: "0.1rem 0.2rem",
                 borderRadius: "0.12rem",
               },
@@ -154,61 +154,60 @@ module.exports = {
           css: [
             {
               color: theme("colors.neutral.300"),
+              '[class~="lead"]': {
+                color: theme('colors.neutral.400', defaultTheme.colors.gray[400]),
+              },
               a: {
-                color: theme("colors.primary.300"),
-                textDecorationColor: theme("colors.neutral.500"),
+                color: theme("colors.primary.500"),
                 "&:hover": {
-                  color: theme("colors.primary.500"),
-                  textDecorationColor: theme("colors.primary.500"),
+                  color: theme("colors.primary.400"),
+                  textDecorationColor: theme("colors.primary.400"),
                 },
               },
               strong: {
-                color: theme("colors.neutral.200"),
+                color: theme("colors.neutral.50"),
               },
               "ol > li::before": {
-                color: theme("colors.neutral.300"),
+                color: theme("colors.neutral.400"),
               },
               "ul > li::before": {
                 backgroundColor: theme("colors.neutral.600"),
               },
               hr: {
-                borderColor: theme("colors.neutral.500"),
+                borderColor: theme("colors.neutral.700"),
               },
               blockquote: {
-                color: theme("colors.neutral.200"),
-                borderLeftColor: theme("colors.primary.900"),
+                color: theme("colors.neutral.100"),
+                borderLeftColor: theme("colors.primary.700"),
               },
               h1: {
-                color: theme("colors.neutral.200"),
+                color: theme("colors.neutral.50"),
               },
               h2: {
-                color: theme("colors.neutral.200"),
+                color: theme("colors.neutral.50"),
               },
               h3: {
-                color: theme("colors.neutral.200"),
+                color: theme("colors.neutral.50"),
               },
               h4: {
-                color: theme("colors.neutral.200"),
+                color: theme("colors.neutral.50"),
               },
               "figure figcaption": {
                 color: theme("colors.neutral.400"),
               },
               code: {
-                color: theme("colors.secondary.400"),
+                color: theme("colors.secondary.50"),
               },
               "a code": {
-                color: theme("colors.secondary.400"),
+                color: theme("colors.primary.500"),  // links
               },
               pre: {
-                color: theme("colors.neutral.200"),
-                backgroundColor: theme("colors.neutral.700"),
-              },
-              "pre code": {
-                color: theme("colors.neutral.200"),
+                color: theme("colors.neutral.300"),
+                backgroundColor: 'rgb(0 0 0 / 50%)',
               },
               thead: {
-                color: theme("colors.neutral.200"),
-                borderBottomColor: theme("colors.neutral.500"),
+                color: theme("colors.neutral.50"), // headings
+                borderBottomColor: theme("colors.neutral.600"),
               },
               "tbody tr": {
                 borderBottomColor: theme("colors.neutral.700"),

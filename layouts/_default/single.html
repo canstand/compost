@@ -1,12 +1,12 @@
 {{ define "main" }}
 <div class="flex flex-row flex-wrap">
-  <article class="text-lg xl:text-xl min-w-0 max-w-prose">
-    <header>
+  <article class="text-lg xl:text-xl min-w-0 max-w-prose prose dark:prose-night">
+    <header class="text-base">
       {{ if .Site.Params.article.showBreadcrumbs | default false }}
         {{ partial "breadcrumbs.html" . }}
       {{ end }}
       <h1
-        class="my-4 text-4xl font-extrabold text-neutral-800 dark:text-neutral-200"
+        class="my-4 text-neutral-800 dark:text-neutral-200"
         x-intersect:enter="up = false"
         x-intersect:leave="up = true"
       >
@@ -16,7 +16,7 @@
         {{ partial "article-meta.html" (dict "context" . "scope" "single") }}
       </div>
     </header>
-    <section class="prose max-w-none dark:prose-night">
+    <section class="max-w-none text-base">
       {{ .Content | emojify }}
     </section>
     <footer class="pt-8">

@@ -1,20 +1,29 @@
 # Compost Theme | Hugo
 
-Compost is a simple theme for [Hugo](https://gohugo.io).
+Compost is a simple, lightweight theme for [Hugo](https://gohugo.io). Mainly based on the [Congo](https://github.com/jpanther/congo), also refer to [hugo-starter-tailwind-basic](https://github.com/bep/hugo-starter- tailwind-basic) and so on. 
 
-It is based on the original [hugo-starter-tailwind-basic](https://github.com/bep/hugo-starter-tailwind-basic) and [Congo](https://github.com/jpanther/congo).
+🌏[Demo site](https://canstand.github.io/compost/)
 
-## Usage (As a Theme)
+## Features
+The main differences with [Congo](https://github.com/jpanther/congo):
+- The text style is customized for the [Chinese language](https://canstand.github.io/compost/zh/posts/typography/) (automatically applied when lang is zh), which does not affect the entire site English.
+- The Tailwind CSS JIT mode is not used. Therefore, you can directly use `hugo server -D` to test, the lack of which is that the build will take longer. 
 
-Import `github.com/canstand/compost` into your project, and then run:
+## Usage
 
+1. Set the theme in the Hugo project as `github.com/canstand/compost`:
+```toml
+theme = 'github.com/canstand/compost'
+```
+
+2. Install or upgrade dependencies:
 ```bash
+hugo mod get -u
 hugo mod npm pack
 npm install
 ```
 
-Then run your project as usual.
-
+3. Then run your project as usual.
 ```bash
 hugo server
 ```

@@ -1,13 +1,15 @@
 {{ define "main" }}
-  {{ partial "section-header.html" . }}
-  <section class="w-full">
-    {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-      <h2 class="mt-12 text-2xl font-bold first:mt-8">{{ .Key }}</h2>
-      <hr class="border-dotted border-neutral-400 w-36" />
-      {{ range .Pages }}
-        {{ partial "article-link.html" . }}
+  <div class="text-lg xl:text-xl min-w-0 max-w-prose">
+    {{ partial "section-header.html" . }}
+    <section class="w-full">
+      {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+        <h2 class="mt-12 text-2xl font-bold first:mt-8">{{ .Key }}</h2>
+        <hr class="border-dotted border-neutral-400 w-36" />
+        {{ range .Pages }}
+          {{ partial "article-link.html" . }}
+        {{ end }}
       {{ end }}
-    {{ end }}
-  </section>
-  {{ partial "pagination.html" . }}
+    </section>
+    {{ partial "pagination.html" . }}
+  </div>
 {{ end }}

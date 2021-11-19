@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
+<html lang="{{ with .Site.Language.Lang }}{{ . }}{{ else }}en{{ end }}">
   {{ partial "head.html" . }}
   <body
     class="w-full min-h-full bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200"

@@ -1,2 +1,13 @@
-name = "compost"
+name = "Compost"
 license = "MIT"
+licenselink =  "https://github.com/canstand/compost/blob/master/LICENSE"
+description = "A simple, lightweight theme for Hugo built with Tailwind CSS."
+
+homepage = "https://github.com/canstand/compost/"
+demosite = "https://canstand.github.io/compost/"
+
+tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "tailwind", "personal"]
+features = ["improve Chinese style ", "syntax higlighting", "dark mode", "emoji"]
+
+[author]
+  name = "Can Stand"
