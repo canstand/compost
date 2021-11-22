@@ -10,6 +10,10 @@ defaultContentLanguage = "en"
 title = "Compost"
 enableEmoji = true
 
+[build]
+# Used by PurgeCSS
+writeStats = true
+
 [languages]
 [languages.en]
   weight = 1

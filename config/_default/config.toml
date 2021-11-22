@@ -43,6 +43,6 @@ enableRobotsTXT = true
   #   { youtube = "https://youtube.com/username" },
   # ]
 
-# [build]
-# # Used by PurgeCSS
-# writeStats = true
+[build]
+# Used by PurgeCSS
+writeStats = true

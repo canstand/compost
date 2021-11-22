@@ -21,8 +21,10 @@ module.exports = {
   purge: {
     enabled: process.env.HUGO_ENVIRONMENT === "production",
     content: [
+      "./hugo_stats.json",
       "./layouts/**/*.html",
       "./content/**/*.html",
+      "./exampleSite/hugo_stats.json",
       "./exampleSite/layouts/**/*.html",
       "./exampleSite/content/**/*.html",
     ],

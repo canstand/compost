@@ -49,7 +49,7 @@ The `@tailwindcss/typography` plugin adds a set of prose classes that can be use
 {{</alert>}}
 
 ### 段落文字样式（三级标题）
-普通段落内容**加粗**和*斜体*文字，以及***既加粗又是斜体***的文字。也可以添加~~删除线~~和<mark>标记</mark>。
+普通段落内容**加粗**和*斜体*文字，以及***既加粗又是斜体***的文字。也可以添加~~删除线~~。
 
 > 引用内容
 
@@ -71,8 +71,12 @@ The `@tailwindcss/typography` plugin adds a set of prose classes that can be use
 
 新段落
 
-###### 六级标题
-无内容
+###### HTML 标签支持（六级标题）
+部分样式必须开启 goldmark 的 unsafe，然后使用 HTML 标签来撰写：
+* 标记<mark>重点</mark>内容，不支持 `==marked==` 语法：==marked==
+* 上标<sup>1</sup>下标<sub>1</sub>功能，不支持 `X~1~  X^2^` 语法：X~1~  X^2^
+* <abbr title="缩略语">缩写</abbr>定义，不支持 `*[HTML]: 超文本标记语言` 语法：*[HTML]: 超文本标记语言
+* <ins>下划线（插入）</ins>标记，不支持 `++插入内容++` 语法：++插入内容++
 
 ### 代码样式
 行内代码样式与 `tailwindcss-typography` 不一样，去掉了前后的 ` 字符。
@@ -114,6 +118,7 @@ echo test
     1. 有序列表二级 ol ul
         - 无序列表三级 ol ul ol
 
+术语定义列表，样式待优化：
 First Term
 : This is the definition of the first term.
 
@@ -126,10 +131,10 @@ Second Term
 - [ ] 待完成任务
 
 ### 表格样式
-中文样式包含全边框。
+中文样式包含全边框，Markdown 支持列对齐语法。
 
 | OS/浏览器 | Firefox | Chrome | Safari |
-| --- | --- | --- | --- |
+| --- | :---: | ---: | --- |
 | OS X | ✔ | ✔ | ✔ |
 | Windows | ✔ | ✔ | ✔ |
 | Ubuntu | ✔ | ✔ | - |
