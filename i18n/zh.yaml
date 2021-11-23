@@ -6,6 +6,8 @@ article:
     other: "{{ .Count }} 分钟阅读时长"
   reading_time_title: "预计阅读"
   table_of_contents: "目录"
+  series: "专题"
+  tags: "标签"
 
 author:
   byline_title: "作者"

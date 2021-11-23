@@ -4,6 +4,10 @@
   width: 1em;
 }
 
+body {
+  @apply text-neutral-700 dark:text-neutral-300 bg-neutral-50 dark:bg-neutral-800;
+}
+
 /* Heading anchors */
 .prose .heading-anchor {
   @apply absolute top-0 no-underline opacity-0;
@@ -11,7 +15,7 @@
   left: -1.1em;
 }
 .prose .heading-anchor:hover {
-  @apply underline bg-transparent text-primary-600;
+  @apply underline bg-transparent text-primary-700 dark:text-primary-400;
 }
 .prose .heading-anchor:hover,
 .prose .heading-anchor:focus,
@@ -220,13 +224,33 @@
   @apply mt-0 last:mb-0;
 }
 
+.pagination {
+  @apply flex justify-center;
+}
+
+.pagination .page-item {
+  @apply flex items-center;
+}
+
+.pagination .page-item .page-link{
+  @apply p-2 m-2;
+}
+
+.pagination .active {
+  @apply text-primary-700 dark:text-primary-400;
+}
+
+.pagination .page-item:not(.disabled):hover {
+  @apply text-primary-700 dark:text-primary-400;
+}
+
 /* Article pagination */
 .article-pagination a:hover .article-pagination-title {
-  @apply underline underline-primary-500 text-primary-500;
+  @apply underline underline-primary-700 text-primary-700 dark:text-primary-400;
 }
 
 .article-pagination a:hover .article-pagination-direction {
-  @apply text-primary-500;
+  @apply text-primary-700 dark:text-primary-400;
 }
 
 /* -- Chroma Highlight -- */
@@ -569,12 +593,16 @@
   @apply pl-4 pt-0;
 }
 
+#TableOfContents li {
+  @apply my-1
+}
+
 #TableOfContents li a {
-  @apply inline-block pl-2 overflow-hidden border-l-2 border-transparent overflow-ellipsis whitespace-nowrap;
+  @apply block pl-2 border-l-2 border-transparent;
 }
 
 #TableOfContents li.active>a {
-  @apply inline-block pl-2 overflow-hidden border-l-2 border-primary-500 overflow-ellipsis whitespace-nowrap;
+  @apply block pl-2 border-l-2 border-primary-500;
 }
 
 /* Tabs shortcode (todo: use peer-checked if hugo support jit-mode directly ) */

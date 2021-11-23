@@ -11,6 +11,8 @@ tags:
 - typography
 - demo
 - javascript
+series:
+- Samples
 ---
 
 {{< lead >}}

@@ -1,0 +1,21 @@
+{{- $series := .Site.Taxonomies.series }}
+{{- $currPageLinkTitle := .LinkTitle }}
+<div class="truncate">
+  <label class="font-bold text-lg mb-4">{{ i18n "article.series" }}</label>
+  <ul>
+    {{- range (.GetTerms "series") }}
+      <li>
+        <a class="font-semibold" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        <ul class="pl-2">
+          {{- range .Pages }}
+            {{- if ne $currPageLinkTitle .Page.LinkTitle }}
+              <li>
+                <a class="block" href="{{ .Page.Permalink }}">{{ .Page.LinkTitle }}</a>
+              </li>
+            {{- end }}
+          {{- end }}
+        </ul>
+      </li>
+    {{- end }}
+  </ul>
+</div>

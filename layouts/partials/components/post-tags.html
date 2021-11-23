@@ -1,0 +1,8 @@
+<div>
+  <label class="font-bold text-lg mb-4">{{ i18n "article.tags" }}</label>
+  <div class="space-x-2">
+    {{ range $index, $value := . }}
+      <a href="{{ .Permalink }}" class="hover:underline">#{{ .LinkTitle }}</a>
+    {{ end }}
+  </div>
+</div>

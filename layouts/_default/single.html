@@ -1,16 +1,15 @@
 {{ define "main" }}
-<div class="flex flex-row flex-wrap">
-  <article class="text-lg xl:text-xl min-w-0 max-w-prose">
+  <article class="flex-grow mx-auto text-lg xl:text-xl min-w-0 max-w-prose">
     <header class="text-base">
-      {{ if .Site.Params.article.showBreadcrumbs | default false }}
-        {{ partial "breadcrumbs.html" . }}
-      {{ end }}
+      {{- if .Site.Params.article.showBreadcrumbs | default false }}
+        {{- partial "breadcrumbs.html" . }}
+      {{- end }}
       <h1
-        class="mt-6 mb-3 text-3xl font-semibold text-neutral-800 dark:text-neutral-200"
+        class="my-3 text-3xl font-semibold text-neutral-800 dark:text-neutral-200"
         x-intersect:enter="up = false"
         x-intersect:leave="up = true"
       >
-        {{ .Title | emojify }}
+        {{- .Title | emojify }}
       </h1>
       <div class="mb-6 text-base text-neutral-400 dark:text-neutral-500">
         {{ partial "article-meta.html" (dict "context" . "scope" "single") }}
@@ -24,10 +23,9 @@
       {{ partial "sharing-links.html" . }}
       {{ partial "article-pagination.html" . }}
     </footer>
-    {{ if templates.Exists "partials/comments.html" }}
+    {{- if templates.Exists "partials/comments.html" }}
       {{ partial "comments.html" . }}
-    {{ end }}
+    {{- end }}
   </article>
-  {{ partial "toc.html" . }}
-</div>
-{{ end }}
+  {{ partial "aside.html" . }}
+{{- end }}

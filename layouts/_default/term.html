@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="text-lg xl:text-xl min-w-0 max-w-prose">
+  <div class="mx-auto text-lg xl:text-xl min-w-0 max-w-prose">
     {{ partial "section-header.html" . }}
     <section class="w-full">
       {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
@@ -10,6 +10,6 @@
         {{ end }}
       {{ end }}
     </section>
-    {{ partial "pagination.html" . }}
+    {{ template "_internal/pagination.html" . }}
   </div>
 {{ end }}

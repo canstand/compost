@@ -5,6 +5,8 @@ draft: false
 description: "All the shortcodes available in theme."
 slug: "shortcodes"
 tags: ["shortcodes", "mermaid", "icon", "lead", "docs"]
+series:
+- Extra
 ---
 
 In addition to all the [default Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), Compost adds a few extras for additional functionality.

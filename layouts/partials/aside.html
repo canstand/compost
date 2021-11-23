@@ -1,0 +1,63 @@
+{{- $showRSide := false }}
+{{- $showSeries := false }}
+{{- $showTOC := false }}
+
+{{- if and (gt .WordCount 400 ) (ne .Params.showTOC false) }}
+  {{- $showTOC = true }}
+  {{- $showRSide = true }}
+{{- end }}
+{{- $series := .GetTerms "series" }}
+{{- range $series }}
+  {{- if gt (len .Pages) 1 }}
+    {{- $showSeries = true }}
+    {{- $showRSide = true }}
+  {{- end }}
+{{- end }}
+{{- $tags := .GetTerms "tags" }}
+{{- if $tags }}
+{{- $showRSide = true }}
+{{- end }}
+
+{{- if $showRSide }}
+  <aside class="flex-auto min-w-0 space-y-6 pl-10 mt-3 pr-4 xl:pl-16 hidden lg:block text-sm xl:text-base">
+    {{ if $showSeries }}
+      {{ partial "components/post-series" . }}
+    {{ end }}
+    {{ with .GetTerms "tags" }}
+      {{ partial "components/post-tags" . }}
+    {{ end }}
+    {{- if $showTOC }}
+      <div class="sticky self-start top-20 min-h-screen overflow-y-auto truncate">
+        <label class="font-bold text-lg mb-4">{{ i18n "article.table_of_contents" }}</label>
+        {{ .TableOfContents }}
+      </div>
+    {{- end }}
+  </aside>
+  {{- if $showTOC }}
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.getAttribute("id")
+            const elem = document.querySelector(`nav li a[href="#${id}"]`)
+            if (elem !== null) {
+              if (entry.intersectionRatio > 0) {
+                elem.parentElement.classList.add("active")
+              } else {
+                elem.parentElement.classList.remove("active")
+              }
+            }
+          })
+        })
+        const selectors = []
+        for (let i = 1; i <= 6; i++) {
+          selectors.push(`article h${i}[id]`)
+        }
+        // Track all headers that have an `id` applied
+        document.querySelectorAll(selectors.join()).forEach((h) => {
+          observer.observe(h)
+        })
+      })
+    </script>
+  {{- end }}
+{{ end }}
