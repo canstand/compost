@@ -101,7 +101,7 @@
 .prose p:lang(zh) {
   margin-block-start: 12px;
   margin-block-end: 24px;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 .prose pre:lang(zh) {
@@ -201,6 +201,19 @@
   font-style: normal;
 }
 
+.prose dd {
+  margin-inline-start: 28px;
+}
+.prose dd:lang(zh) {
+  margin-inline-start: 32px;
+}
+.prose dt {
+  font-weight: 600;
+}
+
+.prose ul > li > input {
+  @apply mt-2 mb-1 !important;
+}
 
 /* Prose escape hatch */
 .no-prose > p {

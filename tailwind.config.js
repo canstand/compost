@@ -55,6 +55,11 @@ module.exports = {
       bold: "2px",
     },
     extend: {
+      fontFamily: {
+        sans: ['ui-sans-serif','-apple-system','BlinkMacSystemFont','"Apple Color Emoji"','"Segoe UI Emoji"','"Segoe UI Symbol"','"Segoe UI"', '"PingFang SC"', '"Hiragino Sans GB"', '"Source Han Sans CN"', '"Microsoft YaHei"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        serif: ['ui-serif','Lora', '"Source Han Serif CN"','NSimSun','Georgia','"Times New Roman"','Times','"Songti SC"','"Apple Color Emoji"','"Segoe UI Emoji"','serif'],
+        mono: ['ui-monospace','SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'],
+      },
       boxShadow: {
         dark: "0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 255, 255, 0.06)",
       },

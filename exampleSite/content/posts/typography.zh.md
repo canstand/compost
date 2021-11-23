@@ -118,7 +118,8 @@ echo test
     1. 有序列表二级 ol ul
         - 无序列表三级 ol ul ol
 
-术语定义列表，样式待优化：
+术语定义列表：
+
 First Term
 : This is the definition of the first term.
 
@@ -126,7 +127,8 @@ Second Term
 : This is one definition of the second term.
 : This is another definition of the second term.
 
-任务列表的样式还有待优化：
+任务列表：
+
 - [x] 已完成任务
 - [ ] 待完成任务
 

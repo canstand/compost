@@ -11,6 +11,7 @@
 # robots = ""
 
 logo = "logo-192.png"
+colorScheme = "light" # Default color scheme: auto, light or dark
 
 [homepage]
   layout = "page" # valid options: page, profile, custom

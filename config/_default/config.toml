@@ -1,14 +1,20 @@
 # -- Site Configuration --
 
 # baseURL = "https://your_domain.com/"
+title = "Compost"
+
 languageCode = "en"
 defaultContentLanguage = "en"
+hasCJKLanguage = false # true for Chinese/Japanese/Korean
+defaultContentLanguageInSubdir = false
 
-title = "Compost"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 enableEmoji = true
 enableRobotsTXT = true
+
+# Uncomment for analytics
+# googleAnalytics = "G-MEASUREMENT_ID"
 
 [author]
   # name = "Your name here"
