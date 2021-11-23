@@ -1,10 +1,13 @@
-{{ if not .Site.IsServer }}
-  {{ with .Site.Params.fathomAnalytics.site }}
-    {{ if isset $.Site.Params.fathomanalytics "domain" }}
+{{ if not .Site.IsServer -}}
+  {{ with .Site.Params.fathomAnalytics.site -}}
+    {{ if isset $.Site.Params.fathomanalytics "domain" -}}
       <script defer src="https://{{ $.Site.Params.fathomanalytics.domain }}/script.js" data-site="{{ . }}" defer></script>
-    {{ else }}
+    {{- else -}}
       <script defer src="https://cdn.usefathom.com/script.js" data-site="{{ . }}" defer></script>
-    {{ end }}
-  {{ end }}
-  {{ template "_internal/google_analytics.html" . }}
-{{ end }}
+    {{- end -}}
+  {{ end -}}
+  {{ with .Site.Params.cloudflareAnalytics -}}
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ . }}"}'></script>
+  {{- end -}}
+  {{- template "_internal/google_analytics.html" . -}}
+{{- end }}
