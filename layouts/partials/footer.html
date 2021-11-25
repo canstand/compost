@@ -7,38 +7,38 @@
           {{ . | emojify | markdownify }}
         {{- else -}}
           &copy;
-          {{ now.Format "2006" }}
+          {{- now.Format "2006" -}}
           {{ .Site.Author.name }}
         {{- end -}}
       </p>
       {{/* Theme attribution */}}
-      {{ if .Site.Params.attribution | default true }}
+      {{- if .Site.Params.attribution | default true }}
         <p class="text-xs  text-neutral-300 dark:text-neutral-600">
-          {{ $hugo := `<a class="hover:underline hover:underline-primary-300 hover:text-primary-400" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>` }}
+          {{- $hugo := `<a class="hover:underline hover:underline-primary-300 hover:text-primary-400" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>` }}
           {{ i18n "footer.powered_by" (dict "Hugo" $hugo) | safeHTML }}
         </p>
       {{ end }}
     </div>
     <div class="flex-1">
       {{/* Extend footer - eg. for extra scripts, etc. */}}
-      {{ if templates.Exists "partials/extend-footer.html" }}
+      {{- if templates.Exists "partials/extend-footer.html" }}
         {{ partialCached "extend-footer.html" . }}
-      {{ end }}
+      {{- end }}
     </div>
   </div>
 </footer>
 
 {{/* Include mermaid.js only on pages that use the shortcode */}}
-{{ if .Page.HasShortcode "mermaid" }}
+{{- if .Page.HasShortcode "mermaid" }}
   <script src="https://unpkg.com/mermaid@8.x.x/dist/mermaid.min.js" crossorigin="anonymous"></script>
   <script>
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-      mermaid.initialize({ theme: "dark" })
+      mermaid.initialize({ theme: "dark" });
     } else {
-      mermaid.initialize({ theme: "neutral" })
+      mermaid.initialize({ theme: "neutral" });
     }
   </script>
-{{ end }}
+{{- end }}

@@ -105,14 +105,13 @@
   <script>
   {{- with .Site.Params.colorScheme }}
     if (!('theme' in localStorage)) {
-      localStorage.theme = "{{ . }}"
+      localStorage.theme = "{{ . }}";
     }
   {{- end }}
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
+      document.documentElement.classList.add('dark');
     }
   </script>
-
   {{/* Analytics */}}
   {{- partialCached "analytics.html" .Site -}}
 

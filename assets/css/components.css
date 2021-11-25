@@ -232,7 +232,7 @@ body {
   @apply flex items-center;
 }
 
-.pagination .page-item .page-link{
+.pagination .page-item .page-link {
   @apply p-2 m-2;
 }
 
@@ -594,14 +594,14 @@ body {
 }
 
 #TableOfContents li {
-  @apply my-1
+  @apply my-1;
 }
 
 #TableOfContents li a {
   @apply block pl-2 border-l-2 border-transparent;
 }
 
-#TableOfContents li.active>a {
+#TableOfContents li.active > a {
   @apply block pl-2 border-l-2 border-primary-500;
 }
 
@@ -618,10 +618,10 @@ body {
   @apply w-full p-4 order-last border-t border-neutral-500;
 }
 
-.tab-control:checked+.tab-label {
+.tab-control:checked + .tab-label {
   @apply border-primary-500 text-primary-500;
 }
 
-.tab-control:checked+.tab-label+.tab-content {
+.tab-control:checked + .tab-label + .tab-content {
   @apply block !important;
 }

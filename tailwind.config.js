@@ -1,7 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const typography = require("@tailwindcss/typography")
-const underlineUtils = require("tailwind-underline-utils")
-const colors = require("tailwindcss/colors")
+const typography = require("@tailwindcss/typography");
+const underlineUtils = require("tailwind-underline-utils");
+const colors = require("tailwindcss/colors");
 
 //const colorBrand = 'var(--color-pretty)';
 
@@ -10,10 +10,10 @@ const round = (num) =>
   num
     .toFixed(7)
     .replace(/(\.[0-9]+?)0+$/, "$1")
-    .replace(/\.0$/, "")
-const rem = (px) => `${round(px / 16)}rem`
-const em = (px, base) => `${round(px / base)}em`
-const px = (px) => `${px}px`
+    .replace(/\.0$/, "");
+const rem = (px) => `${round(px / 16)}rem`;
+const em = (px, base) => `${round(px / base)}em`;
+const px = (px) => `${px}px`;
 
 module.exports = {
   // mode: "production" !== process.env.HUGO_ENVIRONMENT ? "jit" : null,
@@ -31,8 +31,8 @@ module.exports = {
     extractors: [
       {
         extractor: (content) => {
-          let els = JSON.parse(content).htmlElements
-          return els.tags.concat(els.classes, els.ids)
+          let els = JSON.parse(content).htmlElements;
+          return els.tags.concat(els.classes, els.ids);
         },
         extensions: ["json"],
       },
@@ -56,9 +56,37 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['ui-sans-serif','-apple-system','BlinkMacSystemFont','"Apple Color Emoji"','"Segoe UI Emoji"','"Segoe UI Symbol"','"Segoe UI"', '"PingFang SC"', '"Hiragino Sans GB"', '"Source Han Sans CN"', '"Microsoft YaHei"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
-        serif: ['ui-serif','Lora', '"Source Han Serif CN"','NSimSun','Georgia','"Times New Roman"','Times','"Songti SC"','"Apple Color Emoji"','"Segoe UI Emoji"','serif'],
-        mono: ['ui-monospace','SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'],
+        sans: [
+          "ui-sans-serif",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Segoe UI"',
+          '"PingFang SC"',
+          '"Hiragino Sans GB"',
+          '"Source Han Sans CN"',
+          '"Microsoft YaHei"',
+          '"Helvetica Neue"',
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
+        serif: [
+          "ui-serif",
+          "Lora",
+          '"Source Han Serif CN"',
+          "NSimSun",
+          "Georgia",
+          '"Times New Roman"',
+          "Times",
+          '"Songti SC"',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          "serif",
+        ],
+        mono: ["ui-monospace", "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", "monospace"],
       },
       boxShadow: {
         dark: "0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 255, 255, 0.06)",
@@ -77,9 +105,9 @@ module.exports = {
         DEFAULT: {
           css: [
             {
-              color: theme('colors.neutral.700', defaultTheme.colors.gray[700]),
+              color: theme("colors.neutral.700", defaultTheme.colors.gray[700]),
               '[class~="lead"]': {
-                color: theme('colors.neutral.600', defaultTheme.colors.gray[600]),
+                color: theme("colors.neutral.600", defaultTheme.colors.gray[600]),
               },
               a: {
                 color: theme("colors.primary.600", defaultTheme.colors.gray[900]),
@@ -91,56 +119,56 @@ module.exports = {
                 },
               },
               strong: {
-                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
+                color: theme("colors.neutral.900", defaultTheme.colors.gray[900]),
               },
               "ol > li::before": {
-                color: theme('colors.neutral.500', defaultTheme.colors.gray[500]),
+                color: theme("colors.neutral.500", defaultTheme.colors.gray[500]),
               },
               "ul > li::before": {
-                backgroundColor: theme('colors.neutral.300', defaultTheme.colors.gray[300]),
+                backgroundColor: theme("colors.neutral.300", defaultTheme.colors.gray[300]),
               },
               hr: {
-                borderColor: theme('colors.neutral.200', defaultTheme.colors.gray[200]),
+                borderColor: theme("colors.neutral.200", defaultTheme.colors.gray[200]),
               },
               blockquote: {
-                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
-                borderLeftColor: theme('colors.neutral.200', defaultTheme.colors.gray[200]),
+                color: theme("colors.neutral.900", defaultTheme.colors.gray[900]),
+                borderLeftColor: theme("colors.neutral.200", defaultTheme.colors.gray[200]),
               },
               h1: {
-                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
+                color: theme("colors.neutral.900", defaultTheme.colors.gray[900]),
                 position: "relative",
               },
               h2: {
-                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
+                color: theme("colors.neutral.900", defaultTheme.colors.gray[900]),
                 position: "relative",
               },
               h3: {
-                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
+                color: theme("colors.neutral.900", defaultTheme.colors.gray[900]),
                 position: "relative",
               },
               h4: {
-                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
+                color: theme("colors.neutral.900", defaultTheme.colors.gray[900]),
                 position: "relative",
               },
-              'figure figcaption': {
-                color: theme('colors.neutral.500', defaultTheme.colors.gray[500]),
+              "figure figcaption": {
+                color: theme("colors.neutral.500", defaultTheme.colors.gray[500]),
               },
               code: {
-                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
+                color: theme("colors.neutral.900", defaultTheme.colors.gray[900]),
               },
               "a code": {
-                color: theme('colors.primary.600', defaultTheme.colors.gray[900]),
+                color: theme("colors.primary.600", defaultTheme.colors.gray[900]),
               },
               pre: {
-                color: theme('colors.neutral.200', defaultTheme.colors.gray[200]),
-                backgroundColor: theme('colors.neutral.800', defaultTheme.colors.gray[800]),
+                color: theme("colors.neutral.200", defaultTheme.colors.gray[200]),
+                backgroundColor: theme("colors.neutral.800", defaultTheme.colors.gray[800]),
               },
               thead: {
-                color: theme('colors.neutral.900', defaultTheme.colors.gray[900]),
-                borderBottomColor: theme('colors.neutral.300', defaultTheme.colors.gray[300]),
+                color: theme("colors.neutral.900", defaultTheme.colors.gray[900]),
+                borderBottomColor: theme("colors.neutral.300", defaultTheme.colors.gray[300]),
               },
               "tbody tr": {
-                borderBottomColor: theme('colors.neutral.200', defaultTheme.colors.gray[200]),
+                borderBottomColor: theme("colors.neutral.200", defaultTheme.colors.gray[200]),
               },
               kbd: {
                 backgroundColor: theme("colors.neutral.200", defaultTheme.colors.gray[200]),
@@ -162,7 +190,7 @@ module.exports = {
             {
               color: theme("colors.neutral.300"),
               '[class~="lead"]': {
-                color: theme('colors.neutral.400', defaultTheme.colors.gray[400]),
+                color: theme("colors.neutral.400", defaultTheme.colors.gray[400]),
               },
               a: {
                 color: theme("colors.primary.500"),
@@ -206,11 +234,11 @@ module.exports = {
                 color: theme("colors.secondary.50"),
               },
               "a code": {
-                color: theme("colors.primary.500"),  // links
+                color: theme("colors.primary.500"), // links
               },
               pre: {
                 color: theme("colors.neutral.300"),
-                backgroundColor: 'rgb(0 0 0 / 50%)',
+                backgroundColor: "rgb(0 0 0 / 50%)",
               },
               thead: {
                 color: theme("colors.neutral.50"), // headings
@@ -241,4 +269,4 @@ module.exports = {
     },
   },
   plugins: [typography, underlineUtils],
-}
+};

@@ -5,13 +5,16 @@ Compost 是一个简单、轻量级的 [Hugo](https://gohugo.io) 主题。主要
 🌏[演示站点](https://github.com/canstand/compost/zh)
 
 ## 特性
+
 与 [Congo](https://github.com/jpanther/congo) 的主要区别：
-* 针对简体中文语言定制了正文样式（lang 为 zh 时自动应用），不影响全站英文。
-* 暂时没用 Tailwind CSS JIT 模式。因此可以直接用 `hugo server -D` 测试，缺占是 build 耗时会长一些。
+
+- 针对简体中文语言定制了正文样式（lang 为 zh 时自动应用），不影响全站英文。
+- 暂时没用 Tailwind CSS JIT 模式。因此可以直接用 `hugo server -D` 测试，缺占是 build 耗时会长一些。
 
 ## 使用
 
 1. 在 Hugo 项目配置文件 `config.toml` 里指定主题为 `github.com/canstand/compost`，并且配置构建参数：
+
 ```toml
 theme = 'github.com/canstand/compost'
 

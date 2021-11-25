@@ -9,25 +9,25 @@
     window.addEventListener("DOMContentLoaded", () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          const id = entry.target.getAttribute("id")
-          const elem = document.querySelector(`nav li a[href="#${id}"]`)
+          const id = entry.target.getAttribute("id");
+          const elem = document.querySelector(`nav li a[href="#${id}"]`);
           if (elem !== null) {
             if (entry.intersectionRatio > 0) {
-              elem.parentElement.classList.add("active")
+              elem.parentElement.classList.add("active");
             } else {
-              elem.parentElement.classList.remove("active")
+              elem.parentElement.classList.remove("active");
             }
           }
-        })
-      })
-      const selectors = []
+        });
+      });
+      const selectors = [];
       for (let i = 1; i <= 6; i++) {
-        selectors.push(`article h${i}[id]`)
+        selectors.push(`article h${i}[id]`);
       }
       // Track all headers that have an `id` applied
       document.querySelectorAll(selectors.join()).forEach((h) => {
-        observer.observe(h)
-      })
-    })
+        observer.observe(h);
+      });
+    });
   </script>
 {{ end }}

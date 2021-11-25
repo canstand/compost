@@ -31,13 +31,13 @@
     {{ end }}
   </h3>
   {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-  <div class="my-2">
-    {{ if .Description }}
-      {{ .Description | emojify | plainify | htmlUnescape }}
-    {{ else if .Summary }}
-      {{ .Summary | emojify | plainify | htmlUnescape }}
-    {{ end }}
-  </div>
+    <div class="my-2">
+      {{ if .Description }}
+        {{ .Description | emojify | plainify | htmlUnescape }}
+      {{ else if .Summary }}
+        {{ .Summary | emojify | plainify | htmlUnescape }}
+      {{ end }}
+    </div>
   {{ end }}
   <div class="text-sm text-neutral-400 dark:text-neutral-500">
     {{ partial "article-meta.html" . }}

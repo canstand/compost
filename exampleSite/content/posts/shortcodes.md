@@ -6,7 +6,7 @@ description: "All the shortcodes available in theme."
 slug: "shortcodes"
 tags: ["shortcodes", "mermaid", "icon", "lead", "docs"]
 series:
-- Extra
+  - Extra
 ---
 
 In addition to all the [default Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), Compost adds a few extras for additional functionality.
@@ -121,6 +121,7 @@ B-->C[Profit]
 
 Tabs let you organize content by context, for example installation instructions for each supported platform.
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* tabs "uniqueid" */>}}
 {{</* tab "MacOS" */>}} # MacOS Content {{</* /tab */>}}
@@ -128,11 +129,13 @@ Tabs let you organize content by context, for example installation instructions 
 {{</* tab "Windows" */>}} # Windows Content {{</* /tab */>}}
 {{</* /tabs */>}}
 ```
+<!-- prettier-ignore-end -->
 
 ### Example
 
 {{< tabs "uniqueid" >}}
 {{< tab "MacOS" >}}
+
 # MacOS
 
 This is tab **MacOS** content.
@@ -140,6 +143,7 @@ This is tab **MacOS** content.
 ```bash
 echo "for test"
 ```
+
 Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
 stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
 protulit, sed sed aere valvis inhaesuro Pallas animam: qui _quid_, ignes.

@@ -141,16 +141,16 @@
             localStorage.theme === "dark" ||
             (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
           ) {
-            document.documentElement.classList.remove("dark")
-            localStorage.theme = "light"
+            document.documentElement.classList.remove("dark");
+            localStorage.theme = "light";
           } else if (
             localStorage.theme === "light" ||
             (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)
           ) {
-            document.documentElement.classList.add("dark")
-            localStorage.theme = "dark"
+            document.documentElement.classList.add("dark");
+            localStorage.theme = "dark";
           }
-        })
+        });
       </script>
     </nav>
   </header>
