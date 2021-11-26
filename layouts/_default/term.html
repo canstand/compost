@@ -1,10 +1,10 @@
 {{ define "main" }}
-  <div class="mx-auto text-lg xl:text-xl min-w-0 max-w-prose">
+  <div class="mx-auto min-w-0 max-w-2xl lg:max-w-3xl flex-grow">
     {{ partial "section-header.html" . }}
     <section class="w-full">
       {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
         <h2 class="mt-12 text-2xl font-bold first:mt-8">{{ .Key }}</h2>
-        <hr class="border-dotted border-neutral-400 w-36" />
+        <hr class="border-double border-neutral-400 max-w-none" />
         {{ range .Pages }}
           {{ partial "article-link.html" . }}
         {{ end }}

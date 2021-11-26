@@ -5,10 +5,28 @@
     "@type": "WebSite",
     "name": "{{ .Site.Title | safeJS }}",
     "url": "{{ (site.GetPage "/").Permalink | safeURL }}",
-    "description": "{{ .Site.Params.description | safeJS }}"
+    {{- with .Site.LanguageCode -}}
+      "inLanguage": "{{ . }}",
+    {{- end -}}
+    {{- with .Site.Author.name -}}
+      "author": {
+        "@type": "Person",
+        "name": {{ . | safeJS }}
+      },
+    {{- end -}}
+    {{- with .Site.Params.description -}}
+      "description": {{ . | safeJS }},
+    {{- end -}}
+    {{- with .Site.Params.logo -}}
+      "thumbnailUrl": "{{ . | absURL }}",
+    {{- end -}}
+    {{- with .Site.Copyright -}}
+      "license": "{{ . | safeJS }}",
+    {{- end -}}
   }
   </script>
 {{ else if .IsPage }}
+  {{- $author :=  or (.Params.author) (.Site.Author.name) -}}
   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
   <script type="application/ld+json">
   {
@@ -17,17 +35,17 @@
     "articleSection": "{{ (site.GetPage .Section).Title }}",
     "name": "{{ .Title | safeJS }}",
     "headline": "{{ .Title | safeJS }}",
-    "description": "{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}",
+    "description": "{{ with .Description | safeJS }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary | safeJS }}{{ else }}{{ with .Site.Params.description }}{{ . | safeJS }}{{ end }}{{ end }}{{ end }}",
     {{ with .Site.LanguageCode }}"inLanguage": {{ . }},{{ end }}
     "author" : {
       "@type": "Person",
-      "name": "{{ .Site.Author.name | safeJS }}"
+      "name": "{{ $author | safeJS }}"
     },
     "creator" : {
       "@type": "Person",
-      "name": "{{ .Site.Author.name | safeJS }}"
+      "name": "{{ $author | safeJS }}"
     },
-    "copyrightHolder": "{{ .Site.Author.name | safeJS }}",
+    "copyrightHolder": "{{ $author | safeJS }}",
     {{ with .PublishDate }}"copyrightYear": "{{ .Format "2006" }}",{{ end }}
     {{ with .PublishDate }}"dateCreated": "{{ .Format $iso8601 }}",{{ end }}
     {{ with .PublishDate }}"datePublished": "{{ .Format $iso8601 }}",{{ end }}

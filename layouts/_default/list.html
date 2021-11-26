@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ if gt .Pages 0 }}
-    <section class="mx-auto min-w-0 max-w-2xl lg:max-w-3xl w-full">
+    <section class="mx-auto min-w-0 max-w-2xl lg:max-w-3xl flex-grow">
       {{ partial "section-header.html" . }}
       {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
         {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
@@ -19,7 +19,7 @@
     </section>
     {{ partial "aside.html" . }}
   {{ else }}
-    <section class="mx-auto min-w-0 max-w-2xl lg:max-w-3xl w-full">
+    <section class="mx-auto min-w-0 max-w-2xl lg:max-w-3xl flex-grow">
       {{ partial "section-header.html" . }}
       <section class="mt-10 prose max-w-none dark:prose-night">
         <p class="py-8 border-t">

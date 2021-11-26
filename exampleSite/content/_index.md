@@ -7,7 +7,7 @@ description: "This is a demo of the Compost theme for Hugo."
 A simple, lightweight theme for Hugo built with Tailwind CSS.
 {{< /lead >}}
 
-Compost is a simple, lightweight theme for [Hugo](https://gohugo.io). Mainly based on the [Congo](https://github.com/jpanther/congo), also refer to [hugo-starter-tailwind-basic](https://github.com/bep/hugo-starter- tailwind-basic) and so on.
+Compost is a simple, lightweight theme for [Hugo](https://gohugo.io). Mainly based on the [Congo](https://github.com/jpanther/congo), also refer to [hugo-starter-tailwind-basic](https://github.com/bep/hugo-starter-tailwind-basic) and so on.
 
 ## Features
 

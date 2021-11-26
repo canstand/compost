@@ -1,4 +1,7 @@
 {
+  "bugs": {
+    "url": "https://github.com/canstand/compost/issues"
+  },
   "comments": {
     "dependencies": {
       "@alpinejs/intersect": "project",
@@ -27,11 +30,15 @@
     "tailwind-underline-utils": "^1.1.3",
     "tailwindcss": "^2.2.19"
   },
+  "homepage": "https://canstand.github.io/compost",
   "license": "MIT",
   "name": "hugo-compost",
   "repository": {
     "type": "git",
     "url": "https://github.com/canstand/compost.git"
   },
-  "version": "0.3.0"
+  "scripts": {
+    "prettier": "npx prettier --write ."
+  },
+  "version": "0.3.6"
 }

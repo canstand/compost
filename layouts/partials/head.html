@@ -5,7 +5,7 @@
   {{ end -}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  {{/* Title */}}
+  <!-- Title -->
   {{- if .IsHome -}}
     <title>{{ .Site.Title }}</title>
     <meta name="title" content="{{ .Site.Title }}" />
@@ -14,7 +14,8 @@
     <meta name="title" content="{{ .Title }} &middot; {{ .Site.Title }}" />
   {{ end -}}
 
-  {{/* Metadata */}}
+
+  <!-- Metadata -->
   {{- with .Params.Description -}}
     <meta name="description" content="{{ . }}" />
   {{ else -}}
@@ -34,7 +35,8 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML -}}
   {{ end -}}
 
-  {{/* Styles */}}
+
+  <!-- Styles -->
   {{- $mainCSS := resources.Get "css/main.css" }}
   {{ $mainCSS = $mainCSS | resources.PostCSS (dict "inlineImports" true) }}
   {{ if  hugo.IsProduction -}}
@@ -52,7 +54,8 @@
     />
   {{- end -}}
 
-  {{/* Icons */}}
+
+  <!-- Icons -->
   {{- if templates.Exists "partials/favicons.html" -}}
     {{ partialCached "favicons.html" .Site }}
   {{ else -}}
@@ -62,7 +65,8 @@
     <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
   {{ end }}
 
-  {{/* Site Verification */}}
+
+  <!-- Site Verification -->
   {{- with .Site.Params.verification.google -}}
     <meta name="google-site-verification" content="{{ . }}" />
   {{- end -}}
@@ -75,20 +79,27 @@
   {{ with .Site.Params.verification.yandex -}}
     <meta name="yandex-verification" content="{{ . }}" />
   {{- end -}}
+  {{- with .Site.Params.verification.baidu -}}
+    <meta name="baidu-site-verification" content="{{ . }}" />
+  {{- end -}}
 
-  {{/* Social */}}
+
+  <!-- Social -->
   {{- template "_internal/opengraph.html" . }}
   {{- template "_internal/twitter_cards.html" . }}
 
-  {{/* Schema */}}
+
+  <!-- Schema -->
   {{- partial "schema.html" . }}
 
-  {{/* Generator */}}
+
+  <!-- Generator -->
   {{- if .Site.Params.attribution | default true }}
     {{ hugo.Generator }}
   {{- end -}}
 
-  {{/* Me */}}
+
+  <!-- Me -->
   {{- with .Site.Author.name }}<meta name="author" content="{{ . }}" />{{ end }}
   {{ with .Site.Author.links -}}
     {{ range $links := . }}
@@ -96,6 +107,8 @@
     {{- end -}}
   {{- end -}}
 
+
+  <!-- Javascript -->
   {{- $mainJS := resources.Get "js/main.js" }}
   {{ if  hugo.IsProduction -}}
     {{ $mainJS = $mainJS | js.Build | minify | fingerprint }}
@@ -112,10 +125,11 @@
       document.documentElement.classList.add('dark');
     }
   </script>
-  {{/* Analytics */}}
+  <!-- Analytics -->
   {{- partialCached "analytics.html" .Site -}}
 
-  {{/* Extend head - eg. for custom analytics scripts, etc. */}}
+
+  <!-- Extend head - eg. for custom analytics scripts, etc. -->
   {{- if templates.Exists "partials/extend-head.html" -}}
     {{ partialCached "extend-head.html" .Site }}
   {{- end }}

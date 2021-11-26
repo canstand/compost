@@ -68,7 +68,7 @@
       class="container flex  leading-12 items-center px-6 mx-auto max-w-7xl lg:px-8 xl:px-12 bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200"
       aria-label="Top"
     >
-      {{ if .Site.Params.Logo }}
+      {{- if .Site.Params.Logo }}
         <a
           class="relative hidden p-2 align-middle lg:block"
           rel="me"
@@ -77,10 +77,10 @@
         >
           <img src="{{ .Site.Params.Logo | relURL }}" class="h-8 w-auto" alt="{{ .Site.Title }}" />
         </a>
-      {{ end }}
+      {{- end }}
 
 
-      <button class="lg:hidden" type="button" @click="open = true">
+      <button class="lg:hidden" type="button" @click="open = true" aria-label="Open menu">
         <svg
           class="block w-6 h-6"
           xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@
       <div class="flex-grow h-12 mx-2">
         <div class="relative w-full h-full">
           <div class="absolute max-w-full" :class="up ? 'hidden' : ''" x-transition.duration.500ms>
-            <span class="overflow-hidden overflow-ellipsis whitespace-nowrap">{{ .Site.Title }}</span>
+            <span class="font-semibold overflow-hidden overflow-ellipsis whitespace-nowrap">{{ .Site.Title }}</span>
           </div>
           <template x-if="true">
             <div

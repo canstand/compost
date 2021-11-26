@@ -9,7 +9,7 @@ themesDir = "../.."
 defaultContentLanguage = "en"
 title = "Compost"
 enableEmoji = true
-
+enableRobotsTXT = true
 paginate = 5
 
 [build]
@@ -69,6 +69,7 @@ path="github.com/bep/empty-hugo-module"
 
 [params]
   logo = "logo-192.png"
+  colorScheme = "auto"
 
 [params.homepage]
   layout = "page"

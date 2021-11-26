@@ -245,6 +245,22 @@ body {
 }
 
 /* Article pagination */
+.article-pagination {
+  @apply pt-8;
+}
+
+.article-pagination > div {
+  @apply flex justify-between pt-3;
+}
+
+.article-pagination hr {
+  @apply border-dotted border-neutral-300 dark:border-neutral-600;
+}
+
+.article-pagination .article-pagination-date {
+  @apply -mt-0 text-sm text-neutral-500 dark:text-neutral-400;
+}
+
 .article-pagination a:hover .article-pagination-title {
   @apply underline underline-primary-700 text-primary-700 dark:text-primary-400;
 }

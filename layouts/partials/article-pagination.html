@@ -1,15 +1,15 @@
 {{ if .Params.showPagination | default (.Site.Params.article.showPagination | default true) }}
   {{ if or .NextInSection .PrevInSection }}
-    <div class="pt-8 article-pagination">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
-      <div class="flex justify-between pt-3">
+    <div class="article-pagination">
+      <hr />
+      <div>
         <span>
           {{ if .PrevInSection }}
             <a class="flex text-right" href="{{ .PrevInSection.RelPermalink }}">
               <span class="mr-3 article-pagination-direction">&larr;</span>
               <span class="flex flex-col">
                 <span class="article-pagination-title">{{ .PrevInSection.Title }}</span>
-                <span class="-mt-0 text-xs text-neutral-400 dark:text-neutral-500">
+                <span class="article-pagination-date">
                   {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
                     {{ partial "meta/date.html" .PrevInSection }}
                   {{ end }}
@@ -23,7 +23,7 @@
             <a class="flex" href="{{ .NextInSection.RelPermalink }}">
               <span class="flex flex-col">
                 <span class="article-pagination-title">{{ .NextInSection.Title }}</span>
-                <span class="-mt-1 text-xs text-neutral-400 dark:text-neutral-500">
+                <span class="article-pagination-date">
                   {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
                     {{ partial "meta/date.html" .NextInSection }}
                   {{ end }}
