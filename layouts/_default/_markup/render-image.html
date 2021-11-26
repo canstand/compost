@@ -1,0 +1,42 @@
+{{- $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) -}}
+{{- $Permalink := .Destination | relURL | safeURL -}}
+{{- $alt := .PlainText | safeHTML -}}
+{{- $Width := 0 -}}
+{{- $Height := 0 -}}
+{{- $Srcset := "" -}}
+
+{{- if $image -}}
+  {{- $notSVG := ne (path.Ext .Destination) ".svg" -}}
+  {{- $Permalink = $image.RelPermalink -}}
+
+  {{- if $notSVG -}}
+    {{- $Width = $image.Width -}}
+    {{- $Height = $image.Height -}}
+    {{- $Min := .Page.Site.Params.imaging.minWidth | default 480 -}}
+    {{- $Max := .Page.Site.Params.imaging.maxWidth | default 1024 -}}
+    {{- if gt $Max $Width -}} {{ $Max = $Width }} {{- end -}}
+    {{- if gt $Min $Width -}} {{ $Min = $Width }} {{- end -}}
+
+    {{- if (.Page.Site.Params.imaging.enabled | default true) -}}
+      {{- $small := $image.Resize (printf `%dx` $Min) -}}
+      {{- $big := $image.Resize (printf `%dx` $Max) -}}
+      {{- $Srcset = printf `%s %dw, %s %dw` $small.RelPermalink $Min $big.RelPermalink $Max -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+
+<figure>
+  <img
+    src="{{ $Permalink }}"
+    {{ with $Width }}width="{{ . }}"{{ end }}
+    {{ with $Height }}height="{{ . }}"{{ end }}
+    {{ with $Srcset }}srcset="{{ . }}"{{ end }}
+    loading="lazy"
+    {{ with $alt }}alt="{{ . }}"{{ end }}
+    {{ with .Title }}title="{{ . }}"{{ end }}
+  />
+  {{ with .Title }}
+    <figcaption>{{ . | markdownify }}</figcaption>
+  {{ end }}
+</figure>

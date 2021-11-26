@@ -52,3 +52,8 @@ colorScheme = "light" # Default color scheme: auto, light or dark
   # bing = ""
   # pinterest = ""
   # yandex = ""
+
+[imaging]
+minWidth = 480
+maxWidth = 1024
+enabled = true

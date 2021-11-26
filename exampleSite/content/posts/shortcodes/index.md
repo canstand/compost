@@ -174,3 +174,15 @@ protulit, sed sed aere valvis inhaesuro Pallas animam: qui _quid_, ignes.
 Miseratus fonte Ditis conubia.
 {{< /tab >}}
 {{< /tabs >}}
+
+## Figure
+
+Same with Hugo's built-in shortcode, but add image resize and lazy loading.
+
+<!-- prettier-ignore-start -->
+```tpl
+{{</* figure src="compost.jpg" alt="Compost Photo" caption="Photo by [Daniel Öberg](https://unsplash.com/)" */>}}
+```
+<!-- prettier-ignore-end -->
+
+{{< figure src="compost.jpg" alt="Compost Photo" caption="Photo by [Daniel Öberg](https://unsplash.com/collections/11624289/compost?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/collections/11624289/compost?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
