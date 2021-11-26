@@ -7,7 +7,7 @@
           {{ . | emojify | markdownify }}
         {{- else -}}
           &copy;
-          {{- now.Format "2006" }}
+          {{ now.Format "2006" }}
           {{ .Site.Author.name }}
         {{- end -}}
       </p>

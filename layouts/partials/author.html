@@ -1,14 +1,14 @@
 {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
   <div class="flex text-base text-neutral-500 dark:text-neutral-400">
     {{ with .Site.Author.image }}
-      <img class="w-16 h-16 !mt-0 !mb-0 mr-4 rounded-full" src="{{ . | relURL }}" alt="Avatar"/>
+      <img class="w-16 h-16 my-auto mr-4 rounded-full" src="{{ . | relURL }}" alt="Avatar"/>
     {{ end }}
     <div class="place-self-center">
       {{ with .Site.Author.name | markdownify | emojify }}
-        <div class="text-sm  uppercase">
+        <div class="text-xs uppercase" aria-hidden="true">
           {{ i18n "author.byline_title" | markdownify | emojify }}
         </div>
-        <div class="font-bold text-neutral-800 dark:text-neutral-300">
+        <div class="my-1 font-bold text-neutral-800 dark:text-neutral-300">
           {{ . }}
         </div>
       {{ end }}
