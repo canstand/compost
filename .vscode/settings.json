@@ -9,5 +9,6 @@
   "css.validate": false,
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "html.validate.scripts": false,
 }
