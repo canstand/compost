@@ -16,6 +16,12 @@ paginate = 5
 # Used by PurgeCSS
 writeStats = true
 
+[minify]
+[minify.tdewolff]
+[minify.tdewolff.html]
+# for better seo
+keepQuotes = true
+
 [languages]
 [languages.en]
   weight = 1

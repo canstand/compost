@@ -52,3 +52,9 @@ enableRobotsTXT = true
 [build]
 # Used by PurgeCSS
 writeStats = true
+
+[minify]
+[minify.tdewolff]
+[minify.tdewolff.html]
+# improve seo
+keepQuotes = true
