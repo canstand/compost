@@ -37,22 +37,7 @@
 
 
   <!-- Styles -->
-  {{- $mainCSS := resources.Get "css/main.css" }}
-  {{ $mainCSS = $mainCSS | resources.PostCSS (dict "inlineImports" true) }}
-  {{ if  hugo.IsProduction -}}
-    {{ $mainCSS = $mainCSS | minify | fingerprint | resources.PostProcess }}
-  {{- end -}}
-  <link type="text/css" rel="stylesheet" href="{{ $mainCSS.RelPermalink }}" integrity="{{ $mainCSS.Data.Integrity }}" />
-  {{ $customCSS := resources.Get "css/custom.css" -}}
-  {{ if $customCSS -}}
-    {{ $customStyles := $customCSS | minify | fingerprint }}
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="{{ $customStyles.RelPermalink }}"
-      integrity="{{ $customStyles.Data.Integrity }}"
-    />
-  {{- end -}}
+  {{ partialCached "css.html" . }}
 
 
   <!-- Icons -->
@@ -121,7 +106,7 @@
       localStorage.theme = "{{ . }}";
     }
   {{- end }}
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'auto') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     }
   </script>

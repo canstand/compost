@@ -1,5 +1,9 @@
 @tailwind base;
-@import "site.css";
+@layer base {
+  a,button {
+    @apply transition;
+  }
+}
 
 @tailwind components;
 @import "components.css";

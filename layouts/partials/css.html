@@ -1,0 +1,18 @@
+{{- $mainCSS := resources.Get "css/main.css" }}
+{{ $mainCSS = $mainCSS | resources.PostCSS (dict "inlineImports" true) }}
+{{ if  hugo.IsProduction -}}
+  {{ $mainCSS = $mainCSS | minify | fingerprint | resources.PostProcess }}
+{{ else if .Site.IsServer }}
+  {{ $mainCSS = $mainCSS | resources.ExecuteAsTemplate (printf "main.dev.%v.css" now.UnixMilli) .}}
+{{- end -}}
+<link type="text/css" rel="stylesheet" href="{{ $mainCSS.RelPermalink }}" integrity="{{ $mainCSS.Data.Integrity }}" />
+{{ $customCSS := resources.Get "css/custom.css" -}}
+{{ if $customCSS -}}
+  {{ $customStyles := $customCSS | minify | fingerprint }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ $customStyles.RelPermalink }}"
+    integrity="{{ $customStyles.Data.Integrity }}"
+  />
+{{- end -}}

@@ -14,7 +14,7 @@
       {{ partialCached "author-links.html" . }}
     </div>
   </header>
-  <section class="prose dark:prose-night">{{ .Content | emojify }}</section>
+  <section class="prose dark:prose-invert">{{ .Content | emojify }}</section>
 </article>
 <section>
   {{ partial "recent-articles.html" . }}

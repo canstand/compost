@@ -2,7 +2,7 @@
   {{ if .Site.Params.list.showBreadcrumbs | default false }}
     {{ partial "breadcrumbs.html" . }}
   {{ end }}
-  <section class="prose max-w-full dark:prose-night">
+  <section class="prose max-w-full dark:prose-invert">
     <h1 class="mb-3 text-4xl font-extrabold">{{ .Title }}</h1>
     {{ with .Content }}
       <section>{{ .Content }}</section>

@@ -9,14 +9,19 @@ body {
 }
 
 /* Heading anchors */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply relative;
+}
+
 .prose .heading-anchor {
-  @apply absolute top-0 no-underline opacity-0;
-  width: 1.1em;
-  left: -1.1em;
+  @apply absolute top-0 no-underline -left-5 opacity-0;
 }
-.prose .heading-anchor:hover {
-  @apply underline bg-transparent text-primary-700 dark:text-primary-400;
-}
+
 .prose .heading-anchor:hover,
 .prose .heading-anchor:focus,
 .prose h2:hover > .heading-anchor,
@@ -27,39 +32,34 @@ body {
   @apply opacity-100;
 }
 
-.prose figure > * {
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-}
-.prose figure > figcaption {
-  text-align: center;
-}
-
 .prose figure:lang(zh) {
-  margin-inline-start: 0;
+  @apply mx-0 my-4;
+  /* margin-inline-start: 0;
   margin-inline-end: 0;
   margin-block-start: 16px;
-  margin-block-end: 16px;
+  margin-block-end: 16px; */
 }
 
 .prose h1:lang(zh),
 .prose h2:lang(zh),
 .prose h3:lang(zh) {
-  margin-block-start: 24px;
-  letter-spacing: 0.05em;
-  font-weight: 600;
+  @apply mt-6 tracking-wider font-semibold;
+  /* margin-block-start: 24px;
+  font-weight: 600; */
 }
 
 .prose h4:lang(zh),
 .prose h5:lang(zh) {
-  margin-block-start: 24px;
+  @apply mt-6 mb-3 font-semibold;
+  /* margin-block-start: 24px;
   margin-block-end: 12px;
-  font-weight: 600;
+  font-weight: 600; */
 }
 
 .prose h6:lang(zh) {
-  margin-block-start: 24px;
-  margin-block-end: 12px;
+  @apply mt-6 mb-3;
+  /* margin-block-start: 24px;
+  margin-block-end: 12px; */
 }
 
 .prose h1:lang(zh) + h2,
@@ -67,137 +67,151 @@ body {
 .prose h3:lang(zh) + h4,
 .prose h4:lang(zh) + h5,
 .prose h5:lang(zh) + h6 {
-  margin-block-start: 12px;
+  @apply mt-3;
+  /* margin-block-start: 12px; */
 }
 
 .prose h1:lang(zh) {
-  margin-block-end: 24px;
+  @apply mb-6 text-3xl leading-12;
+  /* margin-block-end: 24px;
   font-size: 32px;
-  line-height: 48px;
+  line-height: 48px; */
 }
 
 .prose h2:lang(zh) {
-  margin-block-end: 12px;
+  @apply mb-3 text-2xl leading-9;
+  /* margin-block-end: 12px;
   font-size: 24px;
-  line-height: 36px;
+  line-height: 36px; */
 }
 
 .prose h3:lang(zh) {
-  margin-block-end: 12px;
+  @apply mb-3 text-xl leading-9;
+  /* margin-block-end: 12px;
   font-size: 20px;
-  line-height: 36px;
+  line-height: 36px; */
 }
 
 .prose h4:lang(zh) {
-  font-size: 18px;
+  /* font-size: 18px;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 24px; */
+  @apply text-lg leading-6 font-semibold
 }
 
 .prose hr:lang(zh) {
-  width: 30%;
+  /* width: 30%;
   margin-block-start: 48px;
   margin-block-end: 47px;
   margin-inline-start: auto;
-  margin-inline-end: auto;
+  margin-inline-end: auto; */
+  @apply mt-12 mb-[47px] mx-auto w-1/3;
 }
 
 .prose p:lang(zh) {
-  margin-block-start: 12px;
-  margin-block-end: 24px;
+  /* margin-block-start: 12px;
+  margin-block-end: 24px; */
+  @apply mt-3 mb-6;
   /* text-align: justify; */
 }
 
 .prose pre:lang(zh) {
-  margin-block-start: 12px;
-  margin-block-end: 12px;
+  /* margin-block-start: 12px;
+  margin-block-end: 12px; */
+  @apply my-3;
 }
 
 .prose ul:lang(zh),
 .prose ol:lang(zh),
 .prose dl:lang(zh) {
-  margin-block-start: 12px;
-  margin-block-end: 24px;
+  /* margin-block-start: 12px;
+  margin-block-end: 24px; */
+  @apply mt-3 mb-6;
 }
 
 .prose ul:lang(zh) > li,
 .prose ol:lang(zh) > li,
 .prose dl:lang(zh) > li {
-  margin-block-start: 0;
-  margin-block-end: 0;
+  /* margin-block-start: 0;
+  margin-block-end: 0; */
+  @apply my-0;
 }
 
 .prose ul:lang(zh) ul,
 .prose ul:lang(zh) ol,
 .prose ol:lang(zh) ul,
 .prose ol:lang(zh) ol {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-.prose ol:lang(zh) > li,
-.prose ul:lang(zh) > li {
-  padding-inline-start: 32px;
+  /* margin-block-start: 0;
+  margin-block-end: 0; */
+  @apply my-0;
 }
 
 .prose ol:lang(zh) > li::before {
-  left: 4px;
+  /* left: 4px; */
+  @apply left-1;
 }
 
 .prose ul:lang(zh) > li::before {
-  top: 9px;
+  /* top: 9px; */
+  @apply top-2
 }
 
 .prose table:lang(zh) {
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   margin-block-start: 12px;
   margin-block-end: 24px;
   margin-inline-start: auto;
-  margin-inline-end: auto;
-  @apply border-neutral-300 dark:border-neutral-600;
+  margin-inline-end: auto; */
+  @apply box-border mx-auto mt-3 mb-6 border-neutral-300 dark:border-neutral-600;
 }
 
 .prose thead:lang(zh) th,
 .prose tbody:lang(zh) td {
-  padding-block-start: 6px;
+  /* padding-block-start: 6px;
   padding-block-end: 6px;
   padding-inline-start: 8px;
   padding-inline-end: 8px;
   border-width: 1px;
   border-collapse: collapse;
-  border-style: solid;
-  @apply border-neutral-300 dark:border-neutral-600;
+  border-style: solid; */
+  @apply p-2 border border-collapse border-solid border-neutral-300 dark:border-neutral-600;
 }
 
 .prose tbody:lang(zh) tr {
-  border-bottom-width: 0px;
-  border-collapse: collapse;
+  /* border-bottom-width: 0px;
+  border-collapse: collapse; */
+  @apply border-b-0 border-collapse;
 }
 
 .prose tbody:lang(zh) tr:last-child {
-  border-bottom-width: 0px;
-  border-collapse: collapse;
+  /* border-bottom-width: 0px;
+  border-collapse: collapse; */
+  @apply border-b-0 border-collapse;
 }
 
 .prose thead:lang(zh) tr:first-child {
-  border-top-width: 0px;
-  border-collapse: collapse;
+  /* border-top-width: 0px;
+  border-collapse: collapse; */
+  @apply border-t-0 border-collapse;
 }
 
 .prose thead:lang(zh) th:last-child,
 .prose tbody:lang(zh) td:first-child {
-  padding-inline-end: 8px;
+  /* padding-inline-end: 8px; */
+  @apply px-2;
 }
 
 .prose thead:lang(zh) th:first-child,
 .prose tbody:lang(zh) td:last-child {
-  padding-inline-start: 8px;
+  /* padding-inline-start: 8px; */
+  @apply pl-2;
 }
 
 .prose :lang(zh) code::before,
 .prose :lang(zh) code::after {
-  content: none;
-  width: 4px;
+  /* content: none;
+  width: 4px; */
+  @apply content-none w-1;
 }
 
 .prose blockquote:lang(zh) {
@@ -205,25 +219,20 @@ body {
   font-style: normal;
 }
 
-.prose dd {
-  margin-inline-start: 28px;
-}
 .prose dd:lang(zh) {
-  margin-inline-start: 32px;
-}
-.prose dt {
-  font-weight: 600;
+  /* margin-inline-start: 32px; */
+  @apply ml-8;
 }
 
-.prose ul > li > input {
-  @apply mt-2 mb-1 !important;
+.prose .footnote-ref {
+  @apply no-underline;
 }
 
-/* Prose escape hatch */
-.no-prose > p {
-  @apply mt-0 last:mb-0;
+.prose .footnote-backref {
+  @apply no-underline;
 }
 
+/* Pagination */
 .pagination {
   @apply flex justify-center;
 }
@@ -262,7 +271,7 @@ body {
 }
 
 .article-pagination a:hover .article-pagination-title {
-  @apply underline underline-primary-700 text-primary-700 dark:text-primary-400;
+  @apply underline decoration-primary-700 text-primary-700 dark:text-primary-400;
 }
 
 .article-pagination a:hover .article-pagination-direction {
@@ -299,15 +308,15 @@ body {
 }
 /* LineNumbersTable */
 .chroma .lnt {
-  @apply text-neutral-600 dark:text-neutral-300;
-  margin-right: 0.4em;
-  padding: 0 0.4em 0 0.4em;
+  @apply text-neutral-600 dark:text-neutral-300 mr-2 py-0 px-2;
+  /* margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em; */
 }
 /* LineNumbers */
 .chroma .ln {
-  @apply text-neutral-600 dark:text-neutral-300;
-  margin-right: 0.4em;
-  padding: 0 0.4em 0 0.4em;
+  @apply text-neutral-600 dark:text-neutral-300  mr-2 py-0 px-2;
+  /* margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em; */
 }
 /* Keyword */
 .chroma .k {

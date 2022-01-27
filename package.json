@@ -10,10 +10,10 @@
     "devDependencies": {
       "@tailwindcss/typography": "project",
       "autoprefixer": "project",
+      "postcss": "project",
       "postcss-cli": "project",
       "prettier": "project",
       "prettier-plugin-go-template": "project",
-      "tailwind-underline-utils": "project",
       "tailwindcss": "project"
     }
   },
@@ -22,13 +22,13 @@
     "alpinejs": "^3.4.2"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.3.7",
-    "postcss-cli": "^9.0.1",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
     "prettier": "^2.4.1",
     "prettier-plugin-go-template": "0.0.11",
-    "tailwind-underline-utils": "^1.1.3",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^3.0.17"
   },
   "homepage": "https://canstand.github.io/compost",
   "license": "MIT",
@@ -40,5 +40,5 @@
   "scripts": {
     "prettier": "npx prettier --write ."
   },
-  "version": "0.4.2"
+  "version": "0.5.0"
 }

@@ -144,6 +144,44 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
   - Milk
   - Cheese
 
+
+1. Ordered list level one  ol
+   1. Ordered list level two ol ol
+      1. Ordered list level three ol ol ol
+   1. Ordered list level two ol ol
+      - Unordered list level three ol ol ul
+2. Ordered list level one ol
+   - Unordered list level two ol ul
+     1. Ordered list level three ol ul ol
+   - Unordered list level two ol ul
+     - Unordered list level three ol ul ul
+
+- Unordered list level one ul
+  - Unordered list level two ul ul
+    1. Ordered list level three ul ul ol
+  - Unordered list level two ul ul
+    - Unordered list level three ul ul ul
+- Unordered list level one ul
+  1. Ordered list level two ul ol
+     1. Ordered list level three ul ol ol
+  1. Ordered list level two ul ol
+     - Unordered list level three ul ol ul
+
+#### Definition List
+
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+
+#### Task List
+
+- [x] task finished
+- [ ] todo list
+
+
 ## Other Elements — abbr, sub, sup, kbd, mark
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.

@@ -109,27 +109,27 @@ echo test
 
 列表前的段落
 
-1. 有序列表一级 ul
-   1. 有序列表二级 ul ul
-      1. 有序列表三级 ul ul ul
-   1. 有序列表二级 ul ul
-      - 无序列表三级 ul ul ol
-2. 有序列表一级 ul
-   - 无序列表二级 ul ol
-     1. 有序列表三级 ul ol ul
-   - 无序列表二级 ul ol
-     - 无序列表三级 ul ol ol
+1. 有序列表一级 ol
+   1. 有序列表二级 ol ol
+      1. 有序列表三级 ol ol ol
+   1. 有序列表二级 ol ol
+      - 无序列表三级 ol ol ul
+2. 有序列表一级 ol
+   - 无序列表二级 ol ul
+     1. 有序列表三级 ol ul ol
+   - 无序列表二级 ol ul
+     - 无序列表三级 ol ul ul
 
-- 无序列表一级 ol
-  - 无序列表二级 ol ol
-    1. 有序列表三级 ol ol ul
-  - 无序列表二级 ol ol
-    - 无序列表三级 ol ol ol
-- 无序列表一级 ol
-  1. 有序列表二级 ol ul
-     1. 有序列表三级 ol ul ul
-  1. 有序列表二级 ol ul
-     - 无序列表三级 ol ul ol
+- 无序列表一级 ul
+  - 无序列表二级 ul ul
+    1. 有序列表三级 ul ul ol
+  - 无序列表二级 ul ul
+    - 无序列表三级 ul ul ul
+- 无序列表一级 ul
+  1. 有序列表二级 ul ol
+     1. 有序列表三级 ul ol ol
+  1. 有序列表二级 ul ol
+     - 无序列表三级 ul ol ul
 
 术语定义列表：
 
