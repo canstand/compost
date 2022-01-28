@@ -2,7 +2,7 @@
 
 Compost is a simple, lightweight theme for [Hugo](https://gohugo.io). Mainly based on the [Congo](https://github.com/jpanther/congo), also refer to [hugo-starter-tailwind-basic](https://github.com/bep/hugo-starter-tailwind-basic) and so on.
 
-🌏[Demo site](https://canstand.github.io/compost/)
+🌏[Demo site](https://canstand.github.io/compost/) | [中文](https://canstand.github.io/compost/zh)
 
 ## Features
 

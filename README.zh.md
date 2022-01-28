@@ -2,7 +2,7 @@
 
 Compost 是一个简单、轻量级的 [Hugo](https://gohugo.io) 主题。主要基于 [Congo](https://github.com/jpanther/congo) 改造，并参考了 [hugo-starter-tailwind-basic](https://github.com/bep/hugo-starter-tailwind-basic) 等。
 
-🌏[演示站点](https://github.com/canstand/compost/zh)
+🌏[演示站点](https://canstand.github.io/compost/zh)
 
 ## 特性
 
