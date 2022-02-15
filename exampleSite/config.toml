@@ -12,15 +12,17 @@ enableEmoji = true
 enableRobotsTXT = true
 paginate = 5
 
+# required
 [build]
-# Used by PurgeCSS
-writeStats = true
+_merge = 'deep'
 
-[minify]
-[minify.tdewolff]
-[minify.tdewolff.html]
+# required
+[markup]
+_merge = 'deep'
+
 # for better seo
-keepQuotes = true
+[minify]
+_merge = 'deep'
 
 [languages]
 [languages.en]
@@ -52,6 +54,7 @@ keepQuotes = true
   weight = 30
 [languages.zh.params.article]
 dateFormat = "2006/01/02"
+showDraftLabel = true
 
 [module]
 [[module.imports]]
@@ -74,16 +77,10 @@ path="github.com/bep/empty-hugo-module"
   tag = "tags"
 
 [params]
-  logo = "logo-192.png"
   colorScheme = "auto"
 
 [params.homepage]
-  layout = "page"
   showRecent = true
-
-[params.list]
-  groupByYear = true
-  showBreadcrumbs = true
 
 [params.article]
   showBreadcrumbs = true
@@ -110,10 +107,3 @@ path="github.com/bep/empty-hugo-module"
   name = "GitHub"
   url = "https://github.com/canstand/compost"
   weight = 30
-
-[markup.goldmark]
-[markup.goldmark.renderer]
-  unsafe = true
-
-[markup.highlight]
-  noClasses = false
