@@ -7,7 +7,7 @@
 <meta name="description" content="This is a demo of the Compost theme for Hugo.">
 <link rel="canonical" href="https://canstand.github.io/compost/">
 <link rel="alternate" type="application/rss+xml" href="/compost/index.xml" title="Compost">
-<link type="text/css" rel="stylesheet" href="/compost/css/main.min.7e725eed5f5b4471edc445ced3e7b3c4feb4fcd79fb0190d8687c963d26cdac2.css" integrity="sha256-fnJe7V9bRHHtxEXO0+ezxP60/NefsBkNhofJY9Js2sI=">
+<link type="text/css" rel="stylesheet" href="/compost/css/main.min.8de471ebac86b936287f19bdfdf90528c4c1cd2747449eb9b27c70a3bc7fb576.css" integrity="sha256-jeRx66yGuTYofxm9/fkFKMTBzSdHRJ65snxwo7x/tXY=">
 <link rel="icon" sizes="192x192" href="/compost/logo-192.png">
 <link rel="apple-touch-icon" href="/compost/logo-192.png">
 <link rel="mask-icon" href="/compost/logo.svg" color="blue">
@@ -20,12 +20,12 @@
 <meta name="twitter:title" content="Welcome to Compost! :tada:">
 <meta name="twitter:description" content="This is a demo of the Compost theme for Hugo.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Compost","url":"https:\/\/canstand.github.io\/compost\/","author":{"@type":"Person","name":"Compost"},"thumbnailUrl":"https:\/\/canstand.github.io\/compost\/logo-192.png"}</script>
-<meta name="generator" content="Hugo 0.92.1"><meta name="author" content="Compost">
+<meta name="generator" content="Hugo 0.92.2"><meta name="author" content="Compost">
 <link href="https://twitter.com/" rel="me">
 <link href="https://facebook.com/" rel="me">
 <link href="https://linkedin.com/" rel="me">
 <link href="https://youtube.com/" rel="me">
-<script defer src="/compost/js/main.min.1575a795ca8f079b8cfa446c9e2bba29860e486d2224412d1a613eb0fee274ea.js" integrity="sha256-FXWnlcqPB5uM+kRsniu6KYYOSG0iJEEtGmE+sP7idOo="></script>
+<script defer src="/compost/js/main.min.89df06b3bdd1c3fb1a2504541f195c9ccf1c18523536548f6d27638153b4ab1c.js" integrity="sha256-id8Gs73Rw/saJQRUHxlcnM8cGFI1NlSPbSdjgVO0qxw="></script>
 <script>'theme'in localStorage||(localStorage.theme="auto"),(localStorage.theme==='dark'||(!('theme'in localStorage)||localStorage.theme==='auto')&&window.matchMedia('(prefers-color-scheme: dark)').matches)&&document.documentElement.classList.add('dark')</script>
 </head>
 <body class="w-full min-h-full" x-data="{ up: false }">
@@ -116,9 +116,21 @@ A simple, lightweight theme for Hugo built with Tailwind CSS.
 </ul>
 <h2 id="usage">Usage <a class="heading-anchor" href="#usage" aria-hidden="true">#</a></h2>
 <ol>
-<li>Set the theme in the Hugo project as <code>github.com/canstand/compost</code>:</li>
+<li>Set the theme in the Hugo project as <code>github.com/canstand/compost</code>, and add required options to <code>config.toml</code>:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">theme</span> <span class="p">=</span> <span class="s1">&#39;github.com/canstand/compost&#39;</span>
+
+<span class="c"># required</span>
+<span class="p">[</span><span class="nx">build</span><span class="p">]</span>
+<span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
+
+<span class="c"># required</span>
+<span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
+<span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
+
+<span class="c"># for better seo</span>
+<span class="p">[</span><span class="nx">minify</span><span class="p">]</span>
+<span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
 </code></pre></div><ol start="2">
 <li>Install or upgrade dependencies:</li>
 </ol>
