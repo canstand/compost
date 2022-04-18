@@ -47,6 +47,7 @@ enableRobotsTXT = true
   #   { twitch = "https://twitch.tv/username" },
   #   { twitter = "https://twitter.com/username" },
   #   { youtube = "https://youtube.com/username" },
+  #   { weibo = "https://weibo.com/n/username" },
   # ]
 
 [build]
