@@ -1,184 +1,28 @@
-<!doctype html><html dir="ltr" lang="zh">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Compost</title>
-<meta name="title" content="Compost">
-<meta name="description" content="演示 Hugo Compost 主题">
-<link rel="canonical" href="https://canstand.github.io/compost/zh/">
-<link rel="alternate" type="application/rss+xml" href="/compost/zh/index.xml" title="Compost">
-<link type="text/css" rel="stylesheet" href="/compost/css/main.min.8de471ebac86b936287f19bdfdf90528c4c1cd2747449eb9b27c70a3bc7fb576.css" integrity="sha256-jeRx66yGuTYofxm9/fkFKMTBzSdHRJ65snxwo7x/tXY=">
-<link rel="icon" sizes="192x192" href="/compost/logo-192.png">
-<link rel="apple-touch-icon" href="/compost/logo-192.png">
-<link rel="mask-icon" href="/compost/logo.svg" color="blue">
-<link rel="manifest" href="/compost/site.webmanifest">
-<meta property="og:title" content="欢迎使用 Compost 主题! :tada:">
-<meta property="og:description" content="演示 Hugo Compost 主题">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://canstand.github.io/compost/zh/">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欢迎使用 Compost 主题! :tada:">
-<meta name="twitter:description" content="演示 Hugo Compost 主题">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Compost","url":"https:\/\/canstand.github.io\/compost\/zh\/","author":{"@type":"Person","name":"Compost"},"thumbnailUrl":"https:\/\/canstand.github.io\/compost\/logo-192.png"}</script>
-<meta name="generator" content="Hugo 0.92.2"><meta name="author" content="Compost">
-<link href="https://twitter.com/" rel="me">
-<link href="https://facebook.com/" rel="me">
-<link href="https://linkedin.com/" rel="me">
-<link href="https://youtube.com/" rel="me">
-<script defer src="/compost/js/main.min.89df06b3bdd1c3fb1a2504541f195c9ccf1c18523536548f6d27638153b4ab1c.js" integrity="sha256-id8Gs73Rw/saJQRUHxlcnM8cGFI1NlSPbSdjgVO0qxw="></script>
-<script>'theme'in localStorage||(localStorage.theme="auto"),(localStorage.theme==='dark'||(!('theme'in localStorage)||localStorage.theme==='auto')&&window.matchMedia('(prefers-color-scheme: dark)').matches)&&document.documentElement.classList.add('dark')</script>
-</head>
-<body class="w-full min-h-full" x-data="{ up: false }">
-<div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky inset-x-0 top-0 z-10">
-<div class="fixed z-10 flex w-48 h-screen lg:hidden" :class="open ? '' : 'hidden'" x-ref="dialog" aria-modal="true">
-<div class="fixed inset-0 bg-black bg-opacity-25" :class="open ? '' : 'hidden'" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state." @click="open = false" aria-hidden="true"></div>
-<div class="fixed inset-0 flex flex-col w-full h-full pb-12 overflow-y-auto shadow-xl bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 max-w-xxs" :class="open ? '' : 'hidden'" x-transition:enter="transition ease-in-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" x-description="Off-canvas menu, show/hide based on off-canvas menu state.">
-<div class="flex px-4 pt-5 pb-2">
-<button type="button" title="Close menu" class="inline-flex items-center justify-center p-2 -m-2 rounded-md text-neutral-400" @click="open = false">
-<span class="sr-only">Close menu</span><svg class="w-6 h-6" x-description="Heroicon name: outline/x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentcolor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/></svg>
-</button>
-</div>
-<ul class="py-4 divide-y divide-neutral-200">
-<li class="flow-root px-4 py-2
-bg-neutral-200 dark:bg-neutral-900">
-<a href="/compost/zh/" title="欢迎使用 Compost 主题! :tada:" class="block p-2 -m-2 font-medium">首页</a>
-</li>
-<li class="flow-root px-4 py-2">
-<a href="/compost/zh/posts/" title="文章列表" class="block p-2 -m-2 font-medium">文章</a>
-</li>
-<li class="flow-root px-4 py-2">
-<a href="/compost/zh/tags/" title="标签列表" class="block p-2 -m-2 font-medium">标签</a>
-</li>
-<li class="flow-root px-4 py-2">
-<a href="https://github.com/canstand/compost" title class="block p-2 -m-2 font-medium">GitHub</a>
-</li>
-</ul>
-</div>
-</div>
-<header class="shadow dark:shadow-dark bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200">
-<nav class="container flex leading-12 items-center px-6 mx-auto max-w-7xl lg:px-8 xl:px-12 bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200" aria-label="Top">
-<a class="relative hidden p-2 align-middle lg:block" rel="me" href="/compost/" title="Compost">
-<img src="/compost/logo-192.png" class="h-8 w-auto" alt="Compost">
-</a>
-<button class="lg:hidden" type="button" @click="open = true" aria-label="Open menu"><svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentcolor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-</button>
-<div class="flex-grow h-12 mx-2">
-<div class="relative w-full h-full">
-<div class="absolute max-w-full" :class="up ? 'hidden' : ''" x-transition.duration.500ms>
-<span class="font-semibold overflow-hidden text-ellipsis whitespace-nowrap">Compost</span>
-</div>
-<template x-if="true">
-<div class="absolute top-0 left-0 right-0 max-w-full" :class="up ? '' : 'hidden'" x-transition.duration.500ms>
-<span class="overflow-hidden text-ellipsis whitespace-nowrap">欢迎使用 Compost 主题! 🎉</span>
-</div>
-</template>
-</div>
-</div>
-<ul class="shrink hidden ml-7 lg:flex flex-row justify-end list-none">
-<li class="border-b-2 border-transparent text-right mr-7 hover:border-primary-500
-border-primary-500">
-<a href="/compost/zh/" title="欢迎使用 Compost 主题! :tada:">首页</a>
-</li>
-<li class="border-b-2 border-transparent text-right mr-7 hover:border-primary-500">
-<a href="/compost/zh/posts/" title="文章列表">文章</a>
-</li>
-<li class="border-b-2 border-transparent text-right mr-7 hover:border-primary-500">
-<a href="/compost/zh/tags/" title="标签列表">标签</a>
-</li>
-<li class="border-b-2 border-transparent text-right mr-7 hover:border-primary-500">
-<a href="https://github.com/canstand/compost" title>GitHub</a>
-</li>
-</ul>
-<button id="switchTheme" class="w-8 h-8 flex justify-center items-center focus:outline-none">
+<!doctype html><html dir="ltr" lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Compost</title><meta name="title" content="Compost"><meta name="description" content="演示 Hugo Compost 主题"><link rel="canonical" href="https://canstand.github.io/compost/zh/"><link rel="alternate" type="application/rss+xml" href="/compost/zh/index.xml" title="Compost"><link type="text/css" rel="stylesheet" href="/compost/css/main.min.8de471ebac86b936287f19bdfdf90528c4c1cd2747449eb9b27c70a3bc7fb576.css" integrity="sha256-jeRx66yGuTYofxm9/fkFKMTBzSdHRJ65snxwo7x/tXY="><link rel="icon" sizes="192x192" href="/compost/logo-192.png"><link rel="apple-touch-icon" href="/compost/logo-192.png"><link rel="mask-icon" href="/compost/logo.svg" color="blue"><link rel="manifest" href="/compost/site.webmanifest"><meta property="og:title" content="欢迎使用 Compost 主题! :tada:"><meta property="og:description" content="演示 Hugo Compost 主题"><meta property="og:type" content="website"><meta property="og:url" content="https://canstand.github.io/compost/zh/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="欢迎使用 Compost 主题! :tada:"><meta name="twitter:description" content="演示 Hugo Compost 主题"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Compost","url":"https:\/\/canstand.github.io\/compost\/zh\/","author":{"@type":"Person","name":"Compost"},"thumbnailUrl":"https:\/\/canstand.github.io\/compost\/logo-192.png"}</script><meta name="generator" content="Hugo 0.97.2"><meta name="author" content="Compost"><link href="https://twitter.com/" rel="me"><link href="https://facebook.com/" rel="me"><link href="https://linkedin.com/" rel="me"><link href="https://youtube.com/" rel="me"><script defer src="/compost/js/main.min.f4909a308c072b6c1ac95939a8f519a127469481d8207e35cbb97733b36c338f.js" integrity="sha256-9JCaMIwHK2wayVk5qPUZoSdGlIHYIH41y7l3M7NsM48="></script>
+<script>"theme"in localStorage||(localStorage.theme="auto"),(localStorage.theme==="dark"||(!("theme"in localStorage)||localStorage.theme==="auto")&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.documentElement.classList.add("dark")</script></head><body class="w-full min-h-full" x-data="{ up: false }"><div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky inset-x-0 top-0 z-10"><div class="fixed z-10 flex w-48 h-screen lg:hidden" :class="open ? '' : 'hidden'" x-ref="dialog" aria-modal="true"><div class="fixed inset-0 bg-black bg-opacity-25" :class="open ? '' : 'hidden'" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state." @click="open = false" aria-hidden="true"></div><div class="fixed inset-0 flex flex-col w-full h-full pb-12 overflow-y-auto shadow-xl bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 max-w-xxs" :class="open ? '' : 'hidden'" x-transition:enter="transition ease-in-out duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" x-description="Off-canvas menu, show/hide based on off-canvas menu state."><div class="flex px-4 pt-5 pb-2"><button type="button" title="Close menu" class="inline-flex items-center justify-center p-2 -m-2 rounded-md text-neutral-400" @click="open = false">
+<span class="sr-only">Close menu</span><svg class="w-6 h-6" x-description="Heroicon name: outline/x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentcolor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/></svg></button></div><ul class="py-4 divide-y divide-neutral-200"><li class="flow-root px-4 py-2
+bg-neutral-200 dark:bg-neutral-900"><a href="/compost/zh/" title="欢迎使用 Compost 主题! :tada:" class="block p-2 -m-2 font-medium">首页</a></li><li class="flow-root px-4 py-2"><a href="/compost/zh/posts/" title="文章列表" class="block p-2 -m-2 font-medium">文章</a></li><li class="flow-root px-4 py-2"><a href="/compost/zh/tags/" title="标签列表" class="block p-2 -m-2 font-medium">标签</a></li><li class="flow-root px-4 py-2"><a href="https://github.com/canstand/compost" title class="block p-2 -m-2 font-medium">GitHub</a></li></ul></div></div><header class="shadow dark:shadow-dark bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200"><nav class="container flex leading-12 items-center px-6 mx-auto max-w-7xl lg:px-8 xl:px-12 bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200" aria-label="Top"><a class="relative hidden p-2 align-middle lg:block" rel="me" href="/compost/" title="Compost"><img src="/compost/logo-192.png" class="h-8 w-auto" alt="Compost"></a>
+<button class="lg:hidden" type="button" @click="open = true" aria-label="Open menu"><svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentcolor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="flex-grow h-12 mx-2"><div class="relative w-full h-full"><div class="absolute max-w-full" :class="up ? 'hidden' : ''" x-transition.duration.500ms><span class="font-semibold overflow-hidden text-ellipsis whitespace-nowrap">Compost</span></div><template x-if="true"><div class="absolute top-0 left-0 right-0 max-w-full" :class="up ? '' : 'hidden'" x-transition.duration.500ms><span class="overflow-hidden text-ellipsis whitespace-nowrap">欢迎使用 Compost 主题! 🎉</span></div></template></div></div><ul class="shrink hidden ml-7 lg:flex flex-row justify-end list-none"><li class="border-b-2 border-transparent text-right mr-7 hover:border-primary-500
+border-primary-500"><a href="/compost/zh/" title="欢迎使用 Compost 主题! :tada:">首页</a></li><li class="border-b-2 border-transparent text-right mr-7 hover:border-primary-500"><a href="/compost/zh/posts/" title="文章列表">文章</a></li><li class="border-b-2 border-transparent text-right mr-7 hover:border-primary-500"><a href="/compost/zh/tags/" title="标签列表">标签</a></li><li class="border-b-2 border-transparent text-right mr-7 hover:border-primary-500"><a href="https://github.com/canstand/compost" title>GitHub</a></li></ul><button id="switchTheme" class="w-8 h-8 flex justify-center items-center focus:outline-none">
 <span class="sr-only">Switch theme</span><svg class="w-5 h-5" fill="currentcolor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1A1 1 0 119 4V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707A1 1 0 1113.536 5.05l.707-.707a1 1 0 011.414.0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707A1 1 0 004.343 5.757l.707.707zm1.414 8.486-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
-<span class="light"></span><span class="dark"></span>
-</button>
-<script>document.getElementById("switchTheme").addEventListener("click",function(){localStorage.theme==="dark"||(!('theme'in localStorage)||localStorage.theme==='auto')&&window.matchMedia("(prefers-color-scheme: dark)").matches?(document.documentElement.classList.remove("dark"),localStorage.theme="light"):(localStorage.theme==="light"||(!('theme'in localStorage)||localStorage.theme==='auto')&&window.matchMedia("(prefers-color-scheme: light)").matches)&&(document.documentElement.classList.add("dark"),localStorage.theme="dark")})</script>
-</nav>
-</header>
-</div>
-<main class="container flex flex-row px-6 mx-auto my-6 lg:px-8 xl:px-12 max-w-7xl">
-<div class="mx-auto min-w-0 max-w-2xl lg:max-w-3xl w-full">
-<article class="prose max-w-none dark:prose-invert">
-<header>
-<h1>欢迎使用 Compost 主题! 🎉</h1>
-</header>
-<section><p class="lead">
-使用 Tailwind CSS 构建的简单、轻量级的 Hugo 主题。
-</p>
-<p>Compost 是一个简单、轻量级的 <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> 主题。主要基于 <a href="https://github.com/jpanther/congo" target="_blank" rel="noopener">Congo</a> 改造，并参考了 <a href="https://github.com/bep/hugo-starter-tailwind-basic" target="_blank" rel="noopener">hugo-starter-tailwind-basic</a> 等。</p>
-<h2 id="特性">特性 <a class="heading-anchor" href="#%e7%89%b9%e6%80%a7" aria-hidden="true">#</a></h2>
-<ul>
-<li>样式基于 <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener">Tailwind CSS</a> 3.x，以及官方的 <a href="https://github.com/tailwindlabs/tailwindcss-typography" target="_blank" rel="noopener">Typography 插件</a>。</li>
-<li>可以使用 <code>hugo</code> 命令直接构建和测试（使用了 <a href="https://github.com/gohugoio/hugo/issues/8343" target="_blank" rel="noopener">#8343</a> 中提到的一些技巧）。</li>
-<li>🌐 特别为简体中文语言定制了文章样式（只在 html 的 lang 为 zh 时应用）。</li>
-<li>✨ 使用 Hugo 内置功能自动调整图片大小，并添加原生延迟加载属性。</li>
-</ul>
-<h2 id="使用">使用 <a class="heading-anchor" href="#%e4%bd%bf%e7%94%a8" aria-hidden="true">#</a></h2>
-<ol>
-<li>在 Hugo 项目里指定主题为 <code>github.com/canstand/compost</code>，并且配置需要从主题合并的默认选项：</li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">theme</span> <span class="p">=</span> <span class="s1">&#39;github.com/canstand/compost&#39;</span>
-
-<span class="c"># required</span>
-<span class="p">[</span><span class="nx">build</span><span class="p">]</span>
-<span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
-
-<span class="c"># required</span>
-<span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
-<span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
-
-<span class="c"># for better seo</span>
-<span class="p">[</span><span class="nx">minify</span><span class="p">]</span>
-<span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
-</code></pre></div><ol start="2">
-<li>安装或升级依赖：</li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo mod get -u
-hugo mod npm pack
-npm install
-</code></pre></div><ol start="3">
-<li>之后按正常开发与测试：</li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo server
-</code></pre></div><h2 id="二次开发">二次开发 <a class="heading-anchor" href="#%e4%ba%8c%e6%ac%a1%e5%bc%80%e5%8f%91" aria-hidden="true">#</a></h2>
-<p>克隆项目之后，项目目录下运行 <code>hugo server -s ./exampleSite</code> 就可以实时测试了</p>
-</section>
-</article>
-<section class="w-full">
-<h2 class="mt-8 text-2xl font-extrabold">最近的文章</h2>
-<div class="overflow-hidden divide-y divide-neutral-300 dark:divide-neutral-600">
-<article class="py-4">
-<h3 class="flex items-center text-xl font-semibold">
-<a class="hover:underline hover:decoration-primary-500 hover:underline-offset-auto text-neutral-800 dark:text-neutral-200" href="/compost/zh/posts/typography/">中文网页排版样例</a>
-</h3>
-<div class="my-2">
-参考赫蹏项目调整后的中文正文内容样式，支持深色模式。
-</div>
-<div class="text-sm text-neutral-400 dark:text-neutral-500">
-<div class="flex flex-row items-center">
-<time datetime="2021-11-16 00:00:00 +0000 UTC">2021/11/16</time><span class="px-2 text-primary-500">&#183;</span><span title="预计阅读">3 分钟阅读时长</span>
-</div>
-</div>
-</article>
-</div>
-</section>
-</div>
-</main>
-<footer class="text-neutral-500 dark:text-neutral-500 bg-neutral-200 dark:bg-neutral-900">
-<div class="container flex flex-row px-6 lg:px-8 xl:px-12 py-4 mx-auto text-sm max-w-7xl">
-<div class="flex-1">
-<p>
-&copy;
+<span class="light"></span><span class="dark"></span></button>
+<script>document.getElementById("switchTheme").addEventListener("click",function(){localStorage.theme==="dark"||(!("theme"in localStorage)||localStorage.theme==="auto")&&window.matchMedia("(prefers-color-scheme: dark)").matches?(document.documentElement.classList.remove("dark"),localStorage.theme="light"):(localStorage.theme==="light"||(!("theme"in localStorage)||localStorage.theme==="auto")&&window.matchMedia("(prefers-color-scheme: light)").matches)&&(document.documentElement.classList.add("dark"),localStorage.theme="dark")})</script></nav></header></div><main class="container flex flex-row px-6 mx-auto my-6 lg:px-8 xl:px-12 max-w-7xl"><div class="mx-auto min-w-0 max-w-2xl lg:max-w-3xl w-full"><article class="prose max-w-none dark:prose-invert"><header><h1>欢迎使用 Compost 主题! 🎉</h1></header><section><p class="lead">使用 Tailwind CSS 构建的简单、轻量级的 Hugo 主题。</p><p>Compost 是一个简单、轻量级的 <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> 主题。主要基于 <a href="https://github.com/jpanther/congo" target="_blank" rel="noopener">Congo</a> 改造，并参考了 <a href="https://github.com/bep/hugo-starter-tailwind-basic" target="_blank" rel="noopener">hugo-starter-tailwind-basic</a> 等。</p><h2 id="特性">特性 <a class="heading-anchor" href="#%e7%89%b9%e6%80%a7" aria-hidden="true">#</a></h2><ul><li>样式基于 <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener">Tailwind CSS</a> 3.x，以及官方的 <a href="https://github.com/tailwindlabs/tailwindcss-typography" target="_blank" rel="noopener">Typography 插件</a>。</li><li>可以使用 <code>hugo</code> 命令直接构建和测试（使用了 <a href="https://github.com/gohugoio/hugo/issues/8343" target="_blank" rel="noopener">#8343</a> 中提到的一些技巧）。</li><li>🌐 特别为简体中文语言定制了文章样式（只在 html 的 lang 为 zh 时应用）。</li><li>✨ 使用 Hugo 内置功能自动调整图片大小，并添加原生延迟加载属性。</li></ul><h2 id="使用">使用 <a class="heading-anchor" href="#%e4%bd%bf%e7%94%a8" aria-hidden="true">#</a></h2><ol><li>在 Hugo 项目里指定主题为 <code>github.com/canstand/compost</code>，并且配置需要从主题合并的默认选项：</li></ol><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s1">&#39;github.com/canstand/compost&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># required</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">build</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># required</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># for better seo</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">minify</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
+</span></span></code></pre></div><ol start="2"><li>安装或升级依赖：</li></ol><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo mod get -u
+</span></span><span class="line"><span class="cl">hugo mod npm pack
+</span></span><span class="line"><span class="cl">npm install
+</span></span></code></pre></div><ol start="3"><li>之后按正常开发与测试：</li></ol><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo server
+</span></span></code></pre></div><h2 id="二次开发">二次开发 <a class="heading-anchor" href="#%e4%ba%8c%e6%ac%a1%e5%bc%80%e5%8f%91" aria-hidden="true">#</a></h2><p>克隆项目之后，项目目录下运行 <code>hugo server -s ./exampleSite</code> 就可以实时测试了</p></section></article><section class="w-full"><h2 class="mt-8 text-2xl font-extrabold">最近的文章</h2><div class="overflow-hidden divide-y divide-neutral-300 dark:divide-neutral-600"><article class="py-4"><h3 class="flex items-center text-xl font-semibold"><a class="hover:underline hover:decoration-primary-500 hover:underline-offset-auto text-neutral-800 dark:text-neutral-200" href="/compost/zh/posts/typography/">中文网页排版样例</a></h3><div class="my-2">参考赫蹏项目调整后的中文正文内容样式，支持深色模式。</div><div class="text-sm text-neutral-400 dark:text-neutral-500"><div class="flex flex-row items-center"><time datetime="2021-11-16 00:00:00 +0000 UTC">2021/11/16</time><span class="px-2 text-primary-500">&#183;</span><span title="预计阅读">3 分钟阅读时长</span></div></div></article></div></section></div></main><footer class="text-neutral-500 dark:text-neutral-500 bg-neutral-200 dark:bg-neutral-900"><div class="container flex flex-row px-6 lg:px-8 xl:px-12 py-4 mx-auto text-sm max-w-7xl"><div class="flex-1"><p>&copy;
 2022
-Compost</p>
-<p class="text-sm">
-由 <a class="hover:underline hover:decoration-primary-500 hover:text-primary-500" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> 和 <a class="hover:underline hover:underline-primary-400 hover:text-primary-500" href="https://canstand.github.io/compost" target="_blank" rel="noopener noreferrer">Compost</a> 驱动
-</p>
-</div>
-<div class="flex-1">
-</div>
-</div>
-</footer>
-</body>
-</html>
+Compost</p><p class="text-sm">由 <a class="hover:underline hover:decoration-primary-500 hover:text-primary-500" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> 和 <a class="hover:underline hover:underline-primary-400 hover:text-primary-500" href="https://canstand.github.io/compost" target="_blank" rel="noopener noreferrer">Compost</a> 驱动</p></div><div class="flex-1"></div></div></footer></body></html>
