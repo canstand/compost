@@ -53,7 +53,7 @@ The `@tailwindcss/typography` plugin adds a set of prose classes that can be use
 
 ### 段落文字样式（三级标题）
 
-普通段落内容**加粗**和*斜体*文字，以及**_既加粗又是斜体_**的文字。也可以添加~~删除线~~。
+普通段落内容**加粗**和*斜体*文字，以及  _**既加粗又是斜体**_  的文字。也可以添加~~删除线~~。
 
 > 引用内容
 

@@ -22,7 +22,7 @@
     "alpinejs": "^3.10.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "0.5.2",
+    "@tailwindcss/typography": "^0.5.7",
     "autoprefixer": "^10.4.11",
     "postcss": "^8.4.16",
     "postcss-cli": "^9.1.0",

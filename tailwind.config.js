@@ -15,7 +15,7 @@ const em = (px, base) => `${round(px / base)}em`;
 const px = (px) => `${px}px`;
 
 module.exports = {
-  important: true, // See https://tailwindcss.com/docs/configuration#important
+  // important: true, // See https://tailwindcss.com/docs/configuration#important
   content: {
     content: [
       "./hugo_stats.json",
@@ -126,6 +126,17 @@ module.exports = {
               border: "solid 1px "+theme("colors.neutral.500"),
               borderBottomWidth: '2px',
               padding: "1px 3px"
+            },
+            'li > input:first-child': {
+              marginTop: 'auto',
+              marginBottom: 'auto',
+              marginRight: rem(4),
+            },
+            'li:has(input:first-child)': {
+              paddingLeft: '0',
+            },
+            'li:has(input:first-child)::marker': {
+              color: theme("colors.transparent"),
             }
           },
         },
