@@ -120,10 +120,12 @@ module.exports = {
               backgroundColor: theme("colors.yellow.200"),
             },
             kbd: {
-              backgroundColor: theme("colors.neutral.400"),
-              borderRadius: rem(4),
-              border: "solid 1px ",
-              padding: "0px 2px"
+              fontSize: rem(14),
+              backgroundColor: theme("colors.neutral.200"),
+              borderRadius: rem(3),
+              border: "solid 1px "+theme("colors.neutral.500"),
+              borderBottomWidth: '2px',
+              padding: "1px 3px"
             }
           },
         },
@@ -134,7 +136,7 @@ module.exports = {
               backgroundColor: theme("colors.yellow.800"),
             },
             kbd: {
-              backgroundColor: theme("color.neutral.800"),
+              backgroundColor: theme("colors.neutral.700"),
             }
           },
         },
