@@ -119,6 +119,12 @@ module.exports = {
               color: 'var(--tw-prose-body)',
               backgroundColor: theme("colors.yellow.200"),
             },
+            kbd: {
+              backgroundColor: theme("colors.neutral.400"),
+              borderRadius: rem(4),
+              border: "solid 1px ",
+              padding: "0px 2px"
+            }
           },
         },
         invert: {
@@ -127,6 +133,9 @@ module.exports = {
               color: 'var(--tw-prose-body)',
               backgroundColor: theme("colors.yellow.800"),
             },
+            kbd: {
+              backgroundColor: theme("color.neutral.800"),
+            }
           },
         },
       }),
