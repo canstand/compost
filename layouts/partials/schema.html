@@ -35,7 +35,7 @@
     "articleSection": "{{ (site.GetPage .Section).Title }}",
     "name": "{{ .Title | safeJS }}",
     "headline": "{{ .Title | safeJS }}",
-    "description": "{{ with .Description | safeJS }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary | safeJS }}{{ else }}{{ with .Site.Params.description }}{{ . | safeJS }}{{ end }}{{ end }}{{ end }}",
+    "description": "{{ with .Description | safeJS }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary | safeJS }}{{ else }}{{ with .Site.Params.description }}{{ . | safeJS }}{{ end }}{{ end }}{{ end }}",
     {{ with .Site.LanguageCode }}"inLanguage": {{ . }},{{ end }}
     "author" : {
       "@type": "Person",
@@ -52,7 +52,7 @@
     {{ with .Lastmod }}"dateModified": "{{ .Format $iso8601 }}",{{ end }}
     "url" : "{{ .Permalink }}",
     "wordCount": "{{ .WordCount }}",
-    "keywords": [{{ if .IsPage}}{{ range $index, $tag := .Params.tags }}{{ $tag }},{{ end }}{{ else }}{{ range $plural, $terms := .Site.Taxonomies }}{{ range $term, $val := $terms }}{{ printf "%s," $term }}{{ end }}{{ end }}{{ end }}]
+    "keywords": [{{ if .IsPage }}{{ range $index, $tag := .Params.tags }}{{ $tag }},{{ end }}{{ else }}{{ range $plural, $terms := .Site.Taxonomies }}{{ range $term, $val := $terms }}{{ printf "%s," $term }}{{ end }}{{ end }}{{ end }}]
   }
   </script>
 {{ end }}

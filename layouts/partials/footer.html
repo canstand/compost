@@ -14,8 +14,8 @@
       {{/* Theme attribution */}}
       {{- if .Site.Params.attribution | default true }}
         <p class="text-sm">
-          {{- $hugo := `<a class="hover:underline hover:decoration-primary-500 hover:text-primary-500" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>` }}
-          {{ $compost := printf `<a class="hover:underline hover:underline-primary-400 hover:text-primary-500" href="https://canstand.github.io/compost" target="_blank" rel="noopener noreferrer">Compost</a>` }}
+          {{- $hugo := `<a class="hover:underline hover:text-primary-500" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>` }}
+          {{ $compost := printf `<a class="hover:underline hover:text-primary-500" href="https://canstand.github.io/compost" target="_blank" rel="noopener noreferrer">Compost</a>` }}
           {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Theme" $compost) | safeHTML }}
         </p>
       {{ end }}
