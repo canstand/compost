@@ -3,7 +3,7 @@ publish = "exampleSite/public"
 command = "hugo --gc -s ./exampleSite --minify --baseURL $URL"
 
 [build.environment]
-HUGO_VERSION = "0.89.4"
+HUGO_VERSION = "0.110.0"
 HUGO_THEMESDIR = "../.."
 HUGO_THEME = "repo"
 

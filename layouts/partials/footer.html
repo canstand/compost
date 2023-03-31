@@ -31,15 +31,15 @@
 
 {{/* Include mermaid.js only on pages that use the shortcode */}}
 {{- if .Page.HasShortcode "mermaid" }}
-  <script src="https://unpkg.com/mermaid@8.x.x/dist/mermaid.min.js" crossorigin="anonymous"></script>
-  <script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-      mermaid.initialize({ theme: "dark" });
+      mermaid.initialize({ startOnLoad: true, theme: "dark" });
     } else {
-      mermaid.initialize({ theme: "neutral" });
+      mermaid.initialize({ startOnLoad: true, theme: "neutral" });
     }
   </script>
 {{- end }}
