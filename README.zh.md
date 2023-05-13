@@ -13,6 +13,8 @@ Compost 是一个简单、轻量级的 [Hugo](https://gohugo.io) 主题。主要
 
 ## 使用
 
+0. 本主题使用 `go modules`，不是 `git submodule`，先确认满足[要求](https://gohugo.io/hugo-modules/use-modules/#prerequisite)并阅读[说明](https://gohugo.io/hugo-modules/use-modules/#initialize-a-new-module)。（Windows 用户额外[注意](https://gohugo.io/getting-started/quick-start/#commands)）
+
 1. 在 Hugo 项目配置文件 `config.toml` 里指定主题为 `github.com/canstand/compost`，并且配置需要从主题合并的默认选项：
 
 ```toml
