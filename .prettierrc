@@ -1,4 +1,5 @@
 {
+  "plugins": ["prettier-plugin-go-template"],
   "htmlWhitespaceSensitivity": "css",
   "semi": true,
   "singleQuote": false,

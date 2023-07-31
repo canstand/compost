@@ -1,8 +1,0 @@
-body a,
-body button {
-  @apply transition;
-}
-
-body:lang(zh) {
-  -webkit-font-smoothing: subpixel-antialiased;
-}

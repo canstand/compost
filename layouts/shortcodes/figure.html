@@ -27,10 +27,13 @@
     {{- end -}}
   {{- end -}}
 
-  <figure{{ with .Get "class" }} class="{{ . }}"{{ end -}}>
+  <figure {{- with .Get "class" }} class="{{ . }}"{{ end -}}>
   {{- if .Get "link" -}}
-    <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
-  {{- end -}}
+    <a href="{{ .Get "link" }}"
+      {{ with .Get "target" }} target="{{ . }}"{{ end }}
+      {{ with .Get "rel" }} rel="{{ . }}"{{ end }}
+    >
+  {{- end }}
   <img
     src="{{ $Permalink }}"
     {{ with $Width }}width="{{ . }}"{{ end }}

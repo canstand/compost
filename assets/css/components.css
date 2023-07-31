@@ -96,7 +96,7 @@ body {
   /* font-size: 18px;
   font-weight: 600;
   line-height: 24px; */
-  @apply text-lg leading-6 font-semibold
+  @apply text-lg leading-6 font-semibold;
 }
 
 .prose hr:lang(zh) {
@@ -153,7 +153,7 @@ body {
 
 .prose ul:lang(zh) > li::before {
   /* top: 9px; */
-  @apply top-2
+  @apply top-2;
 }
 
 .prose table:lang(zh) {

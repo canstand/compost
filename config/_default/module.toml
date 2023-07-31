@@ -1,3 +1,27 @@
 [hugoVersion]
   extended = false
-  min = "0.110.0"
+  min = "0.116.0"
+[[mounts]]
+  source = 'content'
+  target = 'content'
+[[mounts]]
+  source = 'static'
+  target = 'static'
+[[mounts]]
+  source = 'layouts'
+  target = 'layouts'
+[[mounts]]
+  source = 'data'
+  target = 'data'
+[[mounts]]
+  source = 'assets'
+  target = 'assets'
+[[mounts]]
+  source = 'i18n'
+  target = 'i18n'
+[[mounts]]
+  source = 'archetypes'
+  target = 'archetypes'
+[[mounts]]
+  source = "hugo_stats.json"
+  target = "assets/watching/hugo_stats.json"

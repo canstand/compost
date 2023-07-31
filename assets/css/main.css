@@ -1,6 +1,7 @@
 @tailwind base;
 @layer base {
-  a,button {
+  a,
+  button {
     @apply transition;
   }
 }

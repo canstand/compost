@@ -1,7 +1,9 @@
-module github.com/canstand/compost
+module github.com/canstand/compost/exampleSite
 
-go 1.18
+go 1.19
 
 require (
-	github.com/bep/empty-hugo-module v1.0.0 // indirect
+	github.com/canstand/compost v0.6.0 // indirect
 )
+
+replace github.com/canstand/compost => ../

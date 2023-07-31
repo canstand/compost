@@ -138,7 +138,6 @@ hugo.linux
 
 # End of https://www.toptal.com/developers/gitignore/api/hugo
 
-hugo_stats.json
 exampleSite/public/
 exampleSite/resources/_gen/
 TODO

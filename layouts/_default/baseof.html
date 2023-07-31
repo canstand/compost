@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html dir="{{ .Site.Language.LanguageDirection | default "ltr" }}" lang="{{ with .Site.Language.Lang }}{{ . }}{{ else }}en{{ end }}">
+<html
+  dir="{{ .Site.Language.LanguageDirection | default "ltr" }}"
+  lang="{{ with .Site.Language.Lang -}}
+    {{- . -}}
+  {{- else -}}
+    en
+  {{- end }}"
+>
   {{ partial "head.html" . }}
   <body class="w-full min-h-full" x-data="{ up: false }">
     {{ partial "dev-size-indicator.html" . }}

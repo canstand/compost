@@ -4,8 +4,7 @@
 # as it does not contain all the required theme settings!
 # --------------------------------------------------------------------------
 
-theme = "compost"
-themesDir = "../.."
+theme = "github.com/canstand/compost"
 defaultContentLanguage = "en"
 title = "Compost"
 enableEmoji = true
@@ -24,6 +23,9 @@ _merge = 'deep'
 [minify]
 _merge = 'deep'
 
+[module]
+_merge = 'deep'
+
 [languages]
 [languages.en]
   weight = 1
@@ -35,31 +37,25 @@ _merge = 'deep'
   name = "首页"
   pageRef = "/"
   weight = 1
-
 [[languages.zh.menu.main]]
   name = "文章"
   pageRef = "posts"
   title = "文章列表"
   weight = 10
-
 [[languages.zh.menu.main]]
   name = "标签"
   pageRef = "tags"
   title = "标签列表"
   weight = 20
-
 [[languages.zh.menu.main]]
   name = "GitHub"
   url = "https://github.com/canstand/compost"
   weight = 30
 [languages.zh.params.article]
-dateFormat = "2006/01/02"
-showDraftLabel = true
+  dateFormat = "2006/01/02"
+  showDraftLabel = true
 
-[module]
-[[module.imports]]
-# We include the theme by "../.." above, but we need one module import for Hugo to detect us as a Hugo Module.
-path="github.com/bep/empty-hugo-module"
+
 
 [author]
   name = "Compost"

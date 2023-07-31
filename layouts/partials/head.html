@@ -99,7 +99,12 @@
     {{ $mainJS = $mainJS | js.Build | minify | fingerprint }}
   {{- else -}}
     {{ $mainJS = $mainJS | js.Build (dict "sourceMap" "inline") }}
-  {{- end }}  <script defer src="{{ $mainJS.RelPermalink }}" {{ if hugo.IsProduction }} integrity="{{ $mainJS.Data.Integrity }}"{{ end }}></script>
+  {{- end }}
+  <script
+    defer
+    src="{{ $mainJS.RelPermalink }}"
+    {{ if hugo.IsProduction }}integrity="{{ $mainJS.Data.Integrity }}"{{ end }}
+  ></script>
   <script>
   {{- with .Site.Params.colorScheme }}
     if (!('theme' in localStorage)) {
@@ -111,11 +116,11 @@
     }
   </script>
   <!-- Analytics -->
-  {{- partialCached "analytics.html" .Site -}}
+  {{- partialCached "analytics.html" . -}}
 
 
   <!-- Extend head - eg. for custom analytics scripts, etc. -->
   {{- if templates.Exists "partials/extend-head.html" -}}
-    {{ partialCached "extend-head.html" .Site }}
+    {{ partialCached "extend-head.html" . }}
   {{- end }}
 </head>

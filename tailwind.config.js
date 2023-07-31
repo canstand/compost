@@ -12,30 +12,10 @@ const round = (num) =>
     .replace(/\.0$/, "");
 const rem = (px) => `${round(px / 16)}rem`;
 const em = (px, base) => `${round(px / base)}em`;
-const px = (px) => `${px}px`;
 
 module.exports = {
   // important: true, // See https://tailwindcss.com/docs/configuration#important
-  content: {
-    content: [
-      "./hugo_stats.json",
-      "./layouts/**/*.html",
-      "./content/**/*.html",
-      "./exampleSite/hugo_stats.json",
-      "./exampleSite/layouts/**/*.html",
-      "./exampleSite/content/**/*.html",
-    ],
-    extractors: [
-      {
-        extractor: (content) => {
-          let els = JSON.parse(content).htmlElements;
-          return els.tags.concat(els.classes, els.ids);
-        },
-        extensions: ["json"],
-      },
-    ],
-    mode: "all",
-  },
+  content: ["./**/hugo_stats.json"],
   darkMode: "class",
   theme: {
     colors: {
@@ -116,39 +96,39 @@ module.exports = {
               textAlign: "center",
             },
             mark: {
-              color: 'var(--tw-prose-body)',
+              color: "var(--tw-prose-body)",
               backgroundColor: theme("colors.yellow.200"),
             },
             kbd: {
               fontSize: rem(14),
               backgroundColor: theme("colors.neutral.200"),
               borderRadius: rem(3),
-              border: "solid 1px "+theme("colors.neutral.500"),
-              borderBottomWidth: '2px',
-              padding: "1px 3px"
+              border: "solid 1px " + theme("colors.neutral.500"),
+              borderBottomWidth: "2px",
+              padding: "1px 3px",
             },
-            'li > input:first-child': {
-              marginTop: 'auto',
-              marginBottom: 'auto',
+            "li > input:first-child": {
+              marginTop: "auto",
+              marginBottom: "auto",
               marginRight: rem(4),
             },
-            'li:has(input:first-child)': {
-              paddingLeft: '0',
+            "li:has(input:first-child)": {
+              paddingLeft: "0",
             },
-            'li:has(input:first-child)::marker': {
+            "li:has(input:first-child)::marker": {
               color: theme("colors.transparent"),
-            }
+            },
           },
         },
         invert: {
           css: {
             mark: {
-              color: 'var(--tw-prose-body)',
+              color: "var(--tw-prose-body)",
               backgroundColor: theme("colors.yellow.800"),
             },
             kbd: {
               backgroundColor: theme("colors.neutral.700"),
-            }
+            },
           },
         },
       }),

@@ -14,8 +14,8 @@
     {{- $Height = $image.Height -}}
     {{- $Min := .Page.Site.Params.imaging.minWidth | default 480 -}}
     {{- $Max := .Page.Site.Params.imaging.maxWidth | default 1024 -}}
-    {{- if gt $Max $Width -}} {{ $Max = $Width }} {{- end -}}
-    {{- if gt $Min $Width -}} {{ $Min = $Width }} {{- end -}}
+    {{- if gt $Max $Width -}}{{ $Max = $Width }}{{- end -}}
+    {{- if gt $Min $Width -}}{{ $Min = $Width }}{{- end -}}
 
     {{- if (.Page.Site.Params.imaging.enabled | default true) -}}
       {{- $small := $image.Resize (printf `%dx` $Min) -}}

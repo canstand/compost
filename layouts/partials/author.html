@@ -1,7 +1,7 @@
 {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
   <div class="flex text-base text-neutral-500 dark:text-neutral-400">
     {{ with .Site.Author.image }}
-      <img class="w-16 h-16 my-auto mr-4 rounded-full" src="{{ . | relURL }}" alt="Avatar"/>
+      <img class="w-16 h-16 my-auto mr-4 rounded-full" src="{{ . | relURL }}" alt="Avatar" />
     {{ end }}
     <div class="place-self-center">
       {{ with .Site.Author.name | markdownify | emojify }}

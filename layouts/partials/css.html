@@ -1,22 +1,23 @@
 {{- $mainCSS := resources.Get "css/main.css" }}
 {{ $mainCSS = $mainCSS | resources.PostCSS (dict "inlineImports" true) }}
-{{ if  hugo.IsProduction -}}
+{{ if hugo.IsProduction -}}
   {{ $mainCSS = $mainCSS | minify | fingerprint | resources.PostProcess }}
-{{ else if .Site.IsServer }}
-  {{ $stats_hash := now.UnixMilli | printf "main.dev.%v.css" }}
-  {{ if fileExists "hugo_stats.json" }}
-    {{ $stats_hash = getJSON "hugo_stats.json" | printf "%v" | sha256 }}
-  {{- end -}}
-  {{- $mainCSS = $mainCSS | resources.ExecuteAsTemplate (printf "main.%v.css" $stats_hash) .}}
 {{- end -}}
-<link type="text/css" rel="stylesheet" href="{{ $mainCSS.RelPermalink }}" integrity="{{ $mainCSS.Data.Integrity }}" />
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="{{ $mainCSS.RelPermalink }}"
+  {{ if hugo.IsProduction }}integrity="{{ $mainCSS.Data.Integrity }}"{{ end }}
+/>
 {{ $customCSS := resources.Get "css/custom.css" -}}
 {{ if $customCSS -}}
-  {{ $customStyles := $customCSS | minify | fingerprint }}
+  {{ if hugo.IsProduction -}}
+    {{ $customCSS = $customCSS | minify | fingerprint | resources.PostProcess }}
+  {{- end -}}
   <link
     type="text/css"
     rel="stylesheet"
-    href="{{ $customStyles.RelPermalink }}"
-    integrity="{{ $customStyles.Data.Integrity }}"
+    href="{{ $customCSS.RelPermalink }}"
+    {{ if hugo.IsProduction }}integrity="{{ $customCSS.Data.Integrity }}"{{ end }}
   />
 {{- end -}}

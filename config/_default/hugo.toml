@@ -51,8 +51,19 @@ enableRobotsTXT = true
   # ]
 
 [build]
-# Used by PurgeCSS
-writeStats = true
+  writeStats = true
+[[build.cachebusters]]
+  source = "assets/watching/hugo_stats\\.json"
+  target = "main\\.css"
+[[build.cachebusters]]
+  source = "(postcss|tailwind)\\.config\\.js"
+  target = "css"
+[[build.cachebusters]]
+  source = "assets/.*\\.(js|ts|jsx|tsx)"
+  target = "js"
+[[build.cachebusters]]
+  source = "assets/.*\\.(.*)$"
+  target = "$1"
 
 [minify]
 [minify.tdewolff]

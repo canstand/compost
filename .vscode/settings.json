@@ -10,5 +10,5 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "html.validate.scripts": false,
+  "html.validate.scripts": false
 }

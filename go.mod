@@ -1,3 +1,3 @@
 module github.com/canstand/compost
 
-go 1.18
+go 1.19

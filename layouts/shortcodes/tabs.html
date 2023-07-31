@@ -2,6 +2,7 @@
 {{ $id := .Get 0 }}
 {{ $group := printf "tabs-%s" $id }}
 
+
 <div class="tabs">
   {{ range $index, $tab :=  .Scratch.Get $group }}
     <input
