@@ -18,25 +18,28 @@ Compost is a simple, lightweight theme for [Hugo](https://gohugo.io). Mainly bas
 1. Set the theme in the Hugo project as `github.com/canstand/compost`, and add required options to `hugo.toml`:
 
 ```toml
-theme = 'github.com/canstand/compost'
-
 # required
 [build]
-_merge = 'deep'
+  _merge = 'deep'
 
 # required
 [markup]
-_merge = 'deep'
+  _merge = 'deep'
 
 # for better seo
 [minify]
-_merge = 'deep'
+  _merge = 'deep'
 
 # required
 [module]
-_merge = 'deep'
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+[[module.mounts]]
+  source = "hugo_stats.json"
+  target = "assets/watching/hugo_stats.json"
 [[module.imports]]
-path="github.com/canstand/compost"
+  path="github.com/canstand/compost"
 ```
 
 2. Install or upgrade dependencies:

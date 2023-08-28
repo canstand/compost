@@ -13,18 +13,23 @@ paginate = 5
 
 # required
 [build]
-_merge = 'deep'
+  _merge = 'deep'
 
 # required
 [markup]
-_merge = 'deep'
+  _merge = 'deep'
 
 # for better seo
 [minify]
-_merge = 'deep'
+  _merge = 'deep'
 
 [module]
-_merge = 'deep'
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+[[module.mounts]]
+  source = "hugo_stats.json"
+  target = "assets/watching/hugo_stats.json"
 
 [languages]
 [languages.en]

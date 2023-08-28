@@ -18,15 +18,15 @@
     }
   },
   "dependencies": {
-    "@alpinejs/intersect": "^3.12.3",
-    "alpinejs": "^3.12.3"
+    "@alpinejs/intersect": "^3.13.0",
+    "alpinejs": "^3.13.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.27",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
     "postcss-cli": "^10.1.0",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.2",
     "prettier-plugin-go-template": "^0.0.15",
     "tailwindcss": "^3.3.3"
   },
@@ -40,5 +40,5 @@
   "scripts": {
     "prettier": "npx prettier --write ."
   },
-  "version": "0.6.0"
+  "version": "0.6.1"
 }
