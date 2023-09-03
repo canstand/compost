@@ -41,5 +41,5 @@
   "scripts": {
     "prettier": "npx prettier --write ."
   },
-  "version": "0.6.1"
+  "version": "0.6.2"
 }

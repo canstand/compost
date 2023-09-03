@@ -5,8 +5,9 @@
 >
   <div class="fixed z-10 flex h-screen w-48 lg:hidden" :class="open ? '' : 'hidden'" x-ref="dialog" aria-modal="true">
     <div
-      class="bg-black fixed inset-0 bg-opacity-25"
+      class="fixed inset-0 bg-gray-950/25"
       :class="open ? '' : 'hidden'"
+      x-show="open"
       x-transition:enter="transition-opacity ease-linear duration-300"
       x-transition:enter-start="opacity-0"
       x-transition:enter-end="opacity-100"
@@ -20,6 +21,7 @@
     <div
       class="fixed inset-0 flex h-full w-full max-w-xxs flex-col overflow-y-auto bg-neutral-50 pb-12 shadow-xl dark:bg-neutral-800"
       :class="open ? '' : 'hidden'"
+      x-show="open"
       x-transition:enter="transition ease-in-out duration-300"
       x-transition:enter-start="-translate-x-full"
       x-transition:enter-end="translate-x-0"
@@ -95,14 +97,17 @@
       </button>
       <div class="mx-2 h-12 flex-grow">
         <div class="relative h-full w-full">
-          <div class="absolute max-w-full" :class="up ? 'hidden' : ''" x-transition.duration.500ms>
-            <span class="overflow-hidden text-ellipsis whitespace-nowrap font-semibold">{{ .Site.Title }}</span>
+          <div class="absolute max-w-full" :class="up ? 'hidden' : ''" x-show="!up" x-transition.duration.750ms>
+            <span class="overflow-hidden text-ellipsis whitespace-nowrap font-semibold tracking-wider"
+              >{{ .Site.Title }}</span
+            >
           </div>
           <template x-if="true">
             <div
               class="absolute left-0 right-0 top-0 max-w-full"
               :class="up ? '' : 'hidden'"
-              x-transition.duration.500ms
+              x-show="up"
+              x-transition.duration.750ms
             >
               <span class="overflow-hidden text-ellipsis whitespace-nowrap">{{ .Title | emojify }}</span>
             </div>
