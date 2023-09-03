@@ -2,21 +2,21 @@
   <h3 class="flex items-center text-xl font-semibold">
     {{ with .Params.externalUrl }}
       <a
-        class="hover:underline hover:decoration-primary-500 hover:underline-offset-auto text-neutral-800 dark:text-neutral-200"
+        class="text-neutral-800 hover:underline hover:decoration-primary-500 hover:underline-offset-auto dark:text-neutral-200"
         href="{{ . }}"
         target="_blank"
         rel="external"
         >{{ $.Title | emojify }}</a
       >
       <span
-        class="-mt-2 text-xs cursor-default text-neutral-400 dark:text-neutral-500"
+        class="-mt-2 cursor-default text-xs text-neutral-400 dark:text-neutral-500"
         title="{{ i18n "list.externalurl_title" }}"
       >
         &#8599;
       </span>
     {{ else }}
       <a
-        class="hover:underline hover:decoration-primary-500 hover:underline-offset-auto text-neutral-800 dark:text-neutral-200"
+        class="text-neutral-800 hover:underline hover:decoration-primary-500 hover:underline-offset-auto dark:text-neutral-200"
         href="{{ .RelPermalink }}"
         >{{ .Title | emojify }}</a
       >

@@ -15,7 +15,7 @@
     <label for="{{ printf "%s-%d" $group $index }}" class="tab-label">
       {{ $tab.Name }}
     </label>
-    <div class="hidden tab-content">
+    <div class="tab-content hidden">
       {{ .Content | $.Page.RenderString }}
     </div>
   {{ end }}

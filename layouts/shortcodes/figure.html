@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 {{ if .Get "src" }}
   {{- $image := .Page.Resources.GetMatch (printf "%s" (.Get "src" | safeURL)) -}}
   {{- $Permalink := .Get "src" | relURL | safeURL -}}

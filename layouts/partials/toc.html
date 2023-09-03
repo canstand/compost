@@ -1,5 +1,5 @@
 {{ if and (gt .WordCount 400 ) (ne .Params.showTOC false) }}
-  <aside class="sticky self-start hidden h-2 pl-8 xl:pl-12 top-20 lg:block flex-grow">
+  <aside class="sticky top-20 hidden h-2 flex-grow self-start pl-8 lg:block xl:pl-12">
     <div class="min-h-screen overflow-y-auto text-sm xl:text-base">
       <label class="font-bold">{{ i18n "article.table_of_contents" }}</label>
       {{ .TableOfContents }}

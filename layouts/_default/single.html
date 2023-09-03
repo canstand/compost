@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article class="flex-grow mx-auto text-lg lg:text-xl min-w-0 max-w-prose">
+  <article class="mx-auto min-w-0 max-w-prose flex-grow text-lg lg:text-xl">
     <header class="text-base">
       {{- if .Site.Params.article.showBreadcrumbs | default false }}
         {{- partial "breadcrumbs.html" . }}
@@ -15,7 +15,7 @@
         {{ partial "article-meta.html" (dict "context" . "scope" "single") }}
       </div>
     </header>
-    <section class="max-w-none text-base prose  dark:prose-invert">
+    <section class="prose max-w-none text-base  dark:prose-invert">
       {{ .Content | emojify }}
     </section>
     <footer class="pt-8">

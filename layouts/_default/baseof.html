@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html
   dir="{{ .Site.Language.LanguageDirection | default "ltr" }}"
   lang="{{ with .Site.Language.Lang -}}
@@ -8,10 +8,10 @@
   {{- end }}"
 >
   {{ partial "head.html" . }}
-  <body class="w-full min-h-full" x-data="{ up: false }">
+  <body class="min-h-full w-full" x-data="{ up: false }">
     {{ partial "dev-size-indicator.html" . }}
     {{ partial "header.html" . }}
-    <main class="container flex flex-row px-6 mx-auto my-6 lg:px-8 xl:px-12 max-w-7xl">
+    <main class="container mx-auto my-6 flex max-w-7xl flex-row px-6 lg:px-8 xl:px-12">
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}

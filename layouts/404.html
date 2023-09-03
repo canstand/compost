@@ -1,7 +1,7 @@
 {{- define "main" }}
-  <div class="mx-auto text-lg xl:text-xl min-w-0 max-w-prose">
+  <div class="mx-auto min-w-0 max-w-prose text-lg xl:text-xl">
     <h1 class="mb-3 text-4xl font-extrabold">{{ i18n "error.404_title" | emojify }}</h1>
-    <p class="mt-8 mb-12 text-neutral-400 dark:text-neutral-500">
+    <p class="mb-12 mt-8 text-neutral-400 dark:text-neutral-500">
       {{- i18n "error.404_error" | emojify -}}
     </p>
     <div class="prose dark:prose-invert">

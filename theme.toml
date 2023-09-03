@@ -10,10 +10,10 @@ tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "tailwind
 features = ["improve Chinese style ", "syntax higlighting", "dark mode", "emoji"]
 
 [author]
-    name = "Can Stand"
-    homepage = "https://kompost.cn/"
+  name = "Can Stand"
+  homepage = "https://kompost.cn/"
 
 [original]
-    author = "James Panther"
-    homepage = "https://jamespanther.com/"
-    repo = "https://github.com/jpanther/congo"
+  author = "James Panther"
+  homepage = "https://jamespanther.com/"
+  repo = "https://github.com/jpanther/congo"

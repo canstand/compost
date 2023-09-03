@@ -1,7 +1,7 @@
 <div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky inset-x-0 top-0 z-10 ">
-  <div class="fixed z-10 flex w-48 h-screen lg:hidden" :class="open ? '' : 'hidden'" x-ref="dialog" aria-modal="true">
+  <div class="fixed z-10 flex h-screen w-48 lg:hidden" :class="open ? '' : 'hidden'" x-ref="dialog" aria-modal="true">
     <div
-      class="fixed inset-0 bg-black bg-opacity-25"
+      class="bg-black fixed inset-0 bg-opacity-25"
       :class="open ? '' : 'hidden'"
       x-transition:enter="transition-opacity ease-linear duration-300"
       x-transition:enter-start="opacity-0"
@@ -14,7 +14,7 @@
       aria-hidden="true"
     ></div>
     <div
-      class="fixed inset-0 flex flex-col w-full h-full pb-12 overflow-y-auto shadow-xl bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 max-w-xxs"
+      class="fixed inset-0 flex h-full w-full max-w-xxs flex-col overflow-y-auto bg-neutral-50 pb-12 text-neutral-900 shadow-xl dark:bg-neutral-800 dark:text-neutral-200"
       :class="open ? '' : 'hidden'"
       x-transition:enter="transition ease-in-out duration-300"
       x-transition:enter-start="-translate-x-full"
@@ -24,16 +24,16 @@
       x-transition:leave-end="-translate-x-full"
       x-description="Off-canvas menu, show/hide based on off-canvas menu state."
     >
-      <div class="flex px-4 pt-5 pb-2">
+      <div class="flex px-4 pb-2 pt-5">
         <button
           type="button"
           title="Close menu"
-          class="inline-flex items-center justify-center p-2 -m-2 rounded-md text-neutral-400"
+          class="-m-2 inline-flex items-center justify-center rounded-md p-2 text-neutral-400"
           @click="open = false"
         >
           <span class="sr-only">Close menu</span>
           <svg
-            class="w-6 h-6"
+            class="h-6 w-6"
             x-description="Heroicon name: outline/x"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -45,27 +45,27 @@
           </svg>
         </button>
       </div>
-      <ul class="py-4 divide-y divide-neutral-200">
+      <ul class="divide-y divide-neutral-200 py-4">
         {{ range .Site.Menus.main }}
           {{- $url := .URL | relLangURL -}}
           {{- with .Page -}}
             {{- $url = .RelPermalink -}}
           {{- end -}}
           <li
-            class="flow-root px-4 py-2 {{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }}
+            class="{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }}
               bg-neutral-200 dark:bg-neutral-900
-            {{ end }}"
+            {{ end }} flow-root px-4 py-2"
           >
-            <a href="{{ .URL }}" title="{{ .Title }}" class="block p-2 -m-2 font-medium">{{ .Name }}</a>
+            <a href="{{ .URL }}" title="{{ .Title }}" class="-m-2 block p-2 font-medium">{{ .Name }}</a>
           </li>
         {{ end }}
       </ul>
     </div>
   </div>
 
-  <header class="shadow dark:shadow-dark bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 ">
+  <header class="dark:shadow-dark bg-neutral-50 text-neutral-900 shadow dark:bg-neutral-800 dark:text-neutral-200 ">
     <nav
-      class="container flex  leading-12 items-center px-6 mx-auto max-w-7xl lg:px-8 xl:px-12 bg-neutral-50 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200"
+      class="container mx-auto  flex max-w-7xl items-center bg-neutral-50 px-6 leading-12 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 lg:px-8 xl:px-12"
       aria-label="Top"
     >
       {{- if .Site.Params.Logo }}
@@ -82,7 +82,7 @@
 
       <button class="lg:hidden" type="button" @click="open = true" aria-label="Open menu">
         <svg
-          class="block w-6 h-6"
+          class="block h-6 w-6"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -92,14 +92,14 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      <div class="flex-grow h-12 mx-2">
-        <div class="relative w-full h-full">
+      <div class="mx-2 h-12 flex-grow">
+        <div class="relative h-full w-full">
           <div class="absolute max-w-full" :class="up ? 'hidden' : ''" x-transition.duration.500ms>
-            <span class="font-semibold overflow-hidden text-ellipsis whitespace-nowrap">{{ .Site.Title }}</span>
+            <span class="overflow-hidden text-ellipsis whitespace-nowrap font-semibold">{{ .Site.Title }}</span>
           </div>
           <template x-if="true">
             <div
-              class="absolute top-0 left-0 right-0 max-w-full"
+              class="absolute left-0 right-0 top-0 max-w-full"
               :class="up ? '' : 'hidden'"
               x-transition.duration.500ms
             >
@@ -108,24 +108,24 @@
           </template>
         </div>
       </div>
-      <ul class="shrink hidden ml-7 lg:flex flex-row justify-end list-none">
+      <ul class="ml-7 hidden shrink list-none flex-row justify-end lg:flex">
         {{ range .Site.Menus.main }}
           {{- $url := .URL | relLangURL -}}
           {{- with .Page -}}
             {{- $url = .RelPermalink -}}
           {{- end -}}
           <li
-            class="border-b-2 border-transparent text-right mr-7 hover:border-primary-500 {{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }}
+            class="{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }}
               border-primary-500
-            {{ end }}"
+            {{ end }} mr-7 border-b-2 border-transparent text-right hover:border-primary-500"
           >
             <a class="" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
           </li>
         {{ end }}
       </ul>
-      <button id="switchTheme" class="w-8 h-8 flex justify-center items-center focus:outline-none">
+      <button id="switchTheme" class="flex h-8 w-8 items-center justify-center focus:outline-none">
         <span class="sr-only">Switch theme</span>
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path
             fill-rule="evenodd"
             d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"

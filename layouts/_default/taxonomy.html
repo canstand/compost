@@ -1,9 +1,9 @@
 {{ define "main" }}
-  <div class="mx-auto min-w-0 max-w-2xl lg:max-w-3xl flex-grow">
+  <div class="mx-auto min-w-0 max-w-2xl flex-grow lg:max-w-3xl">
     {{ partial "section-header.html" . }}
-    <section class="flex flex-wrap -mx-2 overflow-hidden">
+    <section class="-mx-2 flex flex-wrap overflow-hidden">
       {{ range .Data.Terms }}
-        <article class="px-2 my-3 overflow-hidden w-1/2 md:w-1/3 lg:w-1/4">
+        <article class="my-3 w-1/2 overflow-hidden px-2 md:w-1/3 lg:w-1/4">
           <h2>
             <a
               class="text-lg font-medium hover:underline hover:decoration-primary-500 hover:underline-offset-auto"

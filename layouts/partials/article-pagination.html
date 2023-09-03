@@ -6,7 +6,7 @@
         <span>
           {{ if .PrevInSection }}
             <a class="flex text-right" href="{{ .PrevInSection.RelPermalink }}">
-              <span class="mr-3 article-pagination-direction">&larr;</span>
+              <span class="article-pagination-direction mr-3">&larr;</span>
               <span class="flex flex-col">
                 <span class="article-pagination-title">{{ .PrevInSection.Title }}</span>
                 <span class="article-pagination-date">
@@ -29,7 +29,7 @@
                   {{ end }}
                 </span>
               </span>
-              <span class="ml-3 article-pagination-direction">&rarr;</span>
+              <span class="article-pagination-direction ml-3">&rarr;</span>
             </a>
           {{ end }}
         </span>
