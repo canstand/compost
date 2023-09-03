@@ -1,4 +1,8 @@
-<div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky inset-x-0 top-0 z-10 ">
+<div
+  x-data="{ open: false }"
+  @keydown.window.escape="open = false"
+  class="sticky inset-x-0 top-0 z-10 bg-neutral-50/50 text-neutral-900 after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:backdrop-blur-xl after:content-[''] dark:bg-neutral-800/60 dark:text-neutral-200"
+>
   <div class="fixed z-10 flex h-screen w-48 lg:hidden" :class="open ? '' : 'hidden'" x-ref="dialog" aria-modal="true">
     <div
       class="bg-black fixed inset-0 bg-opacity-25"
@@ -14,7 +18,7 @@
       aria-hidden="true"
     ></div>
     <div
-      class="fixed inset-0 flex h-full w-full max-w-xxs flex-col overflow-y-auto bg-neutral-50 pb-12 text-neutral-900 shadow-xl dark:bg-neutral-800 dark:text-neutral-200"
+      class="fixed inset-0 flex h-full w-full max-w-xxs flex-col overflow-y-auto bg-neutral-50 pb-12 shadow-xl dark:bg-neutral-800"
       :class="open ? '' : 'hidden'"
       x-transition:enter="transition ease-in-out duration-300"
       x-transition:enter-start="-translate-x-full"
@@ -63,11 +67,8 @@
     </div>
   </div>
 
-  <header class="dark:shadow-dark bg-neutral-50 text-neutral-900 shadow dark:bg-neutral-800 dark:text-neutral-200 ">
-    <nav
-      class="container mx-auto  flex max-w-7xl items-center bg-neutral-50 px-6 leading-12 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200 lg:px-8 xl:px-12"
-      aria-label="Top"
-    >
+  <header class="dark:shadow-dark shadow">
+    <nav class="container mx-auto flex max-w-7xl items-center px-6 leading-12 lg:px-8 xl:px-12" aria-label="Top">
       {{- if .Site.Params.Logo }}
         <a
           class="relative hidden p-2 align-middle lg:block"
