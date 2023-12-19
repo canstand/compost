@@ -1,10 +1,10 @@
 {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
   <div class="flex text-base text-neutral-500 dark:text-neutral-400">
-    {{ with .Site.Author.image }}
+    {{ with .Site.Language.Params.Author.image }}
       <img class="my-auto mr-4 h-16 w-16 rounded-full" src="{{ . | relURL }}" alt="Avatar" />
     {{ end }}
     <div class="place-self-center">
-      {{ with .Site.Author.name | markdownify | emojify }}
+      {{ with .Site.Language.Params.Author.name | markdownify | emojify }}
         <div class="text-xs uppercase" aria-hidden="true">
           {{ i18n "author.byline_title" | markdownify | emojify }}
         </div>
@@ -12,7 +12,7 @@
           {{ . }}
         </div>
       {{ end }}
-      {{ with .Site.Author.bio | markdownify | emojify }}
+      {{ with .Site.Language.Params.Author.bio | markdownify | emojify }}
         <div class="text-sm text-neutral-700 dark:text-neutral-400">{{ . }}</div>
       {{ end }}
       {{ partialCached "author-links.html" . }}

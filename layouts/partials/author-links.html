@@ -1,10 +1,10 @@
-{{ with .Site.Author.links }}
+{{ with .Site.Language.Params.Author.links }}
   <div class="flex flex-wrap space-x-2 text-neutral-400 dark:text-neutral-500">
     {{ range $links := . }}
       {{ range $name, $url := $links }}
         <a
           class="hover:text-primary-700 dark:hover:text-primary-400"
-          href="{{ $url }}"
+          href="{{ $url | safeURL }}"
           target="_blank"
           alt="{{ $name | title }}"
           rel="me noopener noreferrer"

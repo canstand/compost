@@ -60,9 +60,15 @@ paginate = 5
   dateFormat = "2006/01/02"
   showDraftLabel = true
 
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
 
+[params]
+  colorScheme = "auto"
 
-[author]
+[params.author]
   name = "Compost"
   image = "img/author.jpg"
   links = [
@@ -71,14 +77,6 @@ paginate = 5
     { linkedin = "https://linkedin.com/" },
     { youtube = "https://youtube.com/" },
   ]
-
-[taxonomies]
-  category = "categories"
-  series = "series"
-  tag = "tags"
-
-[params]
-  colorScheme = "auto"
 
 [params.homepage]
   showRecent = true
