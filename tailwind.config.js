@@ -82,12 +82,6 @@ module.exports = {
                 color: theme("colors.primary.500"),
               },
             },
-            dd: {
-              marginLeft: em(28, 16),
-            },
-            dt: {
-              fontWeight: "600",
-            },
             "figure > *": {
               marginLeft: "auto",
               marginRight: "auto",
@@ -98,14 +92,6 @@ module.exports = {
             mark: {
               color: "var(--tw-prose-body)",
               backgroundColor: theme("colors.yellow.200"),
-            },
-            kbd: {
-              fontSize: rem(14),
-              backgroundColor: theme("colors.neutral.200"),
-              borderRadius: rem(3),
-              border: "solid 1px " + theme("colors.neutral.500"),
-              borderBottomWidth: "2px",
-              padding: "1px 3px",
             },
             "li > input:first-child": {
               marginTop: "auto",
@@ -125,9 +111,6 @@ module.exports = {
             mark: {
               color: "var(--tw-prose-body)",
               backgroundColor: theme("colors.yellow.800"),
-            },
-            kbd: {
-              backgroundColor: theme("colors.neutral.700"),
             },
           },
         },

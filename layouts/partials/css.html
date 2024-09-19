@@ -1,5 +1,5 @@
 {{- $mainCSS := resources.Get "css/main.css" }}
-{{ $mainCSS = $mainCSS | resources.PostCSS (dict "inlineImports" true) }}
+{{ $mainCSS = $mainCSS | css.PostCSS (dict "inlineImports" true) }}
 {{ if hugo.IsProduction -}}
   {{ $mainCSS = $mainCSS | minify | fingerprint | resources.PostProcess }}
 {{- end -}}

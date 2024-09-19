@@ -9,7 +9,8 @@ defaultContentLanguage = "en"
 title = "Compost"
 enableEmoji = true
 enableRobotsTXT = true
-paginate = 5
+
+# ignoreErrors = [ "error-remote-getjson", ]
 
 # required
 [build]
@@ -64,6 +65,9 @@ paginate = 5
   category = "categories"
   series = "series"
   tag = "tags"
+
+[pagination]
+  pagerSize = 5
 
 [params]
   colorScheme = "auto"

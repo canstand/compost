@@ -19,18 +19,18 @@
     }
   },
   "dependencies": {
-    "@alpinejs/intersect": "^3.13.3",
-    "alpinejs": "^3.13.3"
+    "@alpinejs/intersect": "^3.13.10",
+    "alpinejs": "^3.13.10"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
+    "@tailwindcss/typography": "^0.5.15",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
-    "prettier": "^3.1.1",
+    "prettier": "^3.3.3",
     "prettier-plugin-go-template": "^0.0.15",
-    "prettier-plugin-tailwindcss": "^0.5.9",
-    "tailwindcss": "^3.3.7"
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.12"
   },
   "homepage": "https://canstand.github.io/compost",
   "license": "MIT",
