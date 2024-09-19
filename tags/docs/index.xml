@@ -1,5 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>docs on Compost</title><link>https://canstand.github.io/compost/tags/docs/</link><description>Recent content in docs on Compost</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://canstand.github.io/compost/tags/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Shortcodes</title><link>https://canstand.github.io/compost/posts/shortcodes/</link><pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate><guid>https://canstand.github.io/compost/posts/shortcodes/</guid><description>In addition to all the default Hugo shortcodes , Compost adds a few extras for additional functionality.
-Alert # alert outputs its contents as a stylised message box within your article. It&amp;rsquo;s useful for drawing attention to important information that you don&amp;rsquo;t want the reader to miss.
-The input is written in Markdown so you can format it however you please.
-Example:
-{{&amp;lt; alert &amp;gt;}} **Warning!** This action is destructive! {{&amp;lt; /alert &amp;gt;}} Warning!</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on Compost</title><link>https://canstand.github.io/compost/tags/docs/</link><description>Recent content in Docs on Compost</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://canstand.github.io/compost/tags/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Shortcodes</title><link>https://canstand.github.io/compost/posts/shortcodes/</link><pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate><guid>https://canstand.github.io/compost/posts/shortcodes/</guid><description>&lt;p>In addition to all the &lt;a
+ href="https://gohugo.io/content-management/shortcodes"
+ 
+ target="_blank" rel="noopener"
+ 
+ 
+>default Hugo shortcodes&lt;/a>
+, Compost adds a few extras for additional functionality.&lt;/p>
+
+&lt;h2 id="alert">Alert &lt;a class="heading-anchor" href="#alert" aria-hidden="true">#&lt;/a>&lt;/h2>
+&lt;p>&lt;code>alert&lt;/code> outputs its contents as a stylised message box within your article. It&amp;rsquo;s useful for drawing attention to important information that you don&amp;rsquo;t want the reader to miss.&lt;/p>
+&lt;p>The input is written in Markdown so you can format it however you please.&lt;/p>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-md" data-lang="md">&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">alert&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gs">**Warning!**&lt;/span> This action is destructive!
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="nt">alert&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="flex rounded-md bg-yellow-100 px-4 py-3 dark:bg-yellow-900">
+ &lt;span class="pe-3 text-yellow-400">
+ 
+
+ &lt;span class="icon relative inline-block align-text-bottom">
+ &lt;svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exclamation-triangle" class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z">&lt;/path>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;span class="not-prose dark:text-neutral-300">&lt;strong>Warning!&lt;/strong> This action is destructive!&lt;/span>
+&lt;/div>
+
+
+&lt;h2 id="badge">Badge &lt;a class="heading-anchor" href="#badge" aria-hidden="true">#&lt;/a>&lt;/h2>
+&lt;p>&lt;code>badge&lt;/code> outputs a styled badge component which is useful for displaying metadata.&lt;/p></description></item></channel></rss>
