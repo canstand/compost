@@ -18,15 +18,7 @@ Below is an example using the built-in `youtube` shortcode.
 
 This example uses the `twitter_simple` shortcode to output a Tweet. It requires two named parameters `user` and `id`.
 
-{{< twitter_simple user="DesignReviewed" id="1085870671291310081" >}}
-
-Alternatively, the `tweet` shortcode can be used to embed a fully marked up Twitter card.
-
-## Gist
-
-The `gist` shortcode can be used to embed a GitHub Gist. It requires two unnamed parameters: the username and ID of the Gist.
-
-{{< gist jpanther a873e1219ffeaa80a926bbe8255f348e >}}
+{{< x user="DesignReviewed" id="1085870671291310081" >}}
 
 ## Vimeo
 
