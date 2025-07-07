@@ -1,6 +1,6 @@
 [hugoVersion]
   extended = false
-  min = "0.134.2"
+  min = "0.147.9"
 [[mounts]]
   source = 'content'
   target = 'content'

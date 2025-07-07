@@ -314,7 +314,7 @@ body {
 }
 /* LineNumbers */
 .chroma .ln {
-  @apply mr-2 px-2  py-0 text-neutral-600 dark:text-neutral-300;
+  @apply mr-2 px-2 py-0 text-neutral-600 dark:text-neutral-300;
   /* margin-right: 0.4em;
   padding: 0 0.4em 0 0.4em; */
 }

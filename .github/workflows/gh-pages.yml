@@ -49,7 +49,7 @@ jobs:
       - name: Build
         env:
           HUGO_GOOGLEANALYTICS: ${{ secrets.GOOGLEANALYTICS }}
-        run: hugo --gc -v -s ./exampleSite --minify --baseURL https://canstand.github.io/compost/
+        run: hugo --gc -s ./exampleSite --minify --baseURL https://canstand.github.io/compost/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
