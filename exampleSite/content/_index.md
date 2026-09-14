@@ -12,10 +12,9 @@ Compost is a simple, lightweight theme for [Hugo](https://gohugo.io). Mainly bas
 ## Features
 
 - Styles are based on [Tailwind CSS](https://tailwindcss.com/docs) 3.x, and the official [Typography plugin](https://github.com/tailwindlabs/tailwindcss-typography).
-- You can build and test directly with the `hugo` command (using some of the tricks mentioned in [#8343](https://github.com/gohugoio/hugo/issues/8343)). 
-- 🌐 The article style is specially customized for the Simplified Chinese language (only applied when the lang of html is zh). 
+- You can build and test directly with the `hugo` command (using some of the tricks mentioned in [#8343](https://github.com/gohugoio/hugo/issues/8343)).
+- 🌐 The article style is specially customized for the Simplified Chinese language (only applied when the lang of html is zh).
 - ✨ Automatically resize images with Hugo's built-in function, and add native lazy loading attr (supported by browsers)
-
 
 ## Usage
 

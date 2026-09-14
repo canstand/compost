@@ -140,5 +140,8 @@ hugo.linux
 
 exampleSite/public/
 exampleSite/resources/_gen/
+exampleSite/node_modules/
+exampleSite/hugo_stats.json
 TODO
 .hugo_build.lock
+/hugo_stats.json

@@ -1,11 +1,9 @@
 [build]
 publish = "exampleSite/public"
-command = "hugo --gc -s ./exampleSite --minify --baseURL $URL"
+command = "npm ci --prefix exampleSite && hugo --gc -s ./exampleSite --minify --panicOnWarning --baseURL $URL"
 
 [build.environment]
-HUGO_VERSION = "0.147.9"
-HUGO_THEMESDIR = "../.."
-HUGO_THEME = "repo"
+HUGO_VERSION = "0.166.0"
 
 [[headers]]
 for = "/*.jpg"

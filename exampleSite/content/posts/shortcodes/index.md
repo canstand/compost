@@ -6,7 +6,7 @@ description: "All the shortcodes available in theme."
 slug: "shortcodes"
 tags: ["shortcodes", "mermaid", "icon", "lead", "docs"]
 series:
-  - Extra
+    - Extra
 ---
 
 In addition to all the [default Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), Compost adds a few extras for additional functionality.
@@ -75,7 +75,7 @@ Call to action
 
 Icons are populated using Hugo pipelines which makes them very flexible. Congo ships with a default set of icons for social, email, and generic links. If you want to add your own icons, you can simply place them in `/assets/icons/` and reference them using the `icon` shortcode passing in the icon's filename (without the `.svg.` extension).
 
-Icons can also be used in partials by calling the [icon partial]().
+Icons can also be used in partials by calling the [icon partial](<>).
 
 ## Lead
 

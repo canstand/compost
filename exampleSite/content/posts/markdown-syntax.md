@@ -4,16 +4,16 @@ title: Markdown Syntax Guide
 date: "2019-03-11"
 description: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
 tags:
-  - markdown
-  - css
-  - html
+    - markdown
+    - css
+    - html
 categories:
-  - themes
-  - syntax
+    - themes
+    - syntax
 series:
-  - Themes Guide
+    - Themes Guide
 aliases:
-  - migrate-from-jekyl
+    - migrate-from-jekyl
 draft: false
 ---
 
@@ -81,13 +81,13 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <title>Example HTML5 Document</title>
+    </head>
+    <body>
+        <p>Test</p>
+    </body>
 </html>
 ```
 
@@ -137,35 +137,34 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 #### Nested list
 
 - Fruit
-  - Apple
-  - Orange
-  - Banana
+    - Apple
+    - Orange
+    - Banana
 - Dairy
-  - Milk
-  - Cheese
+    - Milk
+    - Cheese
 
-
-1. Ordered list level one  ol
-   1. Ordered list level two ol ol
-      1. Ordered list level three ol ol ol
-   1. Ordered list level two ol ol
-      - Unordered list level three ol ol ul
+1. Ordered list level one ol
+    1. Ordered list level two ol ol
+        1. Ordered list level three ol ol ol
+    1. Ordered list level two ol ol
+        - Unordered list level three ol ol ul
 2. Ordered list level one ol
-   - Unordered list level two ol ul
-     1. Ordered list level three ol ul ol
-   - Unordered list level two ol ul
-     - Unordered list level three ol ul ul
+    - Unordered list level two ol ul
+        1. Ordered list level three ol ul ol
+    - Unordered list level two ol ul
+        - Unordered list level three ol ul ul
 
 - Unordered list level one ul
-  - Unordered list level two ul ul
-    1. Ordered list level three ul ul ol
-  - Unordered list level two ul ul
-    - Unordered list level three ul ul ul
+    - Unordered list level two ul ul
+        1. Ordered list level three ul ul ol
+    - Unordered list level two ul ul
+        - Unordered list level three ul ul ul
 - Unordered list level one ul
-  1. Ordered list level two ul ol
-     1. Ordered list level three ul ol ol
-  1. Ordered list level two ul ol
-     - Unordered list level three ul ol ul
+    1. Ordered list level two ul ol
+        1. Ordered list level three ul ol ol
+    1. Ordered list level two ul ol
+        - Unordered list level three ul ol ul
 
 #### Definition List
 
@@ -180,7 +179,6 @@ Second Term
 
 - [x] task finished
 - [ ] todo list
-
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 

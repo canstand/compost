@@ -4,15 +4,15 @@ date: 2021-11-16T00:00:00.000Z
 draft: false
 description: 参考赫蹏项目调整后的中文正文内容样式，支持深色模式。
 tags:
-  - markdown
-  - css
-  - sample
-  - tailwindcss
-  - typography
-  - demo
-  - javascript
+    - markdown
+    - css
+    - sample
+    - tailwindcss
+    - typography
+    - demo
+    - javascript
 series:
-  - Samples
+    - Samples
 ---
 
 {{< lead >}}
@@ -53,7 +53,7 @@ The `@tailwindcss/typography` plugin adds a set of prose classes that can be use
 
 ### 段落文字样式（三级标题）
 
-普通段落内容**加粗**和*斜体*文字，以及  _**既加粗又是斜体**_  的文字。也可以添加~~删除线~~。
+普通段落内容**加粗**和*斜体*文字，以及 _**既加粗又是斜体**_ 的文字。也可以添加~~删除线~~。
 
 > 引用内容
 
@@ -62,9 +62,9 @@ The `@tailwindcss/typography` plugin adds a set of prose classes that can be use
 > 第二段内容
 >
 > - 无序列表
->   > **嵌套**引用
->   >
->   > 1.  有序列表
+>     > **嵌套**引用
+>     >
+>     > 1.  有序列表
 
 #### 段落中换行（四级标题）
 
@@ -85,7 +85,7 @@ The `@tailwindcss/typography` plugin adds a set of prose classes that can be use
 部分样式必须开启 goldmark 的 unsafe，然后使用 HTML 标签来撰写：
 
 - 标记<mark>重点</mark>内容，不支持 `==marked==` 语法：==marked==
-- 上标<sup>1</sup>下标<sub>1</sub>功能，不支持 `X~1~ X^2^` 语法：X~1~ X^2^
+- 上标<sup>1</sup>下标<sub>1</sub>功能，不支持 `X~1~ X^2^` 语法：X~~1~~ X^2^
 - <abbr title="缩略语">缩写</abbr>定义，不支持 `*[HTML]: 超文本标记语言` 语法：\*[HTML]: 超文本标记语言
 - <ins>下划线（插入）</ins>标记，不支持 `++插入内容++` 语法：++插入内容++
 
@@ -110,26 +110,26 @@ echo test
 列表前的段落
 
 1. 有序列表一级 ol
-   1. 有序列表二级 ol ol
-      1. 有序列表三级 ol ol ol
-   1. 有序列表二级 ol ol
-      - 无序列表三级 ol ol ul
+    1. 有序列表二级 ol ol
+        1. 有序列表三级 ol ol ol
+    1. 有序列表二级 ol ol
+        - 无序列表三级 ol ol ul
 2. 有序列表一级 ol
-   - 无序列表二级 ol ul
-     1. 有序列表三级 ol ul ol
-   - 无序列表二级 ol ul
-     - 无序列表三级 ol ul ul
+    - 无序列表二级 ol ul
+        1. 有序列表三级 ol ul ol
+    - 无序列表二级 ol ul
+        - 无序列表三级 ol ul ul
 
 - 无序列表一级 ul
-  - 无序列表二级 ul ul
-    1. 有序列表三级 ul ul ol
-  - 无序列表二级 ul ul
-    - 无序列表三级 ul ul ul
+    - 无序列表二级 ul ul
+        1. 有序列表三级 ul ul ol
+    - 无序列表二级 ul ul
+        - 无序列表三级 ul ul ul
 - 无序列表一级 ul
-  1. 有序列表二级 ul ol
-     1. 有序列表三级 ul ol ol
-  1. 有序列表二级 ul ol
-     - 无序列表三级 ul ol ul
+    1. 有序列表二级 ul ol
+        1. 有序列表三级 ul ol ol
+    1. 有序列表二级 ul ol
+        - 无序列表三级 ul ol ul
 
 术语定义列表：
 

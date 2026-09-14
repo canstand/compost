@@ -1,0 +1,17 @@
+{
+  "sum": "7fc8cfab74104d74",
+  "dependencySources": {
+    "dependencies": {
+      "@alpinejs/intersect": "github.com/canstand/compost",
+      "alpinejs": "github.com/canstand/compost"
+    },
+    "devDependencies": {
+      "@tailwindcss/cli": "github.com/canstand/compost",
+      "@tailwindcss/typography": "github.com/canstand/compost",
+      "prettier": "github.com/canstand/compost",
+      "prettier-plugin-go-template": "github.com/canstand/compost",
+      "prettier-plugin-tailwindcss": "github.com/canstand/compost",
+      "tailwindcss": "github.com/canstand/compost"
+    }
+  }
+}

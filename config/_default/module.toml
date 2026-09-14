@@ -1,6 +1,6 @@
 [hugoVersion]
   extended = false
-  min = "0.147.9"
+  min = "0.166.0"
 [[mounts]]
   source = 'content'
   target = 'content'
@@ -22,6 +22,3 @@
 [[mounts]]
   source = 'archetypes'
   target = 'archetypes'
-[[mounts]]
-  source = "hugo_stats.json"
-  target = "assets/watching/hugo_stats.json"

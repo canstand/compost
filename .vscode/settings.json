@@ -11,5 +11,6 @@
     "strings": true
   },
   "html.validate.scripts": false,
-  "prettier.enable": true
+  "prettier.enable": true,
+  "i18n-ally.localesPaths": ["i18n"]
 }

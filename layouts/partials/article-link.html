@@ -26,7 +26,7 @@
         {{ partial "badge.html" (i18n "article.draft" | emojify) }}
       </div>
     {{ end }}
-    {{ if templates.Exists "partials/extend-article-link.html" }}
+    {{ if templates.Exists "_partials/extend-article-link.html" }}
       {{ partial "extend-article-link.html" . }}
     {{ end }}
   </h3>

@@ -28,16 +28,32 @@ enableRobotsTXT = true
 [[module.mounts]]
   source = 'assets'
   target = 'assets'
+# required: makes hugo_stats.json (the Tailwind CSS content source) available
 [[module.mounts]]
-  source = "hugo_stats.json"
-  target = "assets/watching/hugo_stats.json"
+  source = 'hugo_stats.json'
+  target = 'assets/notwatching/hugo_stats.json'
+  disableWatch = true
+
+# required: `css.TailwindCSS` runs the Tailwind CSS CLI, which Hugo's default
+# `security.exec` allow list does not include. Adds `tailwindcss` to Hugo's
+# defaults.
+[security]
+  [security.exec]
+    allow = [
+      '^(dart-)?sass$',
+      '^go$',
+      '^git$',
+      '^node$',
+      '^postcss$',
+      '^tailwindcss$',
+    ]
 
 [languages]
 [languages.en]
   weight = 1
 [languages.zh]
   weight = 2
-  languageName = '简体中文'
+  label = '简体中文'
   hasCJKLanguage = true
 [[languages.zh.menu.main]]
   name = "首页"

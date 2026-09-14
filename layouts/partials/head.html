@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8" />
-  {{ with .Site.LanguageCode -}}
+  {{ with .Site.Language.Locale -}}
     <meta http-equiv="content-language" content="{{ . }}" />
   {{ end -}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,11 +37,13 @@
 
 
   <!-- Styles -->
-  {{ partialCached "css.html" . }}
+  {{ with (templates.Defer (dict "key" "global")) }}
+    {{ partial "css.html" . }}
+  {{ end }}
 
 
   <!-- Icons -->
-  {{- if templates.Exists "partials/favicons.html" -}}
+  {{- if templates.Exists "_partials/favicons.html" -}}
     {{ partialCached "favicons.html" .Site }}
   {{ else -}}
     <link rel="icon" sizes="192x192" href="{{ "logo-192.png" | relURL }}" />
@@ -85,8 +87,8 @@
 
 
   <!-- Me -->
-  {{- with .Site.Author.name }}<meta name="author" content="{{ . }}" />{{ end }}
-  {{ with .Site.Author.links -}}
+  {{- with .Site.Language.Params.author.name }}<meta name="author" content="{{ . }}" />{{ end }}
+  {{ with .Site.Language.Params.author.links -}}
     {{ range $links := . }}
       {{ range $name, $url := $links }}<link href="{{ $url }}" rel="me" />{{ end }}
     {{- end -}}
@@ -120,7 +122,7 @@
 
 
   <!-- Extend head - eg. for custom analytics scripts, etc. -->
-  {{- if templates.Exists "partials/extend-head.html" -}}
+  {{- if templates.Exists "_partials/extend-head.html" -}}
     {{ partialCached "extend-head.html" . }}
   {{- end }}
 </head>

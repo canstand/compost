@@ -3,7 +3,7 @@
 # baseURL = "https://your_domain.com/"
 title = "Compost"
 
-languageCode = "en"
+locale = "en"
 defaultContentLanguage = "en"
 hasCJKLanguage = false # true for Chinese/Japanese/Korean
 defaultContentLanguageInSubdir = false
@@ -16,20 +16,23 @@ enableRobotsTXT = true
 # Uncomment for analytics
 # googleAnalytics = "G-MEASUREMENT_ID"
 
+# Hugo writes hugo_stats.json, which is the content source for Tailwind CSS.
+# See assets/css/main.css.
 [build]
-  writeStats = true
-[[build.cachebusters]]
-  source = "assets/watching/hugo_stats\\.json"
-  target = "main\\.css"
-[[build.cachebusters]]
-  source = "(postcss|tailwind)\\.config\\.js"
-  target = "css"
-[[build.cachebusters]]
-  source = "assets/.*\\.(js|ts|jsx|tsx)"
-  target = "js"
-[[build.cachebusters]]
-  source = "assets/.*\\.(.*)$"
-  target = "$1"
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.(js|mjs|cjs)'
+    target = 'css'
+  [[build.cachebusters]]
+    source = 'assets/.*\.(js|ts|jsx|tsx)'
+    target = 'js'
+  [[build.cachebusters]]
+    source = 'assets/.*\.(.*)$'
+    target = '$1'
 
 [minify]
 [minify.tdewolff]

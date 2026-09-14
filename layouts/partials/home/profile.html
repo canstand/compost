@@ -4,11 +4,11 @@
   {{ end }} flex flex-col items-center justify-center text-center"
 >
   <header class="mb-3 flex flex-col items-center">
-    {{ with .Site.Author.image }}
+    {{ with .Site.Language.Params.author.image }}
       <img class="mb-2 h-36 w-36 rounded-full" alt="Avatar" src="{{ . | relURL }}" />
     {{ end }}
     <h1 class="text-4xl font-extrabold">
-      {{ .Site.Author.name | default .Site.Title }}
+      {{ .Site.Language.Params.author.name | default .Site.Title }}
     </h1>
     <div class="mt-1 text-2xl">
       {{ partialCached "author-links.html" . }}

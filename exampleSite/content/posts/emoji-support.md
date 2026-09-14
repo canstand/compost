@@ -5,7 +5,7 @@ description: "Guide to emoji usage in Hugo"
 tags: ["emoji", "sample"]
 categories: ["sample"]
 series:
-  - "Extra"
+    - "Extra"
 ---
 
 Emoji can be enabled in a Hugo project in a number of ways.

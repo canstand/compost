@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@alpinejs/intersect": "^3.17.2",
+    "alpinejs": "^3.17.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "prettier": "^3.9.6",
+    "prettier-plugin-go-template": "^0.0.15",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4.3.3"
+  },
+  "name": "hugoautogen",
+  "private": true,
+  "version": "0.1.0"
+}

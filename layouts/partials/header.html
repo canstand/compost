@@ -1,7 +1,7 @@
 <div
   x-data="{ open: false }"
   @keydown.window.escape="open = false"
-  class="sticky inset-x-0 top-0 z-10 bg-neutral-50/50 text-neutral-900 after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:backdrop-blur-xl after:content-[''] dark:bg-neutral-800/60 dark:text-neutral-200"
+  class="sticky inset-x-0 top-0 z-10 bg-neutral-50/50 text-neutral-900 after:absolute after:top-0 after:left-0 after:-z-10 after:h-full after:w-full after:backdrop-blur-xl after:content-[''] dark:bg-neutral-800/60 dark:text-neutral-200"
 >
   <div class="fixed z-10 flex h-screen w-48 lg:hidden" :class="open ? '' : 'hidden'" x-ref="dialog" aria-modal="true">
     <div
@@ -30,7 +30,7 @@
       x-transition:leave-end="-translate-x-full"
       x-description="Off-canvas menu, show/hide based on off-canvas menu state."
     >
-      <div class="flex px-4 pb-2 pt-5">
+      <div class="flex px-4 pt-5 pb-2">
         <button
           type="button"
           title="Close menu"
@@ -69,7 +69,7 @@
     </div>
   </div>
 
-  <header class="dark:shadow-dark shadow">
+  <header class="shadow-sm">
     <nav class="container mx-auto flex max-w-7xl items-center px-6 leading-12 lg:px-8 xl:px-12" aria-label="Top">
       {{- if .Site.Params.Logo }}
         <a
@@ -95,16 +95,16 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      <div class="mx-2 h-12 flex-grow">
+      <div class="mx-2 h-12 grow">
         <div class="relative h-full w-full">
           <div class="absolute max-w-full" :class="up ? 'hidden' : ''" x-show="!up" x-transition.duration.750ms>
-            <span class="overflow-hidden text-ellipsis whitespace-nowrap font-semibold tracking-wider"
+            <span class="overflow-hidden font-semibold tracking-wider text-ellipsis whitespace-nowrap"
               >{{ .Site.Title }}</span
             >
           </div>
           <template x-if="true">
             <div
-              class="absolute left-0 right-0 top-0 max-w-full"
+              class="absolute top-0 right-0 left-0 max-w-full"
               :class="up ? '' : 'hidden'"
               x-show="up"
               x-transition.duration.750ms
@@ -129,7 +129,7 @@
           </li>
         {{ end }}
       </ul>
-      <button id="switchTheme" class="flex h-8 w-8 items-center justify-center focus:outline-none">
+      <button id="switchTheme" class="flex h-8 w-8 items-center justify-center focus:outline-hidden">
         <span class="sr-only">Switch theme</span>
         <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -138,8 +138,6 @@
             clip-rule="evenodd"
           ></path>
         </svg>
-        <!-- ensure hugo captures these classes in hugo_stats.json when we run purgecss -->
-        <span class="light"></span><span class="dark"></span>
       </button>
       <script>
         document.getElementById("switchTheme").addEventListener("click", function () {

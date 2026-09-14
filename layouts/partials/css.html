@@ -1,23 +1,32 @@
-{{- $mainCSS := resources.Get "css/main.css" }}
-{{ $mainCSS = $mainCSS | css.PostCSS (dict "inlineImports" true) }}
-{{ if hugo.IsProduction -}}
-  {{ $mainCSS = $mainCSS | minify | fingerprint | resources.PostProcess }}
-{{- end -}}
-<link
-  type="text/css"
-  rel="stylesheet"
-  href="{{ $mainCSS.RelPermalink }}"
-  {{ if hugo.IsProduction }}integrity="{{ $mainCSS.Data.Integrity }}"{{ end }}
-/>
-{{ $customCSS := resources.Get "css/custom.css" -}}
-{{ if $customCSS -}}
-  {{ if hugo.IsProduction -}}
-    {{ $customCSS = $customCSS | minify | fingerprint | resources.PostProcess }}
-  {{- end -}}
+{{/* Tailwind CSS v4. See assets/css/main.css.
+  Call this partial from a `templates.Defer` block: Hugo writes the complete
+  hugo_stats.json (the stylesheet's content source) only after all pages
+  have been rendered.
+*/}}
+{{- with resources.Get "css/main.css" }}
+  {{- $opts := dict "minify" (not hugo.IsDevelopment) }}
+  {{- with . | css.TailwindCSS $opts }}
+    {{- $link := . }}
+    {{- if hugo.IsProduction }}
+      {{- $link = $link | fingerprint }}
+    {{- end }}
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ $link.RelPermalink }}"
+      {{ if hugo.IsProduction }}integrity="{{ $link.Data.Integrity }}" crossorigin="anonymous"{{ end }}
+    />
+  {{- end }}
+{{- end }}
+{{- with resources.Get "css/custom.css" }}
+  {{- $link := . }}
+  {{- if hugo.IsProduction }}
+    {{- $link = $link | minify | fingerprint }}
+  {{- end }}
   <link
     type="text/css"
     rel="stylesheet"
-    href="{{ $customCSS.RelPermalink }}"
-    {{ if hugo.IsProduction }}integrity="{{ $customCSS.Data.Integrity }}"{{ end }}
+    href="{{ $link.RelPermalink }}"
+    {{ if hugo.IsProduction }}integrity="{{ $link.Data.Integrity }}" crossorigin="anonymous"{{ end }}
   />
-{{- end -}}
+{{- end }}

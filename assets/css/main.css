@@ -1,12 +1,90 @@
-@tailwind base;
+/* Tailwind CSS v4 entry point.
+   Configuration lives in CSS ("CSS-first configuration").
+   See https://tailwindcss.com/docs/theme */
+
+@import "tailwindcss" source(none);
+
+@import "./components.css";
+@import "./typography.css";
+@import "./chroma.css";
+
+@plugin "@tailwindcss/typography";
+
+/* Hugo writes every class, id and tag used on the rendered site to
+   hugo_stats.json, which makes the CSS complete without Tailwind having to
+   scan the file system. The file is written once all pages are rendered,
+   so the stylesheet is processed inside a `templates.Defer` block.
+   See layouts/partials/css.html and layouts/partials/head.html. */
+@source "hugo_stats.json";
+
+/* Class based dark mode, toggled by the script in layouts/partials/head.html.
+   See https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* -- Brand colors ------------------------------------------------------
+     `primary` and `secondary` alias the default blue and cyan palettes, so
+     that every Tailwind color remains available. */
+  --color-primary-50: var(--color-blue-50);
+  --color-primary-100: var(--color-blue-100);
+  --color-primary-200: var(--color-blue-200);
+  --color-primary-300: var(--color-blue-300);
+  --color-primary-400: var(--color-blue-400);
+  --color-primary-500: var(--color-blue-500);
+  --color-primary-600: var(--color-blue-600);
+  --color-primary-700: var(--color-blue-700);
+  --color-primary-800: var(--color-blue-800);
+  --color-primary-900: var(--color-blue-900);
+  --color-primary-950: var(--color-blue-950);
+
+  --color-secondary-50: var(--color-cyan-50);
+  --color-secondary-100: var(--color-cyan-100);
+  --color-secondary-200: var(--color-cyan-200);
+  --color-secondary-300: var(--color-cyan-300);
+  --color-secondary-400: var(--color-cyan-400);
+  --color-secondary-500: var(--color-cyan-500);
+  --color-secondary-600: var(--color-cyan-600);
+  --color-secondary-700: var(--color-cyan-700);
+  --color-secondary-800: var(--color-cyan-800);
+  --color-secondary-900: var(--color-cyan-900);
+  --color-secondary-950: var(--color-cyan-950);
+
+  /* `neutral` is the zinc palette, as it was in the Tailwind CSS 3
+     configuration of this theme. */
+  --color-neutral-50: var(--color-zinc-50);
+  --color-neutral-100: var(--color-zinc-100);
+  --color-neutral-200: var(--color-zinc-200);
+  --color-neutral-300: var(--color-zinc-300);
+  --color-neutral-400: var(--color-zinc-400);
+  --color-neutral-500: var(--color-zinc-500);
+  --color-neutral-600: var(--color-zinc-600);
+  --color-neutral-700: var(--color-zinc-700);
+  --color-neutral-800: var(--color-zinc-800);
+  --color-neutral-900: var(--color-zinc-900);
+  --color-neutral-950: var(--color-zinc-950);
+
+  /* -- Font stacks ------------------------------------------------------- */
+  --font-sans:
+    ui-sans-serif, -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  --font-serif:
+    ui-serif, Lora, "Source Han Serif CN", NSimSun, Georgia, "Times New Roman", Times, "Songti SC", "Apple Color Emoji",
+    "Segoe UI Emoji", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+  /* -- Extra sizes ------------------------------------------------------- */
+  --container-xxs: 12rem;
+}
+
 @layer base {
   a,
   button {
     @apply transition;
   }
+
+  /* Tailwind CSS v4 dropped this from preflight (v3 had it). */
+  button:not(:disabled) {
+    cursor: pointer;
+  }
 }
-
-@tailwind components;
-@import "components.css";
-
-@tailwind utilities;

@@ -14,7 +14,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
@@ -22,24 +22,24 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "latest"
+          hugo-version: "0.166.0"
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: "22"
+          node-version: "24"
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: npm install -g postcss-cli autoprefixer
       - run: npm ci
+      - run: npm ci --prefix exampleSite
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
@@ -49,7 +49,7 @@ jobs:
       - name: Build
         env:
           HUGO_GOOGLEANALYTICS: ${{ secrets.GOOGLEANALYTICS }}
-        run: hugo --gc -s ./exampleSite --minify --baseURL https://canstand.github.io/compost/
+        run: hugo --gc -s ./exampleSite --minify --panicOnWarning --baseURL https://canstand.github.io/compost/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

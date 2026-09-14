@@ -8,7 +8,7 @@
         {{- else -}}
           &copy;
           {{ now.Format "2006" }}
-          {{ .Site.Author.name }}
+          {{ .Site.Language.Params.author.name }}
         {{- end -}}
       </p>
       {{/* Theme attribution */}}
@@ -22,7 +22,7 @@
     </div>
     <div class="flex-1">
       {{/* Extend footer - eg. for extra scripts, etc. */}}
-      {{- if templates.Exists "partials/extend-footer.html" }}
+      {{- if templates.Exists "_partials/extend-footer.html" }}
         {{ partialCached "extend-footer.html" . }}
       {{- end }}
     </div>

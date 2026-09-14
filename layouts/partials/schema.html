@@ -5,10 +5,10 @@
     "@type": "WebSite",
     "name": "{{ .Site.Title | safeJS }}",
     "url": "{{ (site.GetPage "/").Permalink | safeURL }}",
-    {{- with .Site.LanguageCode -}}
+    {{- with .Site.Language.Locale -}}
       "inLanguage": "{{ . }}",
     {{- end -}}
-    {{- with .Site.Author.name -}}
+    {{- with .Site.Language.Params.author.name -}}
       "author": {
         "@type": "Person",
         "name": "{{ . | safeJS }}"
@@ -26,7 +26,7 @@
   }
   </script>
 {{ else if .IsPage }}
-  {{- $author :=  or (.Params.author) (.Site.Author.name) -}}
+  {{- $author := or (.Params.author) (.Site.Language.Params.author.name) -}}
   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
   <script type="application/ld+json">
   {
@@ -36,7 +36,7 @@
     "name": "{{ .Title | safeJS }}",
     "headline": "{{ .Title | safeJS }}",
     "description": "{{ with .Description | safeJS }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary | safeJS }}{{ else }}{{ with .Site.Params.description }}{{ . | safeJS }}{{ end }}{{ end }}{{ end }}",
-    {{ with .Site.LanguageCode }}"inLanguage": {{ . }},{{ end }}
+    {{ with .Site.Language.Locale }}"inLanguage": {{ . }},{{ end }}
     "author" : {
       "@type": "Person",
       "name": "{{ $author | safeJS }}"
