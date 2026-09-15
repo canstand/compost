@@ -22,11 +22,10 @@ mr-7 border-b-2 border-transparent text-right hover:border-primary-500"><a href=
 主题。主要基于 <a href="https://github.com/jpanther/congo" target="_blank" rel="noopener">Congo</a>
 改造，并参考了 <a href="https://github.com/bep/hugo-starter-tailwind-basic" target="_blank" rel="noopener">hugo-starter-tailwind-basic</a>
 等。</p><h2 id="特性">特性 <a class="heading-anchor" href="#%e7%89%b9%e6%80%a7" aria-hidden="true">#</a></h2><ul><li>样式基于 <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener">Tailwind CSS</a>
-3.x，以及官方的 <a href="https://github.com/tailwindlabs/tailwindcss-typography" target="_blank" rel="noopener">Typography 插件</a>
+4.x，在 <code>assets/css/main.css</code> 中使用 CSS 优先（CSS-first）配置，由 Hugo 的 <code>css.TailwindCSS</code> 编译，并配合官方的 <a href="https://github.com/tailwindlabs/tailwindcss-typography" target="_blank" rel="noopener">Typography 插件</a>
 。</li><li>可以使用 <code>hugo</code> 命令直接构建和测试（使用了 <a href="https://github.com/gohugoio/hugo/issues/8343" target="_blank" rel="noopener">#8343</a>
-中提到的一些技巧）。</li><li>🌐 特别为简体中文语言定制了文章样式（只在 html 的 lang 为 zh 时应用）。</li><li>✨ 使用 Hugo 内置功能自动调整图片大小，并添加原生延迟加载属性。</li></ul><h2 id="使用">使用 <a class="heading-anchor" href="#%e4%bd%bf%e7%94%a8" aria-hidden="true">#</a></h2><ol><li>在 Hugo 项目里指定主题为 <code>github.com/canstand/compost</code>，并且配置需要从主题合并的默认选项：</li></ol><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s1">&#39;github.com/canstand/compost&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># required</span>
+中提到的一些技巧）。</li><li>🌐 特别为简体中文语言定制了文章样式（只在 html 的 lang 为 zh 时应用）。</li><li>✨ 使用 Hugo 内置功能自动调整图片大小，并添加原生延迟加载属性。</li></ul><h2 id="使用">使用 <a class="heading-anchor" href="#%e4%bd%bf%e7%94%a8" aria-hidden="true">#</a></h2><p>需要 Hugo v0.166.0 或更高版本，以及 <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>
+（Tailwind CSS CLI 通过 <code>npm</code> 安装）。</p><ol><li>在 Hugo 项目里指定主题为 <code>github.com/canstand/compost</code>，并且在 <code>hugo.toml</code> 里添加必要的配置：</li></ol><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># required: 合并主题的配置（Tailwind CSS 构建相关）</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">build</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
 </span></span><span class="line"><span class="cl">
@@ -37,10 +36,39 @@ mr-7 border-b-2 border-transparent text-right hover:border-primary-500"><a href=
 </span></span><span class="line"><span class="cl"><span class="c"># for better seo</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">minify</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="nx">_merge</span> <span class="p">=</span> <span class="s1">&#39;deep&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">module</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">module</span><span class="p">.</span><span class="nx">mounts</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">source</span> <span class="p">=</span> <span class="s1">&#39;assets&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">target</span> <span class="p">=</span> <span class="s1">&#39;assets&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># required: hugo_stats.json 是 Tailwind CSS 样式表的内容来源</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">module</span><span class="p">.</span><span class="nx">mounts</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">source</span> <span class="p">=</span> <span class="s1">&#39;hugo_stats.json&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">target</span> <span class="p">=</span> <span class="s1">&#39;assets/notwatching/hugo_stats.json&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">disableWatch</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">module</span><span class="p">.</span><span class="nx">imports</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">path</span> <span class="p">=</span> <span class="s1">&#39;github.com/canstand/compost&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># required: 主题使用 Tailwind CSS CLI 编译样式表</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">security</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">security</span><span class="p">.</span><span class="nx">exec</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">allow</span> <span class="p">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;^(dart-)?sass$&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;^go$&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;^git$&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;^node$&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;^postcss$&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;^tailwindcss$&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
 </span></span></code></pre></div><ol start="2"><li>安装或升级依赖：</li></ol><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo mod get -u
 </span></span><span class="line"><span class="cl">hugo mod npm pack
 </span></span><span class="line"><span class="cl">npm install
 </span></span></code></pre></div><ol start="3"><li>之后按正常开发与测试：</li></ol><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo server
-</span></span></code></pre></div><h2 id="二次开发">二次开发 <a class="heading-anchor" href="#%e4%ba%8c%e6%ac%a1%e5%bc%80%e5%8f%91" aria-hidden="true">#</a></h2><p>克隆项目之后，项目目录下运行 <code>hugo server -s ./exampleSite</code> 就可以实时测试了</p></section></article><section class="w-full"><h2 class="mt-8 text-2xl font-extrabold">最近的文章</h2><div class="divide-y divide-neutral-300 overflow-hidden dark:divide-neutral-600"><article class="py-4"><h3 class="flex items-center text-xl font-semibold"><a class="text-neutral-800 hover:underline hover:decoration-primary-500 hover:underline-offset-auto dark:text-neutral-200" href="/compost/zh/posts/typography/">中文网页排版样例</a></h3><div class="my-2">参考赫蹏项目调整后的中文正文内容样式，支持深色模式。</div><div class="text-sm text-neutral-400 dark:text-neutral-500"><div class="flex flex-row items-center"><time datetime="2021-11-16 00:00:00 +0000 UTC">2021/11/16</time><span class="px-2 text-primary-500">&#183;</span><span title="预计阅读">3 分钟阅读时长</span></div></div></article></div></section></div></main><footer class="bg-neutral-200 text-neutral-500 dark:bg-neutral-900 dark:text-neutral-500"><div class="container mx-auto flex max-w-7xl flex-row px-6 py-4 text-sm lg:px-8 xl:px-12"><div class="flex-1"><p>&copy;
+</span></span></code></pre></div><h2 id="二次开发">二次开发 <a class="heading-anchor" href="#%e4%ba%8c%e6%ac%a1%e5%bc%80%e5%8f%91" aria-hidden="true">#</a></h2><p>演示站点位于 <code>exampleSite</code>，它本身就是一个完整的 Hugo 项目，需要像普通站点一样安装依赖：</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install
+</span></span><span class="line"><span class="cl">hugo mod npm pack --source exampleSite
+</span></span><span class="line"><span class="cl">npm install --prefix exampleSite
+</span></span><span class="line"><span class="cl">hugo server --source exampleSite
+</span></span></code></pre></div><p>注意：如果修改了 <code>package.hugo.json</code> 中的依赖，需要重新执行
+<code>hugo mod npm pack --source exampleSite</code>。</p></section></article><section class="w-full"><h2 class="mt-8 text-2xl font-extrabold">最近的文章</h2><div class="divide-y divide-neutral-300 overflow-hidden dark:divide-neutral-600"><article class="py-4"><h3 class="flex items-center text-xl font-semibold"><a class="text-neutral-800 hover:underline hover:decoration-primary-500 hover:underline-offset-auto dark:text-neutral-200" href="/compost/zh/posts/typography/">中文网页排版样例</a></h3><div class="my-2">参考赫蹏项目调整后的中文正文内容样式，支持深色模式。</div><div class="text-sm text-neutral-400 dark:text-neutral-500"><div class="flex flex-row items-center"><time datetime="2021-11-16 00:00:00 +0000 UTC">2021/11/16</time><span class="px-2 text-primary-500">&#183;</span><span title="预计阅读">3 分钟阅读时长</span></div></div></article></div></section></div></main><footer class="bg-neutral-200 text-neutral-500 dark:bg-neutral-900 dark:text-neutral-500"><div class="container mx-auto flex max-w-7xl flex-row px-6 py-4 text-sm lg:px-8 xl:px-12"><div class="flex-1"><p>&copy;
 2026
 Compost</p><p class="text-sm">由 <a class="hover:underline hover:text-primary-500" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> 和 <a class="hover:underline hover:text-primary-500" href="https://canstand.github.io/compost" target="_blank" rel="noopener noreferrer">Compost</a> 驱动</p></div><div class="flex-1"></div></div></footer></body></html>
