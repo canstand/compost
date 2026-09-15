@@ -73,9 +73,9 @@ Call to action
 
 **Output:** {{< icon "github" >}}
 
-Icons are populated using Hugo pipelines which makes them very flexible. Congo ships with a default set of icons for social, email, and generic links. If you want to add your own icons, you can simply place them in `/assets/icons/` and reference them using the `icon` shortcode passing in the icon's filename (without the `.svg.` extension).
+Icons are populated using Hugo pipelines which makes them very flexible. Compost ships with a default set of icons for social, email, and generic links. If you want to add your own icons, you can simply place them in `/assets/icons/` and reference them using the `icon` shortcode passing in the icon's filename (without the `.svg` extension).
 
-Icons can also be used in partials by calling the [icon partial](<>).
+Icons can also be used in other templates by calling the `icon` partial: `{{ partial "icon.html" "github" }}`.
 
 ## Lead
 
